@@ -57,7 +57,7 @@ impl LazyTheme {
 impl TryFrom<LazyThemeSet> for ThemeSet {
     type Error = Error;
 
-    /// Since the user might want to add custom themes to bat, we need a way to
+    /// Since the user might want to add custom themes to kit, we need a way to
     /// convert from a `LazyThemeSet` to a regular [`ThemeSet`] so that more
     /// themes can be added. This function does that pretty straight-forward
     /// conversion.
