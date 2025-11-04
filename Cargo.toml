@@ -1,15 +1,15 @@
 [package]
-authors = ["David Peter <mail@david-peter.de>"]
+authors = ["Davanico A.N <davaniko1122@gmail.com>"]
 categories = ["command-line-utilities"]
 description = "A cat(1) clone with wings."
-homepage = "https://github.com/sharkdp/bat"
+homepage = "https://github.com/danko1122q/kit"
 license = "MIT OR Apache-2.0"
 name = "kit"
-repository = "https://github.com/sharkdp/bat"
+repository = "https://github.com/danko1122q/kit"
 version = "0.26.0"
 exclude = ["assets/syntaxes/*", "assets/themes/*"]
 build = "build/main.rs"
-edition = '2021'
+edition = '2025'
 # You are free to bump MSRV as soon as a reason for bumping emerges.
 rust-version = "1.87"
 
