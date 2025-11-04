@@ -114,11 +114,11 @@ impl OutputType {
 
         if pager.kind == PagerKind::Less {
             // less needs to be called with the '-R' option in order to properly interpret the
-            // ANSI color sequences printed by bat. If someone has set PAGER="less -F", we
+            // ANSI color sequences printed by kit. If someone has set PAGER="less -F", we
             // therefore need to overwrite the arguments and add '-R'.
             //
-            // We only do this for PAGER (as it is not specific to 'bat'), not for BAT_PAGER
-            // or bats '--pager' command line option.
+            // We only do this for PAGER (as it is not specific to 'kit'), not for KIT_PAGER
+            // or kitss '--pager' command line option.
             let replace_arguments_to_less = pager.source == PagerSource::EnvVarPager;
 
             if args.is_empty() || replace_arguments_to_less {
