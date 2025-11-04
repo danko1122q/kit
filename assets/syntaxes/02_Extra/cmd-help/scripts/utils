@@ -1,0 +1,50 @@
+# usage: $ source scripts/utils
+# shellcheck shell=bash
+
+# regression tests diff
+function reg {
+    if [[ "$*" != *"--"* ]]; then
+        GIT_PAGER="LESS=R less" git diff "$@" -- tests/{highlighted,theme}
+    else
+        GIT_PAGER="LESS=R less" git diff "$@"
+    fi
+}
+
+# to exclude e.g. THEME-italics, do:
+#   reg -- ":^*-italics*"
+
+function regs {
+    reg --staged "$@"
+}
+
+function regm {
+    reg main "$@"
+}
+
+# regression tests show
+function regshow {
+    if [[ "$*" != *"--"* ]]; then
+        GIT_PAGER="LESS=R less" git show "$@" -- tests/{highlighted,theme}
+    else
+        GIT_PAGER="LESS=R less" git show "$@"
+    fi
+}
+
+alias git0='GIT_CONFIG=/dev/null git'
+
+# run a syntax test in debug mode
+function debug {
+    tests/syntax.py "$@" -d | less -R
+}
+
+function demo {
+    "$@" --help | bat --no-config -pl cmd-help --pager='less -R'
+}
+
+function demo_it {
+    "$@" --help | bat --no-config -pl cmd-help --pager='less -R' --italic-text=always
+}
+
+alias mksyn='scripts/make_syntax_test.sh'
+
+alias try='scripts/try_input.sh'

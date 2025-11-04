@@ -1,0 +1,14 @@
+{
+  "cmd": ["typst", "compile", "$file"],
+  "selector": "text.typst",
+  "file_regex": "┌─ (?:\\\\{2}\\?\\\\)?(.+):(\\d+):(\\d+)",
+  "env": { "NO_COLOR": "1" },
+  "cancel": { "kill": true },
+  "syntax": "Packages/Typst/Build Results.sublime-syntax",
+  "variants": [
+    {
+      "name": "Open",
+      "cmd": ["typst", "compile", "$file", "--open"]
+    }
+  ]
+}

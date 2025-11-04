@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  syntax_tests:
+    name: Syntax tests
+    runs-on: "ubuntu-latest"
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - uses: docker/setup-buildx-action@b5ca514318bd6ebac0fb2aedd5d36ec1b5c232a2 # v3.10.0
+      - name: Build and cache syntest
+        # though the cache is evicted after 7 days
+        uses: docker/build-push-action@14487ce63c7a62a4a324b0bfb37086795e31c6c1 # v6.16.0
+        with:
+          context: ./tests/docker
+          file: ./tests/docker/syntest.dockerfile
+          tags: syntest
+          cache-from: type=gha,scope=main
+          cache-to: type=gha,scope=main,mode=max
+          load: true
+      - name: Run syntax tests
+        run: tests/syntax.py
+
+  highlight_regression_tests:
+    name: Highlight regression tests
+    runs-on: "ubuntu-latest"
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run highlight regression tests
+        run: tests/highlight_regression.sh
+
+  theme_regression_tests:
+    name: Theme regression tests
+    runs-on: "ubuntu-latest"
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run theme regression tests
+        run: tests/theme_regression.sh
+
+  bat_ci_compliance:
+    name: bat CI compliance
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check bat CI compliance
+        run: scripts/check_bat_ci_compliance.sh

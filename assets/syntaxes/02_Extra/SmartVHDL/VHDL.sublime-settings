@@ -1,0 +1,36 @@
+{
+	"word_wrap": false,
+	"extensions": ["vhd", "vhdl","vht"],
+	// Allow a dot to trigger autocomplete, except in string, comment or constant
+	"auto_complete_triggers": [ {"selector": "source.vhdl - string - comment - constant", "characters": "."} ],
+	"vhdl.ext"  : ["vhd","vhdl" ], // File extension used to find type information for autocompletion/popup
+	// Popup configuration
+	"vhdl.tooltip_hide_on_move" : true, // True to hide the tooltip when the mouse move away from the tooltip
+	"vhdl.tooltip_show_refs"    : true, // True to show reference to module in tooltips
+	"vhdl.hover_max_size"       : -1  , // Max size of the file (in byte) to display popup info. Set to -1 to disable the limit (default), 0 to disable feature.
+	// Module instantiation configruation
+	"vhdl.instance_as_snippet"     : false,  // Module instantiation is a snippets, with entry at each port
+	"vhdl.instance_prefix"         : "i_",  // Prefix to the module instantiation name
+	"vhdl.instance_suffix"         : "",    // Suffix to the module instantiation name
+	"vhdl.generic_fill"            : true,  // On module instantiation with generics user is asked a value for each generic
+	"vhdl.generic_explicit"        : false, // Control if generic settings are explicit (appears in module instantiation even when default is used)
+	"vhdl.autoconnect"             : true,  // Control if signals are created and connected in module instantiation
+	"vhdl.autoconnect_allow_prefix": true,  // True to expand search for signal to \w+_port
+	"vhdl.autoconnect_allow_suffix": true,  // True to expand search for signal to port_\w+
+	"vhdl.autoconnect_port_prefix" : [],    // List of prefix to remove from the port before looking for a signal connection
+	"vhdl.autoconnect_port_suffix" : [] ,   // List of suffix to remove from the port before looking for a signal connection
+	// Navigation config
+	"vhdl.hierarchy_new_window" : false,  // True to open a new window to display the module hierarchy
+	"vhdl.navbar_width" : 0.3, // Navigation bar width (default 0.2 means 20%)
+	"vhdl.navbar_font_size" : 10, // Navigation bar font size (if value is set to 0 then fontsize change is disabled)
+	"vhdl.navbar_show_port"   : true, // Show all ports of current module
+	"vhdl.navbar_show_signal" : true, // Show all signal declared in a module
+	"vhdl.navbar_show_process": true, // Show all named process declared in a module
+	"vhdl.navbar_show_alias"  : true, // Show all alias declared in a module
+	"vhdl.navbar_show_const"  : true, // Show all const declared in a module
+	// Autocompletion settings
+	"vhdl.disable_autocomplete" : false,  // True to disable auto-completion
+	"vhdl.autocomplete_max_lvl" : 5,      // Max hierachy level for autocompletion (class.struct.field.sub_field == 4 level) , -1 for no limit
+	// Global config
+	"vhdl.debug" : false // True to display debug message in the console
+}
