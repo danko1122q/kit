@@ -1,4 +1,4 @@
-bat 0.18.2
+kit 1.0.0
 A cat(1) clone with syntax highlighting and Git integration.
 
 USAGE:
@@ -132,4 +132,4 @@ ARGS:
 SUBCOMMANDS:
     cache    Modify the syntax-definition and theme cache
 
-Note: `bat -h` prints a short and concise overview while `bat --help` gives all details.
+Note: `kit -h` prints a short and concise overview while `kit --help` gives all details.
