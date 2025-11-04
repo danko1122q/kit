@@ -1,107 +1,75 @@
-# Kit - A Versatile File Utility
+Kit - Versatile CLI File Utility
 
-**Kit** is a versatile command-line utility that combines file viewing with syntax highlighting, Git integration, and file/directory creation capabilities.
+Kit is a command-line utility inspired by cat and less, enhanced with modern features such as advanced syntax highlighting, Git integration, and file management capabilities (file and directory creation). Kit is designed to make your file viewing experience in the terminal more efficient and enjoyable.
 
-## Author
+💡 Key Features
 
-**danko1122q** <davaniko1122@gmail.com>
+📄 Modern File Viewing
 
-Copyright © 2025 danko1122q. All rights reserved.
+* Syntax Highlighting: Beautifully highlight files for over 200 programming and markup languages.
+* Git Integration: Intuitively display Git modification status (modified, added) in the sidebar while viewing files.
+* Automatic Paging: Smartly uses a pager (like less) for easy navigation through large files, with support for customizable pagers.
 
-## Features
+🔨 CLI File Management
 
-### 📄 File Viewing with Syntax Highlighting
-View files with beautiful syntax highlighting for numerous programming and markup languages.
+* File Creation: Quickly create new files using the -c or --create flag.
+* Directory Creation: Create directories (including nested ones) recursively using --mk or --mkdir flags (similar to mkdir -p).
 
-### 🔧 File & Directory Creation
-- **Create files**: `kit -c <file>` or `kit --create <file>`
-- **Create directories**: `kit --mkdir <dir>` (creates recursively like `mkdir -p`)
+💻 Usage
 
-### 🎨 Git Integration
-Shows Git modifications in the sidebar when viewing files.
+1. Viewing Files
+   | Command | Description |
+   |---------|-------------|
+   | kit README.md | View a single file. |
+   | kit src/*.rs | View multiple files at once. |
+   | `curl -s example.com | kit` | View input from a pipe or URL. |
 
-### 🖥️ Automatic Paging
-Smart paging for large files with support for customizable pagers.
+2. Creating Files and Directories
+   | Command | Description |
+   |---------|-------------|
+   | kit -c test.txt | Create a single new file. |
+   | kit -c file1.txt file2.md | Create multiple new files. |
+   | kit --mk path/to/nested/directory | Create nested directories recursively (--mk or --mkdir). |
 
-## Usage
+3. Viewing Options & Quick Customization
+   | Option | Description |
+   |--------|-------------|
+   | kit --list-languages | Print all supported languages. |
+   | kit --list-themes | Print all available color themes. |
+   | kit -n file.txt | Show line numbers. |
+   | kit --theme=TwoDark file.rs | Apply a specific theme to output. |
+   | kit -A file.txt | Show all non-printable characters. |
 
-### View Files
-```bash
-# View a single file
-kit README.md
+⚙️ Persistent Configuration
+Kit can be configured via a configuration file located at ~/.config/kit/config and through environment variables.
 
-# View multiple files
-kit src/*.rs
+| Environment Variable | Description                                                  |
+| -------------------- | ------------------------------------------------------------ |
+| KIT_THEME            | Set the default color theme.                                 |
+| KIT_STYLE            | Control default style components (e.g., lines, Git, header). |
+| KIT_PAGER            | Set the external pager command to use.                       |
+| KIT_PAGING           | Control paging behavior (always or automatic).               |
+| KIT_TABSM            | Set tab width.                                               |
+| KIT_CONFIG_PATH      | Change the configuration file location.                      |
+| KIT_CACHE_PATH       | Change the cache directory location.                         |
 
-# Read from stdin
-curl -s https://example.com | kit
-```
+📦 Building from Source
+Kit is built using Rust. Ensure you have the Rust Toolchain (MSRV 1.70 or newer) installed.
 
-### Create Files
-```bash
-# Create a single file
-kit -c test.txt
-
-# Create multiple files
-kit -c file1.txt file2.md file3.rs
-```
-
-### Create Directories
-```bash
-# Create a directory
-kit --mk mydir
-
-# Create nested directories (like mkdir -p)
-kit --mk path/to/nested/directory
-
-# Create multiple directories
-kit --mk dir1 dir2 dir3
-```
-
-### Additional Options
-```bash
-# List all supported languages
-kit --list-languages
-
-# List all themes
-kit --list-themes
-
-# Show line numbers
-kit -n file.txt
-
-# Set a specific theme
-kit --theme=TwoDark file.rs
-
-# Show all non-printable characters
-kit -A file.txt
-```
-
-## Configuration
-
-Kit can be configured using environment variables:
-
-- `KIT_THEME`: Set the default theme
-- `KIT_STYLE`: Set the default style components
-- `KIT_PAGER`: Set the default pager
-- `KIT_PAGING`: Control paging behavior
-- `KIT_TABS`: Set tab width
-- `KIT_CONFIG_PATH`: Path to config file
-- `KIT_CACHE_PATH`: Path to cache directory
-
-## Building from Source
+Bash
 
 ```bash
-# Build release version
+# For optimized compilation (recommended for use)
 cargo build --release
 
-# Binary will be located at
+# The generated binary will be located at:
 ./target/release/kit
 ```
 
-## License
+📝 License and Copyright
+Kit is dual-licensed under MIT OR Apache-2.0.
 
-MIT OR Apache-2.0
+* Original Code (bat): Copyright (c) 2018-2023 bat-developers ([https://github.com/sharkdp/bat](https://github.com/sharkdp/bat))
+* KIT Modifications & Contributions: Copyright (c) 2025 danko1122q
 
-## Repository
-
-https://github.com/danko1122q/kit
+Repository: [https://github.com/danko1122q/kit](https://github.com/danko1122q/kit)
