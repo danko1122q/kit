@@ -1,25 +1,25 @@
-BAT(1)                      General Commands Manual                     BAT(1)
+KIT(1)                      General Commands Manual                     KIT(1)
 
 NAME
-       bat - a cat(1) clone with syntax highlighting and Git integration.
+       kit - a cat(1) clone with syntax highlighting and Git integration.
 
 USAGE
-       bat [OPTIONS] [FILE]...
+       kit [OPTIONS] [FILE]...
 
-       bat cache [CACHE-OPTIONS] [--build|--clear]
+       kit cache [CACHE-OPTIONS] [--build|--clear]
 
 DESCRIPTION
-       bat  prints  the syntax-highlighted content of a collection of FILEs to
+       kit  prints  the syntax-highlighted content of a collection of FILEs to
        the terminal. If no FILE is specified, or when FILE is  '-',  it  reads
        from standard input.
 
-       bat  supports  a  large number of programming and markup languages.  It
+       kit  supports  a  large number of programming and markup languages.  It
        also communicates with git(1) to show modifications with respect to the
-       git  index.  bat automatically pipes its output through a pager (by de‐
+       git  index.  kit automatically pipes its output through a pager (by de‐
        fault: less).
 
-       Whenever the output of bat goes to  a  non-interactive  terminal,  i.e.
-       when  the output is piped into another process or into a file, bat will
+       Whenever the output of kit goes to  a  non-interactive  terminal,  i.e.
+       when  the output is piped into another process or into a file, kit will
        act as a drop-in replacement for cat(1) and fall back to  printing  the
        plain file contents.
 
@@ -109,21 +109,21 @@ OPTIONS
        -f, --force-colorization
 
               Alias  for '--decorations=always --color=always'. This is useful
-              if the output of bat is piped to another program, but  you  want
+              if the output of kit is piped to another program, but  you  want
               to keep the colorization/decorations.
 
        --paging <when>
 
               Specify when to use the pager. To disable the pager, use '--pag‐
               ing=never' or its alias, -P. To disable the  pager  permanently,
-              set  BAT_PAGER  to  an  empty  string. To control which pager is
+              set  KIT_PAGER  to  an  empty  string. To control which pager is
               used, see the '--pager' option. Possible values: *auto*,  never,
               always.
 
        --pager <command>
 
               Determine  which  pager  is  used. This option will override the
-              PAGER and BAT_PAGER environment variables. The default pager  is
+              PAGER and KIT_PAGER environment variables. The default pager  is
               'less'.  To  control  when the pager is used, see the '--paging'
               option. Example: '--pager "less -RF"'.
 
@@ -140,7 +140,7 @@ OPTIONS
               Set the theme for syntax highlighting.  Use  '--list-themes'  to
               see  all  available  themes.   To  set  a default theme, add the
               '--theme="..."' option to the configuration file or  export  the
-              BAT_THEME environment variable (e.g.: export BAT_THEME="...").
+              KIT_THEME environment variable (e.g.: export KIT_THEME="...").
 
        --list-themes
 
@@ -153,8 +153,8 @@ OPTIONS
               contents.  The  argument is a comma-separated list of components
               to display (e.g. 'numbers,changes,grid') or a pre-defined  style
               ('full').  To set a default style, add the '--style=".."' option
-              to the configuration file or export  the  BAT_STYLE  environment
-              variable (e.g.: export BAT_STYLE=".."). Possible values: *auto*,
+              to the configuration file or export  the  KIT_STYLE  environment
+              variable (e.g.: export KIT_STYLE=".."). Possible values: *auto*,
               full, plain, changes, header, grid, numbers, snip.
 
        -r, --line-range <N:M>...
@@ -199,45 +199,45 @@ SUBCOMMANDS
        cache - Modify the syntax-definition and theme cache.
 
 FILES
-       bat can also be customized with a configuration file. The  location  of
+       kit can also be customized with a configuration file. The  location  of
        the file is dependent on your operating system. To get the default path
        for your system, call:
 
-       bat --config-file
+       kit --config-file
 
-       Alternatively, you can use the BAT_CONFIG_PATH environment variable  to
-       point bat to a non-default location of the configuration file.
+       Alternatively, you can use the KIT_CONFIG_PATH environment variable  to
+       point kit to a non-default location of the configuration file.
 
 ADDING CUSTOM LANGUAGES
-       bat  supports  Sublime  Text .sublime-syntax language files, and can be
+       kit  supports  Sublime  Text .sublime-syntax language files, and can be
        customized to add additional languages to your local  installation.  To
-       do  this,  add  the  .sublime-snytax language files to `$(bat --config-
-       dir)/syntaxes` and run `bat cache --build`.
+       do  this,  add  the  .sublime-snytax language files to `$(kit --config-
+       dir)/syntaxes` and run `kit cache --build`.
 
        Example:
 
-            mkdir -p "$(bat --config-dir)/syntaxes"
-            cd "$(bat --config-dir)/syntaxes"
+            mkdir -p "$(kit --config-dir)/syntaxes"
+            cd "$(kit --config-dir)/syntaxes"
 
             # Put new '.sublime-syntax' language definition files
             # in this folder (or its subdirectories), for example:
             git clone https://github.com/tellnobody1/sublime-purescript-syntax
 
             # And then build the cache.
-            bat cache --build
+            kit cache --build
 
-       Once the cache is built, the new  language  will  be  visible  in  `bat
+       Once the cache is built, the new  language  will  be  visible  in  `kit
        --list-languages`.
        If  you  ever  want  to  remove the custom languages, you can clear the
-       cache with `bat cache --clear`.
+       cache with `kit cache --clear`.
 
 ADDING CUSTOM THEMES
-       Similarly to custom  languages,  bat  supports  Sublime  Text  .tmTheme
-       themes.   These  can  be installed to `$(bat --config-dir)/themes`, and
-       are added to the cache with `bat cache --build`.
+       Similarly to custom  languages,  kit  supports  Sublime  Text  .tmTheme
+       themes.   These  can  be installed to `$(kit --config-dir)/themes`, and
+       are added to the cache with `kit cache --build`.
 
 MORE INFORMATION
-       For more information and up-to-date documentation, visit the bat repo:
-       https://github.com/sharkdp/bat
+       For more information and up-to-date documentation, visit the kit repo:
+       https://github.com/danko1122q/kit
 
-                                                                        BAT(1)
+                                                                        KIT(1)
