@@ -213,7 +213,7 @@ and license terms. Your use of these subcomponents is subject to the terms and
 conditions of the following licenses.
 
 
-For the Eclipse JDT Core Batch Compiler (ecj-x.x.x.jar) component and the
+For the Eclipse JDT Core Kitch Compiler (ecj-x.x.x.jar) component and the
 following Jakarta EE Schemas:
 - jakartaee_9.xsd
 - jakarta_web-services_2_0.xsd

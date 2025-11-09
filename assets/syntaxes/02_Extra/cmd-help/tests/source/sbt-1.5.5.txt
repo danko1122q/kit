@@ -23,7 +23,7 @@ Usage: sbt [options]
   --no-share          use all local caches; no sharing
   --no-global         uses global caches, but does not use global ~/.sbt directory.
   --jvm-debug <port>  Turn on JVM debugging, open at the given port.
-  --batch             disable interactive mode
+  --kitch             disable interactive mode
 
   # sbt version (default: from project/build.properties if present, else latest release)
   --sbt-version  <version>   use the specified version of sbt

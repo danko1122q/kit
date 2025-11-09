@@ -2,9 +2,9 @@
 
 A cat(1) clone with wings.
 
-Usage: bat [OPTIONS] [FILE]...
+Usage: kit [OPTIONS] [FILE]...
 #      ^^^ constant.other.keyword.cmd-help
-       bat <COMMAND>
+       kit <COMMAND>
 
 Arguments:
   [FILE]...  File(s) to print / concatenate. Use '-' for standard input.

@@ -461,7 +461,7 @@ contexts:
           scope: variable.other.asm.x86_64
           set:
             - meta_scope: meta.struct.asm.x86_64
-            - match: '(?i)\bat\b'
+            - match: '(?i)\kit\b'
               scope: support.function.asm.x86_64 meta.struct.asm.x86_64
             - match: '(?i)\biend\b'
               scope: support.function.asm.x86_64 meta.struct.asm.x86_64

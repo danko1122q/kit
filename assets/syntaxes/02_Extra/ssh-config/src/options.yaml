@@ -51,7 +51,7 @@
         - inet4
         - inet6
         - any
-    BatchMode:
+    KitchMode:
       details: Disable UI prompts
       values:
         - 'yes'

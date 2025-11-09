@@ -1,11 +1,11 @@
-bat 0.22.1
+kit 0.22.1
 A cat(1) clone with wings.
 
 Use '--help' instead of '-h' to see a more detailed version of the help text.
 
 USAGE:
-    bat [OPTIONS] [FILE]...
-    bat <SUBCOMMAND>
+    kit [OPTIONS] [FILE]...
+    kit <SUBCOMMAND>
 
 ARGS:
     <FILE>...    File(s) to print / concatenate. Use '-' for standard input.
@@ -40,4 +40,4 @@ OPTIONS:
 SUBCOMMANDS:
     cache    Modify the syntax-definition and theme cache
 
-Note: `bat -h` prints a short and concise overview while `bat --help` gives all details.
+Note: `kit -h` prints a short and concise overview while `kit --help` gives all details.

@@ -1,7 +1,7 @@
 import { SemVer } from 'semver'
 import { OutputChannel } from 'vscode'
 import { z, ZodTypeAny } from 'zod'
-import { batchExecute, batchExecuteWithProgress, ExecutionExitCode, ExecutionResult } from './batch'
+import { kitchExecute, kitchExecuteWithProgress, ExecutionExitCode, ExecutionResult } from './kitch'
 import { FileUri } from './exturi'
 import { groupByUniqueKey } from './groupBy'
 import { semVerRegex } from './semverRegex'
@@ -24,7 +24,7 @@ export type ElanVersionResult =
     | { kind: 'ExecutionError'; message: string }
 
 export async function elanVersion(): Promise<ElanVersionResult> {
-    const r = await batchExecute('elan', ['--version'])
+    const r = await kitchExecute('elan', ['--version'])
     switch (r.exitCode) {
         case ExecutionExitCode.Success:
             const match = elanVersionRegex.exec(r.stdout)
@@ -45,7 +45,7 @@ export async function elanSelfUpdate(
     channel: OutputChannel | undefined,
     context: string | undefined,
 ): Promise<ExecutionResult> {
-    return await batchExecuteWithProgress('elan', ['self', 'update'], context, 'Updating Elan', { channel })
+    return await kitchExecuteWithProgress('elan', ['self', 'update'], context, 'Updating Elan', { channel })
 }
 
 export type ElanOption<T> = T | undefined
@@ -374,7 +374,7 @@ export async function elanDumpStateWithoutNet(
     cwdUri: FileUri | undefined,
     toolchain?: string | undefined,
 ): Promise<ElanDumpStateWithoutNetResult> {
-    const r = await batchExecute(
+    const r = await kitchExecute(
         'elan',
         ['dump-state', '--no-net'],
         cwdUri?.fsPath,
@@ -402,7 +402,7 @@ export async function elanDumpStateWithNet(
     context: string | undefined,
     toolchain?: string | undefined,
 ): Promise<ElanDumpStateWithNetResult> {
-    const r = await batchExecuteWithProgress('elan', ['dump-state'], context, 'Fetching Lean version information', {
+    const r = await kitchExecuteWithProgress('elan', ['dump-state'], context, 'Fetching Lean version information', {
         cwd: cwdUri?.fsPath,
         allowCancellation: true,
         envExtensions: toolchainEnvExtensions(toolchain),
@@ -434,7 +434,7 @@ export async function elanInstalledToolchains(): Promise<ElanInstalledToolchains
     if (stateDumpResult.kind === 'ExecutionError') {
         // User is probably on a pre-eager toolchain resolution elan version which did not yet support
         // `elan dump-state`. Fall back to parsing the toolchain with `elan toolchain list`.
-        const r = await batchExecute('elan', ['toolchain', 'list'])
+        const r = await kitchExecute('elan', ['toolchain', 'list'])
         switch (r.exitCode) {
             case ExecutionExitCode.Success:
                 const lines = r.stdout
@@ -547,7 +547,7 @@ export async function elanInstallToolchain(
     context: string | undefined,
     toolchain: string,
 ): Promise<ElanInstallToolchainResult> {
-    const r = await batchExecuteWithProgress(
+    const r = await kitchExecuteWithProgress(
         'elan',
         ['toolchain', 'install', toolchain],
         context,
@@ -585,7 +585,7 @@ export async function elanUninstallToolchains(
         toolchains.length === 1
             ? `Uninstalling '${toolchains[0]}'`
             : `Uninstalling Lean versions ${toolchains.map(t => `'${t}'`).join(', ')}`
-    return await batchExecuteWithProgress('elan', ['toolchain', 'uninstall', ...toolchains], context, waitingPrompt, {
+    return await kitchExecuteWithProgress('elan', ['toolchain', 'uninstall', ...toolchains], context, waitingPrompt, {
         channel,
         allowCancellation: true,
     })
@@ -595,7 +595,7 @@ export async function elanSelfUninstall(
     channel: OutputChannel | undefined,
     context: string | undefined,
 ): Promise<ExecutionResult> {
-    return await batchExecuteWithProgress('elan', ['self', 'uninstall', '-y'], context, 'Uninstalling Elan', {
+    return await kitchExecuteWithProgress('elan', ['self', 'uninstall', '-y'], context, 'Uninstalling Elan', {
         channel,
         allowCancellation: true,
     })
@@ -610,7 +610,7 @@ export async function elanSetDefaultToolchain(
     channel: OutputChannel | undefined,
     toolchain: string,
 ): Promise<ElanSetDefaultToolchainResult> {
-    const r = await batchExecute('elan', ['default', toolchain], undefined, { combined: channel })
+    const r = await kitchExecute('elan', ['default', toolchain], undefined, { combined: channel })
     switch (r.exitCode) {
         case ExecutionExitCode.Success:
             return { kind: 'Success' }
@@ -668,7 +668,7 @@ export type ElanQueryGcResult =
     | { kind: 'ExecutionError'; message: string }
 
 export async function elanQueryGc(): Promise<ElanQueryGcResult> {
-    const r = await batchExecute('elan', ['toolchain', 'gc', '--json'])
+    const r = await kitchExecute('elan', ['toolchain', 'gc', '--json'])
     switch (r.exitCode) {
         case ExecutionExitCode.Success:
             const info = parseElanGcJson(r.stdout)
@@ -689,7 +689,7 @@ export async function elanGC(
     channel: OutputChannel | undefined,
     context: string | undefined,
 ): Promise<ExecutionResult> {
-    return await batchExecuteWithProgress(
+    return await kitchExecuteWithProgress(
         'elan',
         ['toolchain', 'gc', '--delete'],
         context,

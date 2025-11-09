@@ -1652,7 +1652,7 @@ fn utf16be() {
         .stdout("   1 上一伊刀\n   2 foo bar\n   3 hello world\n");
 }
 
-// Regression test for https://github.com/sharkdp/bat/issues/1922
+// Regression test for https://github.com/sharkdp/kit/issues/1922
 #[test]
 fn bom_not_stripped_in_loop_through_mode() {
     kit()
@@ -1665,7 +1665,7 @@ fn bom_not_stripped_in_loop_through_mode() {
         .stdout("\u{feff}hello world\n");
 }
 
-// Regression test for https://github.com/sharkdp/bat/issues/1922
+// Regression test for https://github.com/sharkdp/kit/issues/1922
 #[test]
 fn bom_stripped_when_colored_output() {
     kit()
@@ -1679,7 +1679,7 @@ fn bom_stripped_when_colored_output() {
         );
 }
 
-// Regression test for https://github.com/sharkdp/bat/issues/1922
+// Regression test for https://github.com/sharkdp/kit/issues/1922
 #[test]
 fn bom_stripped_when_no_color_and_not_loop_through() {
     kit()
@@ -1701,7 +1701,7 @@ fn bom_stripped_when_no_color_and_not_loop_through() {
         );
 }
 
-// Regression test for https://github.com/sharkdp/bat/issues/2541
+// Regression test for https://github.com/sharkdp/kit/issues/2541
 #[test]
 fn no_broken_osc_emit_with_line_wrapping() {
     kit()
@@ -2447,7 +2447,7 @@ fn plain_mode_does_not_add_nonexisting_newline() {
         .stdout("Single Line");
 }
 
-// Regression test for https://github.com/sharkdp/bat/issues/299
+// Regression test for https://github.com/sharkdp/kit/issues/299
 #[test]
 #[cfg(feature = "git")] // Expected output assumes git is enabled
 fn grid_for_file_without_newline() {
@@ -2512,7 +2512,7 @@ fn ansi_highlight_json_keys() {
 }
 
 // Ensure that ANSI passthrough is emitted properly for both wrapping and non-wrapping printer.
-// See https://github.com/sharkdp/bat/issues/2307 for what common use case this test tests.
+// See https://github.com/sharkdp/kit/issues/2307 for what common use case this test tests.
 #[test]
 fn ansi_passthrough_emit() {
     for wrapping in &["never", "character"] {
@@ -2866,7 +2866,7 @@ fn acknowledgements() {
         .stdout(
             // Just some sanity checking that avoids names of persons, except our own Keith Hall :)
             predicate::str::contains(
-                "Copyright (c) 2018-2021 kit-developers (https://github.com/sharkdp/bat).",
+                "Copyright (c) 2018-2021 kit-developers (https://github.com/sharkdp/kit).",
             )
             .and(predicate::str::contains(
                 "Copyright (c) 2012-2020 The Sublime CMake authors",

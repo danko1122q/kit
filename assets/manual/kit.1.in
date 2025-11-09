@@ -145,17 +145,17 @@ to keep the colorization/decorations.
 \fB\-\-paging\fR <when>
 .IP
 Specify when to use the pager. To disable the pager, use \&'\-\-paging=never' or its alias,
-\fB-P\fR. To disable the pager permanently, set BAT_PAGER to an empty string. To control
+\fB-P\fR. To disable the pager permanently, set KIT_PAGER to an empty string. To control
 which pager is used, see the '\-\-pager' option. Possible values: *auto*, never, always.
 .HP
 \fB\-\-pager\fR <command>
 .IP
-Determine which pager is used. This option will override the PAGER and BAT_PAGER
+Determine which pager is used. This option will override the PAGER and KIT_PAGER
 environment variables. The default pager is 'less'. If you provide '\-\-pager=builtin', use
 the built-in 'minus' pager. To control when the pager is used, see the '\-\-paging' option.
 Example: '\-\-pager "less \fB\-RF\fR"'.
 
-Note: By default, if the pager is set to 'less' (and no command-line options are specified), 'bat' will pass the following command line options to the pager: '-R'/'--RAW-CONTROL-CHARS', '-F'/'--quit-if-one-screen' and '-X'/'--no-init'. The last option ('-X') is only used for 'less' versions older than 530. The '-R' option is needed to interpret ANSI colors correctly. The second option ('-F') instructs less to exit immediately if the output size is smaller than the vertical size of the terminal. This is convenient for small files because you do not have to press 'q' to quit the pager. The third option ('-X') is needed to fix a bug with the '--quit-if-one-screen' feature in old versions of 'less'. Unfortunately, it also breaks mouse-wheel support in 'less'. If you want to enable mouse-wheel scrolling on older versions of 'less', you can pass just '-R' (as in the example above, this will disable the quit-if-one-screen feature). For less 530 or newer, it should work out of the box.
+Note: By default, if the pager is set to 'less' (and no command-line options are specified), 'kit' will pass the following command line options to the pager: '-R'/'--RAW-CONTROL-CHARS', '-F'/'--quit-if-one-screen' and '-X'/'--no-init'. The last option ('-X') is only used for 'less' versions older than 530. The '-R' option is needed to interpret ANSI colors correctly. The second option ('-F') instructs less to exit immediately if the output size is smaller than the vertical size of the terminal. This is convenient for small files because you do not have to press 'q' to quit the pager. The third option ('-X') is needed to fix a bug with the '--quit-if-one-screen' feature in old versions of 'less'. Unfortunately, it also breaks mouse-wheel support in 'less'. If you want to enable mouse-wheel scrolling on older versions of 'less', you can pass just '-R' (as in the example above, this will disable the quit-if-one-screen feature). For less 530 or newer, it should work out of the box.
 .HP
 \fB\-m\fR, \fB\-\-map\-syntax\fR <glob-pattern:syntax-name>...
 .IP
@@ -167,14 +167,14 @@ Note that the right-hand side is the *name* of the syntax, not a file extension.
 .HP
 \fB\-\-ignored\-suffix\fR <ignored-suffix>
 .IP
-Ignore extension. For example: 'bat \-\-ignored-suffix ".dev" my_file.json.dev'
+Ignore extension. For example: 'kit \-\-ignored-suffix ".dev" my_file.json.dev'
 will use JSON syntax, and ignore '.dev'
 .HP
 \fB\-\-theme\fR <theme>
 .IP
 Set the theme for syntax highlighting. Use \fB\-\-list\-themes\fP to see all available themes.
 To set a default theme, add the \fB\-\-theme="..."\fP option to the configuration file or
-export the \fBBAT_THEME\fP environment variable (e.g.: \fBexport BAT_THEME="..."\fP).
+export the \fBKIT_THEME\fP environment variable (e.g.: \fBexport KIT_THEME="..."\fP).
 
 Special values:
 .RS
@@ -195,14 +195,14 @@ Use the light theme specified by \fB-\-theme-light\fR.
 .IP
 Sets the theme name for syntax highlighting used when the terminal uses a dark background.
 To set a default theme, add the \fB\-\-theme-dark="..."\fP option to the configuration file or
-export the \fBBAT_THEME_DARK\fP environment variable (e.g. \fBexport BAT_THEME_DARK="..."\fP).
+export the \fBKIT_THEME_DARK\fP environment variable (e.g. \fBexport KIT_THEME_DARK="..."\fP).
 This option only has an effect when \fB\-\-theme\fP option is set to \fBauto\fR or \fBdark\fR.
 .HP
 \fB\-\-theme\-light\fR <theme>
 .IP
 Sets the theme name for syntax highlighting used when the terminal uses a light background.
 To set a default theme, add the \fB\-\-theme-light="..."\fP option to the configuration file or
-export the \fBBAT_THEME_LIGHT\fP environment variable (e.g. \fBexport BAT_THEME_LIGHT="..."\fP).
+export the \fBKIT_THEME_LIGHT\fP environment variable (e.g. \fBexport KIT_THEME_LIGHT="..."\fP).
 This option only has an effect when \fB\-\-theme\fP option is set to \fBauto\fR or \fBlight\fR.
 .HP
 \fB\-\-list\-themes\fR
@@ -229,10 +229,10 @@ Configure which elements (line numbers, file headers, grid borders, Git modifica
 \&..) to display in addition to the file contents. The argument is a comma\-separated list
 of components to display (e.g. 'numbers,changes,grid') or a pre\-defined style ('full').
 To set a default style, add the '\-\-style=".."' option to the configuration file or
-export the BAT_STYLE environment variable (e.g.: export BAT_STYLE="..").
+export the KIT_STYLE environment variable (e.g.: export KIT_STYLE="..").
 .IP
 When styles are specified in multiple places, the "nearest" set of styles take precedence.
-The command\-line arguments are the highest priority, followed by the BAT_STYLE environment
+The command\-line arguments are the highest priority, followed by the KIT_STYLE environment
 variable, and then the configuration file. If any set of styles consists entirely of
 components prefixed with "+" or "\-", it will modify the previous set of styles instead of
 replacing them.
@@ -272,11 +272,11 @@ Do not load custom assets.
 .HP
 \fB\-\-config\-dir\fR
 .IP
-Show bat's configuration directory.
+Show kit's configuration directory.
 .HP
 \fB\-\-cache\-dir\fR
 .IP
-Show bat's cache directory.
+Show kit's cache directory.
 .HP
 \fB\-\-diagnostic\fR
 .IP
@@ -312,7 +312,7 @@ is dependent on your operating system. To get the default path for your system, 
 
 \fB{{PROJECT_EXECUTABLE}} --config-file\fR
 
-Alternatively, you can use the BAT_CONFIG_PATH environment variable to point {{PROJECT_EXECUTABLE}} to a non-default
+Alternatively, you can use the KIT_CONFIG_PATH environment variable to point {{PROJECT_EXECUTABLE}} to a non-default
 location of the configuration file.
 
 To generate a default configuration file, call:
@@ -394,4 +394,4 @@ For more information, see the "INPUT PREPROCESSOR" section of less(1).
 
 For more information and up-to-date documentation, visit the {{PROJECT_EXECUTABLE}} repo:
 .br
-\fBhttps://github.com/sharkdp/bat\fR
+\fBhttps://github.com/sharkdp/kit\fR

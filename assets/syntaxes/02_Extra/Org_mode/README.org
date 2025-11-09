@@ -24,7 +24,7 @@ Please use/abuse/modify it under the terms of the [[http://choosealicense.com/li
 - [X] /Italics/
 - [X] _Underline_
 - [X] ~Code~
-- [X] =Verbatim=
+- [X] =Verkitim=
 - [X] Comments
 - [X] Quote (#+BEGIN/END_QUOTE)
 - [X] Lists

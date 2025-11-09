@@ -10,7 +10,7 @@ Arguments:
    -v			Vi mode (like "vi")
    -e			Ex mode (like "ex")
    -E			Improved Ex mode
-   -s			Silent (batch) mode (only for "ex")
+   -s			Silent (kitch) mode (only for "ex")
    -d			Diff mode (like "vimdiff")
    -y			Easy mode (like "evim", modeless)
    -R			Readonly mode (like "view")

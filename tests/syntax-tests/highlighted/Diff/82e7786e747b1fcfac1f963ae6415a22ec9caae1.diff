@@ -13,14 +13,14 @@
 [38;2;166;226;46m+[0m
 [38;2;248;248;242m ## Bugfixes[0m
 [38;2;248;248;242m ## Other[0m
-[38;2;248;248;242m ## `bat` as a library[0m
-[38;2;248;248;242mdiff --git a/src/bin/bat/app.rs b/src/bin/bat/app.rs[0m
+[38;2;248;248;242m ## `kit` as a library[0m
+[38;2;248;248;242mdiff --git a/src/bin/kit/app.rs b/src/bin/kit/app.rs[0m
 [38;2;248;248;242mindex e5221455..f0f519ea 100644[0m
-[38;2;117;113;94m---[0m[38;2;117;113;94m a/src/bin/bat/app.rs[0m
-[38;2;117;113;94m+++[0m[38;2;117;113;94m b/src/bin/bat/app.rs[0m
+[38;2;117;113;94m---[0m[38;2;117;113;94m a/src/bin/kit/app.rs[0m
+[38;2;117;113;94m+++[0m[38;2;117;113;94m b/src/bin/kit/app.rs[0m
 [38;2;59;192;240m@@[0m[38;2;59;192;240m [0m[38;2;59;192;240m-15,7 +15,7[0m[38;2;59;192;240m [0m[38;2;59;192;240m@@[0m[38;2;59;192;240m [0m[38;2;166;226;46muse console::Term;[0m
 [38;2;248;248;242m [0m
-[38;2;248;248;242m use bat::{[0m
+[38;2;248;248;242m use kit::{[0m
 [38;2;248;248;242m     assets::HighlightingAssets,[0m
 [38;2;249;38;114m-[0m[38;2;249;38;114m    config::Config,[0m
 [38;2;166;226;46m+[0m[38;2;166;226;46m    config::{Config, VisibleLines},[0m
@@ -58,12 +58,12 @@
 [38;2;248;248;242m             style_components,[0m
 [38;2;248;248;242m             syntax_mapping,[0m
 [38;2;248;248;242m             pager: self.matches.value_of("pager"),[0m
-[38;2;248;248;242mdiff --git a/src/bin/bat/clap_app.rs b/src/bin/bat/clap_app.rs[0m
+[38;2;248;248;242mdiff --git a/src/bin/kit/clap_app.rs b/src/bin/kit/clap_app.rs[0m
 [38;2;248;248;242mindex c7344991..85edefde 100644[0m
-[38;2;117;113;94m---[0m[38;2;117;113;94m a/src/bin/bat/clap_app.rs[0m
-[38;2;117;113;94m+++[0m[38;2;117;113;94m b/src/bin/bat/clap_app.rs[0m
+[38;2;117;113;94m---[0m[38;2;117;113;94m a/src/bin/kit/clap_app.rs[0m
+[38;2;117;113;94m+++[0m[38;2;117;113;94m b/src/bin/kit/clap_app.rs[0m
 [38;2;59;192;240m@@[0m[38;2;59;192;240m [0m[38;2;59;192;240m-105,6 +105,34[0m[38;2;59;192;240m [0m[38;2;59;192;240m@@[0m[38;2;59;192;240m [0m[38;2;166;226;46mpub fn build_app(interactive_output: bool) -> ClapApp<'static, 'static> {[0m
-[38;2;248;248;242m                             data to bat from STDIN when bat does not otherwise know \[0m
+[38;2;248;248;242m                             data to kit from STDIN when kit does not otherwise know \[0m
 [38;2;248;248;242m                             the filename."),[0m
 [38;2;248;248;242m         )[0m
 [38;2;166;226;46m+[0m[38;2;166;226;46m        .arg([0m

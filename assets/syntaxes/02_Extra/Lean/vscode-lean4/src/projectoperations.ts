@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import { join } from 'path'
 import { commands, Disposable, OutputChannel, QuickPickItem, window } from 'vscode'
 import { LeanClient } from './leanclient'
-import { batchExecute, ExecutionExitCode, ExecutionResult } from './utils/batch'
+import { kitchExecute, ExecutionExitCode, ExecutionResult } from './utils/kitch'
 import { LeanClientProvider } from './utils/clientProvider'
 import {
     CacheGetAvailabilityResult,
@@ -310,7 +310,7 @@ export class ProjectOperationProvider implements Disposable {
         const augmented: (DirectGitDependency & { remoteRevision?: string | undefined })[] = []
 
         for (const dependency of dependencies) {
-            const result: ExecutionResult = await batchExecute('git', [
+            const result: ExecutionResult = await kitchExecute('git', [
                 'ls-remote',
                 dependency.uri.toString(),
                 dependency.inputRevision,

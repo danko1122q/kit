@@ -2,7 +2,7 @@ import assert from 'assert'
 import { promises } from 'fs'
 import { SemVer, valid } from 'semver'
 import { commands, Disposable, OutputChannel, QuickPickItem, QuickPickItemKind, window } from 'vscode'
-import { ExecutionExitCode } from './batch'
+import { ExecutionExitCode } from './kitch'
 import { LeanClientProvider } from './clientProvider'
 import {
     ActiveToolchainInfo,

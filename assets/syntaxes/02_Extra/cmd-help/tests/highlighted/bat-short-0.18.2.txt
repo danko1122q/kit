@@ -1,9 +1,9 @@
-[38;2;248;248;242mbat 0.18.2[0m
+[38;2;248;248;242mkit 0.18.2[0m
 [38;2;248;248;242mA cat(1) clone with syntax highlighting and Git integration.[0m
 
 [38;2;246;170;17mUSAGE:[0m
-[38;2;248;248;242m    [0m[38;2;190;132;255mbat[0m[38;2;248;248;242m [OPTIONS] [FILE]...[0m
-[38;2;248;248;242m    [0m[38;2;190;132;255mbat[0m[38;2;248;248;242m <SUBCOMMAND>[0m
+[38;2;248;248;242m    [0m[38;2;190;132;255mkit[0m[38;2;248;248;242m [OPTIONS] [FILE]...[0m
+[38;2;248;248;242m    [0m[38;2;190;132;255mkit[0m[38;2;248;248;242m <SUBCOMMAND>[0m
 
 [38;2;246;170;17mOPTIONS:[0m
 [38;2;248;248;242m    [0m[38;2;166;226;46m-A[0m[38;2;248;248;242m, [0m[38;2;166;226;46m--show-all[0m[38;2;248;248;242m                       Show non-printable characters (space, tab, newline, ..).[0m
@@ -40,4 +40,4 @@
 [38;2;246;170;17mSUBCOMMANDS:[0m
 [38;2;248;248;242m    [0m[38;2;190;132;255mcache[0m[38;2;248;248;242m    Modify the syntax-definition and theme cache[0m
 
-[38;2;248;248;242mNote: `bat -h` prints a short and concise overview while `bat --help` gives all details.[0m
+[38;2;248;248;242mNote: `kit -h` prints a short and concise overview while `kit --help` gives all details.[0m

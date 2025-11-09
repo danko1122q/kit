@@ -1,6 +1,6 @@
-# for tests/docker/bat-test.dockerfile,
+# for tests/docker/kit-test.dockerfile,
 # not tests/docker/syntest.dockerfile
 *
 !/syntaxes/
 /syntaxes/vendor/
-!/tests/docker/bat-test-entrypoints/
+!/tests/docker/kit-test-entrypoints/

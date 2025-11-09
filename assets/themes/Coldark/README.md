@@ -2,9 +2,9 @@
     <img src="assets/coldark-banner.png" alt="Coldark Banner" width="400" />
 </p>
 
-# Coldark - Bat
+# Coldark - Kit
 
-![GitHub License](https://img.shields.io/github/license/ArmandPhilippot/coldark-bat?colorA=111b27&color=d0dae7&logo=Github&logoColor=e3eaf2&style=for-the-badge) ![GitHub package.json version](https://img.shields.io/github/package-json/v/ArmandPhilippot/coldark-bat?colorA=111b27&color=d0dae7&logo=Github&logoColor=e3eaf2&style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/ArmandPhilippot/coldark-kit?colorA=111b27&color=d0dae7&logo=Github&logoColor=e3eaf2&style=for-the-badge) ![GitHub package.json version](https://img.shields.io/github/package-json/v/ArmandPhilippot/coldark-kit?colorA=111b27&color=d0dae7&logo=Github&logoColor=e3eaf2&style=for-the-badge)
 
 An optimized theme for web development that comes with two versions: light & dark.
 
@@ -12,13 +12,13 @@ An optimized theme for web development that comes with two versions: light & dar
 
 [Coldark](https://github.com/ArmandPhilippot/coldark) is a gray-blue theme. The colors used respect the Web Content Accessibility Guidelines (WCAG) in order to provide sufficient reading comfort. However, with opacity, it is possible that some contrasts are diminished and that they are above level AA.
 
-This Coldark version is designed for [bat](https://github.com/sharkdp/bat) command.
+This Coldark version is designed for [kit](https://github.com/sharkdp/kit) command.
 
 ## Color pallets
 
 Coldark consists of three color pallets. The first is common to both versions. The other two each apply to a version.
 
-The `bat` version uses almost the same colors as [VS code version](https://github.com/ArmandPhilippot/coldark-vscode). The scopes seems a little different and a little less complete, hence the difference.
+The `kit` version uses almost the same colors as [VS code version](https://github.com/ArmandPhilippot/coldark-vscode). The scopes seems a little different and a little less complete, hence the difference.
 
 ## Colors in detail
 
@@ -66,19 +66,19 @@ The `bat` version uses almost the same colors as [VS code version](https://githu
 
 ## Install
 
-1. Install `bat` (on Manjaro: `pacman -S bat`)
-2. Create themes folder: `mkdir -p "$(bat --config-dir)/themes"`
-3. Go inside this new folder: `cd "$(bat --config-dir)/themes"`
-4. Clone this repo: `git clone https://github.com/ArmandPhilippot/coldark-bat`
-5. Update the binary cache: `bat cache --build`
+1. Install `kit` (on Manjaro: `pacman -S kit`)
+2. Create themes folder: `mkdir -p "$(kit --config-dir)/themes"`
+3. Go inside this new folder: `cd "$(kit --config-dir)/themes"`
+4. Clone this repo: `git clone https://github.com/ArmandPhilippot/coldark-kit`
+5. Update the binary cache: `kit cache --build`
 
-Then, if you use `bat --list-themes`, you should see the themes.
+Then, if you use `kit --list-themes`, you should see the themes.
 
-Coldark Bat is now present in [bat repo](https://github.com/sharkdp/bat). It may be present in the list of themes in a future version without having to install it manually.
+Coldark Kit is now present in [kit repo](https://github.com/sharkdp/kit). It may be present in the list of themes in a future version without having to install it manually.
 
 ## Activation
 
-To select one of the Coldark themes, call `bat` with the `--theme=Coldark-Cold` (or `--theme=Coldark-Dark`) option or set the `BAT_THEME` environment variable to `Coldark-Cold` (or `Coldark-Dark`). Use `export BAT_THEME="Coldark-Cold"` (or `export BAT_THEME="Coldark-Dark"`) in your shell's startup file to make the change permanent.
+To select one of the Coldark themes, call `kit` with the `--theme=Coldark-Cold` (or `--theme=Coldark-Dark`) option or set the `KIT_THEME` environment variable to `Coldark-Cold` (or `Coldark-Dark`). Use `export KIT_THEME="Coldark-Cold"` (or `export KIT_THEME="Coldark-Dark"`) in your shell's startup file to make the change permanent.
 
 ## Screenshots
 
@@ -88,17 +88,17 @@ Here are 2 rendering examples for each version.
 
 | PHP | Markdown |
 | --- | --- |
-| [![Coldark Cold PHP](./assets/coldark-cold-bat-php.jpg)](./assets/coldark-cold-bat-php.jpg) | [![Coldark Cold Markdown](./assets/coldark-cold-bat-markdown.jpg)](./assets/coldark-cold-bat-markdown.jpg) |
+| [![Coldark Cold PHP](./assets/coldark-cold-kit-php.jpg)](./assets/coldark-cold-kit-php.jpg) | [![Coldark Cold Markdown](./assets/coldark-cold-kit-markdown.jpg)](./assets/coldark-cold-kit-markdown.jpg) |
 
 ### Dark
 
 | PHP | Markdown |
 | --- | --- |
-| [![Coldark Dark PHP](./assets/coldark-dark-bat-php.jpg)](./assets/coldark-dark-bat-php.jpg) | [![Coldark Dark Markdown](./assets/coldark-dark-bat-markdown.jpg)](./assets/coldark-dark-bat-markdown.jpg) |
+| [![Coldark Dark PHP](./assets/coldark-dark-kit-php.jpg)](./assets/coldark-dark-kit-php.jpg) | [![Coldark Dark Markdown](./assets/coldark-dark-kit-markdown.jpg)](./assets/coldark-dark-kit-markdown.jpg) |
 
 ## License
 
-This project is open source and available under the [MIT License](https://github.com/ArmandPhilippot/coldark-bat/blob/master/LICENSE).
+This project is open source and available under the [MIT License](https://github.com/ArmandPhilippot/coldark-kit/blob/master/LICENSE).
 
 <!-- REFERENCES -->
 

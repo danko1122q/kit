@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>content</key>
-    <string>{% verbatim %}
+    <string>{% verkitim %}
 	$0
-{% endverbatim %}</string>
+{% endverkitim %}</string>
     <key>name</key>
-    <string>verbatim</string>
+    <string>verkitim</string>
     <key>scope</key>
     <string>text.html.twig</string>
     <key>tabTrigger</key>
-    <string>verbatim</string>
+    <string>verkitim</string>
     <key>uuid</key>
     <string>1A085734-0976-43D7-BEBE-E550A7B3BDC0</string>
 </dict>

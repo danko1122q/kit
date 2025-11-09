@@ -220,7 +220,7 @@ contexts:
               Authentication| # Auth
             ForwardAgent|ForwardX11(?:Trusted)?|ClearAllForwardings|
               ExitOnForwardFailure| # Fwds
-            BatchMode|CanonicalizeFallbackLocal|CheckHostIP|Compression|
+            KitchMode|CanonicalizeFallbackLocal|CheckHostIP|Compression|
             EnableSSHKeySign|GatewayPorts|HashKnownHosts|IdentitiesOnly|
             NoHostAuthenticationForLocalhost|PermitLocalCommand|ProxyUseFdpass|
             StreamLocalBindUnlink|TCPKeepAlive|UseKeychain|UsePrivilegedPort|

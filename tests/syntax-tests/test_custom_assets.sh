@@ -3,22 +3,22 @@ set -o errexit -o nounset -o pipefail
 
 ### ENVIRONMENT
 
-BAT_CONFIG_DIR=$(mktemp -d)
-export BAT_CONFIG_DIR
+KIT_CONFIG_DIR=$(mktemp -d)
+export KIT_CONFIG_DIR
 
-BAT_CACHE_PATH=$(mktemp -d)
-export BAT_CACHE_PATH
+KIT_CACHE_PATH=$(mktemp -d)
+export KIT_CACHE_PATH
 
 echo "
-BAT_CONFIG_DIR = ${BAT_CONFIG_DIR}
-BAT_CACHE_PATH = ${BAT_CACHE_PATH}
+KIT_CONFIG_DIR = ${KIT_CONFIG_DIR}
+KIT_CACHE_PATH = ${KIT_CACHE_PATH}
 "
 
 ### HELPER VARS
 
 custom_syntax_args=(
-    "--language=BatTestCustomAssets"
-    "tests/syntax-tests/source/BatTestCustomAssets/NoColorsUnlessCustomAssetsAreUsed.battestcustomassets"
+    "--language=KitTestCustomAssets"
+    "tests/syntax-tests/source/KitTestCustomAssets/NoColorsUnlessCustomAssetsAreUsed.kittestcustomassets"
 )
 
 integrated_syntax_args=(
@@ -39,36 +39,36 @@ fail_test() {
 
 ### TEST STEPS
 
-echo_step "TEST: Make sure 'BatTestCustomAssets' is not part of integrated syntaxes"
-bat -f "${custom_syntax_args[@]}" &&
+echo_step "TEST: Make sure 'KitTestCustomAssets' is not part of integrated syntaxes"
+kit -f "${custom_syntax_args[@]}" &&
     fail_test "EXPECTED: 'unknown syntax' error ACTUAL: no error occurred"
 
-echo_step "PREPARE: Install custom syntax 'BatTestCustomAssets'"
-custom_syntaxes_dir="$(bat --config-dir)/syntaxes"
+echo_step "PREPARE: Install custom syntax 'KitTestCustomAssets'"
+custom_syntaxes_dir="$(kit --config-dir)/syntaxes"
 mkdir -p "${custom_syntaxes_dir}"
-cp -v "tests/syntax-tests/BatTestCustomAssets.sublime-syntax" \
-    "${custom_syntaxes_dir}/BatTestCustomAssets.sublime-syntax"
+cp -v "tests/syntax-tests/KitTestCustomAssets.sublime-syntax" \
+    "${custom_syntaxes_dir}/KitTestCustomAssets.sublime-syntax"
 
-echo_step "PREPARE: Build custom assets to enable 'BatTestCustomAssets' syntax"
-bat cache --build
+echo_step "PREPARE: Build custom assets to enable 'KitTestCustomAssets' syntax"
+kit cache --build
 
-echo_step "TEST: 'BatTestCustomAssets' is a known syntax"
-bat -f "${custom_syntax_args[@]}" ||
+echo_step "TEST: 'KitTestCustomAssets' is a known syntax"
+kit -f "${custom_syntax_args[@]}" ||
     fail_test "EXPECTED: syntax highlighting to work ACTUAL: there was an error"
 
 echo_step "TEST: The 'Rust' syntax is still available"
-bat -f "${integrated_syntax_args[@]}" ||
+kit -f "${integrated_syntax_args[@]}" ||
     fail_test "EXPECTED: syntax highlighting still works with integrated assets ACTUAL: there was an error"
 
-echo_step "TEST: 'BatTestCustomAssets' is an unknown syntax with --no-custom-assets"
-bat -f --no-custom-assets "${custom_syntax_args[@]}" &&
+echo_step "TEST: 'KitTestCustomAssets' is an unknown syntax with --no-custom-assets"
+kit -f --no-custom-assets "${custom_syntax_args[@]}" &&
     fail_test "EXPECTED: 'unknown syntax' error because of --no-custom-assets ACTUAL: no error occurred"
 
-echo_step "TEST: 'bat cache --clear' removes all files"
-bat cache --clear
-remaining_files=$(ls -A "${BAT_CACHE_PATH}")
+echo_step "TEST: 'kit cache --clear' removes all files"
+kit cache --clear
+remaining_files=$(ls -A "${KIT_CACHE_PATH}")
 [ -z "${remaining_files}" ] ||
     fail_test "EXPECTED: no files remain ACTUAL: some files remain:\n${remaining_files}"
 
 echo_step "CLEAN"
-rm -rv "${BAT_CONFIG_DIR}" "${BAT_CACHE_PATH}"
+rm -rv "${KIT_CONFIG_DIR}" "${KIT_CACHE_PATH}"

@@ -258,36 +258,36 @@
 % <- meta.environment.list.list.latex
 \end{list}
 
-% VERBATIM
+% VERKITIM
 
 \command{}
 % ^ support.function.general.latex
 \verb|\command{}|
 %      ^ markup.raw.verb.latex
-%      ^ meta.environment.verbatim.verb.latex
+%      ^ meta.environment.verkitim.verb.latex
 %      ^ - support.function.general.latex
 \verb+\command{}+
 %      ^ markup.raw.verb.latex
-%      ^ meta.environment.verbatim.verb.latex
+%      ^ meta.environment.verkitim.verb.latex
 %      ^ - support.function.general.latex
 \verb|foo % bar|
-% ^^^^^^^^^^^^^^ meta.environment.verbatim.verb.latex
+% ^^^^^^^^^^^^^^ meta.environment.verkitim.verb.latex
 %         ^^^^^ - comment
 
-% <- - meta.environment.verbatim.verb.latex
+% <- - meta.environment.verkitim.verb.latex
 
-\begin{verbatim}
+\begin{verkitim}
 % ^ support.function.begin.latex keyword.control.flow.begin.latex
 %        ^ variable.parameter.function.latex
-The \emph{verbatim} environment sets everything in verbatim.
-% <- meta.environment.verbatim.verbatim.latex
-% ^ markup.raw.verbatim.latex
+The \emph{verkitim} environment sets everything in verkitim.
+% <- meta.environment.verkitim.verkitim.latex
+% ^ markup.raw.verkitim.latex
 %         ^ - markup.italic.emph.latex
 \command{}
 % ^ - support.function.general.latex
 % This is not a comment
 % <- - comment.line.percentage.tex
-\end{verbatim}
+\end{verkitim}
 
 
 % COMMANDS INSIDE ARGUMENTS
@@ -394,7 +394,7 @@ opening and closing commands.
 \begin{lstlisting} % python
 def my_function():
     pass
-% <- meta.environment.verbatim.lstlisting.latex
+% <- meta.environment.verkitim.lstlisting.latex
 % <- meta.environment.embedded.python.latex
 % <- source.python.embedded
 %   ^ keyword.control.flow.pass.python
@@ -404,7 +404,7 @@ def my_function():
                    language=python] %python
 def my_function():
     pass
-% <- meta.environment.verbatim.lstlisting.latex
+% <- meta.environment.verkitim.lstlisting.latex
 % <- meta.environment.embedded.python.latex
 % <- source.python.embedded
 %   ^ keyword.control.flow.pass.python
@@ -412,7 +412,7 @@ def my_function():
 
 \begin{lstlisting} %java
 class MyClass() {
-% <- meta.environment.verbatim.lstlisting.latex
+% <- meta.environment.verkitim.lstlisting.latex
 % <- meta.environment.embedded.java.latex
 % <- source.java.embedded
 % ^ storage.type.java
@@ -420,17 +420,17 @@ class MyClass() {
 \end{lstlisting}
 
 \lstinline{var x = 15;}
-% ^^^^^^^^^^^^^^^^^^^^^ meta.environment.verbatim.lstinline.latex
+% ^^^^^^^^^^^^^^^^^^^^^ meta.environment.verkitim.lstinline.latex
 %         ^^^^^^^^^^^^^ meta.group.brace.latex
 %         ^ punctuation.definition.group.brace.begin.latex
 %          ^^^^^^^^^^^ markup.raw.verb.latex
 %                     ^ punctuation.definition.group.brace.end.latex
-%                      ^ - meta.environment.verbatim.lstinline.latex
+%                      ^ - meta.environment.verkitim.lstinline.latex
 
 \lstinline|var x = 15;|
-% ^^^^^^^^^^^^^^^^^^^^^ meta.environment.verbatim.lstinline.latex
+% ^^^^^^^^^^^^^^^^^^^^^ meta.environment.verkitim.lstinline.latex
 %          ^^^^^^^^^^^ markup.raw.verb.latex
-%                      ^ - meta.environment.verbatim.lstinline.latex
+%                      ^ - meta.environment.verkitim.lstinline.latex
 
 
 % PACKAGE: minted
@@ -440,7 +440,7 @@ class MyClass() {
 \begin{minted}[linenos=true]{python}
 def my_function():
     pass
-% <- meta.environment.verbatim.minted.latex
+% <- meta.environment.verkitim.minted.latex
 % <- meta.environment.embedded.python.latex
 % <- source.python.embedded
 %   ^ keyword.control.flow.pass.python
@@ -448,7 +448,7 @@ def my_function():
 
 
 \mint{python}{import this}
-%             ^ meta.environment.verbatim.minted.latex
+%             ^ meta.environment.verkitim.minted.latex
 %             ^ meta.environment.embedded.python.latex
 %             ^ source.python.embedded
 %             ^ keyword.control.import.python
@@ -456,12 +456,12 @@ def my_function():
 % instead of embedding the code into { and } it is also possible
 % to use an arbitrary character
 \mint{python}|import this|
-%             ^ meta.environment.verbatim.minted.latex
+%             ^ meta.environment.verkitim.minted.latex
 %             ^ source.python.embedded
 
 
 \mintinline{python}{print(x ** 2)}
-%                    ^ meta.environment.verbatim.minted.latex
+%                    ^ meta.environment.verkitim.minted.latex
 %                    ^ meta.environment.embedded.python.latex
 %                    ^ source.python.embedded
 %                    ^ support.function.builtin.python

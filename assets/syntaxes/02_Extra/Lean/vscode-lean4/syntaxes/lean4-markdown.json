@@ -568,8 +568,8 @@
                 }
             ]
         },
-        "fenced_code_block_dosbatch": {
-            "begin": "(^)(\\s*)(`{3,}|~{3,})\\s*(?i:(bat|batch)((\\s+|:|\\{)[^`~]*)?$)",
+        "fenced_code_block_doskitch": {
+            "begin": "(^)(\\s*)(`{3,}|~{3,})\\s*(?i:(kit|kitch)((\\s+|:|\\{)[^`~]*)?$)",
             "name": "markup.fenced_code.block.markdown",
             "end": "(^|\\G)(\\2|\\s{0,3})(\\3)\\s*(?=-/|$)",
             "beginCaptures": {
@@ -592,10 +592,10 @@
                 {
                     "begin": "(^|\\G)(\\s*)(.*)",
                     "while": "(^|\\G)(?!\\s*([`~]{3,})\\s*(-/|$))",
-                    "contentName": "meta.embedded.block.dosbatch",
+                    "contentName": "meta.embedded.block.doskitch",
                     "patterns": [
                         {
-                            "include": "source.batchfile"
+                            "include": "source.kitchfile"
                         }
                     ]
                 }
@@ -1771,7 +1771,7 @@
                     "include": "#fenced_code_block_yaml"
                 },
                 {
-                    "include": "#fenced_code_block_dosbatch"
+                    "include": "#fenced_code_block_doskitch"
                 },
                 {
                     "include": "#fenced_code_block_clojure"

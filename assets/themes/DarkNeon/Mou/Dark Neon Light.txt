@@ -74,7 +74,7 @@ CODE
 foreground: 999999
 background: E2E2E2
 
-VERBATIM
+VERKITIM
 foreground: 999999
 background: E2E2E2
 

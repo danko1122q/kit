@@ -10,7 +10,7 @@ from multiprocessing import Pool
 
 # Avoid 'default' theme because it can choose a different theme based on
 # the appearance settings on macOS.
-BAT_OPTIONS = [
+KIT_OPTIONS = [
     "--no-config",
     "--style=plain",
     "--color=always",
@@ -22,15 +22,15 @@ SKIP_FILENAMES = [
     "LICENSE.md",
     "NOTICE",
     "README.md",
-    "bat_options",
+    "kit_options",
 ]
 
 
 def get_options(source):
-    options = BAT_OPTIONS.copy()
+    options = KIT_OPTIONS.copy()
 
     source_dirpath = path.dirname(source)
-    options_file = path.join(source_dirpath, "bat_options")
+    options_file = path.join(source_dirpath, "kit_options")
     try:
         with open(options_file, "r") as f:
             options.extend(map(lambda x: x.rstrip(), f.readlines()))
@@ -43,14 +43,14 @@ def get_options(source):
 def create_highlighted_version(args):
     output_basepath, source = args
     env = os.environ.copy()
-    env.pop("BAT_CACHE_PATH", None)
-    env.pop("BAT_CONFIG_DIR", None)
-    env.pop("BAT_CONFIG_PATH", None)
-    env.pop("BAT_OPTS", None)
-    env.pop("BAT_PAGER", None)
-    env.pop("BAT_STYLE", None)
-    env.pop("BAT_TABS", None)
-    env.pop("BAT_THEME", None)
+    env.pop("KIT_CACHE_PATH", None)
+    env.pop("KIT_CONFIG_DIR", None)
+    env.pop("KIT_CONFIG_PATH", None)
+    env.pop("KIT_OPTS", None)
+    env.pop("KIT_PAGER", None)
+    env.pop("KIT_STYLE", None)
+    env.pop("KIT_TABS", None)
+    env.pop("KIT_THEME", None)
     env.pop("NO_COLOR", None)
     env.pop("PAGER", None)
     env["COLORTERM"] = "truecolor"  # make sure to output 24bit colors
@@ -61,8 +61,8 @@ def create_highlighted_version(args):
     if source_filename in SKIP_FILENAMES:
         return
 
-    bat_output = subprocess.check_output(
-        ["bat"] + get_options(source) + [source],
+    kit_output = subprocess.check_output(
+        ["kit"] + get_options(source) + [source],
         stderr=subprocess.PIPE,
         env=env,
     )
@@ -73,7 +73,7 @@ def create_highlighted_version(args):
     os.makedirs(output_dir, exist_ok=True)
 
     with open(output_path, "wb") as output_file:
-        output_file.write(bat_output)
+        output_file.write(kit_output)
 
     print("Created '{}'".format(output_path))
 
@@ -97,17 +97,17 @@ def create_highlighted_versions(output_basepath):
             file=sys.stderr,
         )
         print(
-            "=== bat stdout:\n{}".format(err.stdout.decode("utf-8")),
+            "=== kit stdout:\n{}".format(err.stdout.decode("utf-8")),
             file=sys.stderr,
         )
         print(
-            "=== bat stderr:\n{}".format(err.stderr.decode("utf-8")),
+            "=== kit stderr:\n{}".format(err.stderr.decode("utf-8")),
             file=sys.stderr,
         )
         return False
     except FileNotFoundError:
         print(
-            "Error: Could not execute 'bat'. Please make sure that the executable "
+            "Error: Could not execute 'kit'. Please make sure that the executable "
             "is available on the PATH."
         )
         return False

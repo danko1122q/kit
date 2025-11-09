@@ -7,7 +7,7 @@
 *.c        diff=c
 *.cc       text diff=cpp
 *.o        binary
-*.bat      text eol=crlf
+*.kit      text eol=crlf
 *.lock     text -diff
 *.*ignore  text
 *.patch    -text

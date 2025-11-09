@@ -1,6 +1,6 @@
 /// A small demonstration of the Input API.
 /// This prints embedded bytes with a custom header and then reads from STDIN.
-use bat::{Input, PrettyPrinter};
+use kit::{Input, PrettyPrinter};
 
 fn main() {
     PrettyPrinter::new()

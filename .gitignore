@@ -2,9 +2,9 @@
 **/*.rs.bk
 
 # Generated files
-/assets/completions/_bat.ps1
-/assets/completions/bat.bash
-/assets/completions/bat.fish
-/assets/completions/bat.zsh
-/assets/manual/bat.1
+/assets/completions/_kit.ps1
+/assets/completions/kit.bash
+/assets/completions/kit.fish
+/assets/completions/kit.zsh
+/assets/manual/kit.1
 /assets/metadata.yaml

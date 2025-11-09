@@ -127,7 +127,7 @@ patterns:
 
 - begin: ^(\s*)(\||')\s*
   end: ^(?!(\1\s)|\s*$)
-  comment: Verbatim text (can include HTML tags and copied lines)
+  comment: Verkitim text (can include HTML tags and copied lines)
   patterns:
   - include: text.html.basic
   - include: '#embedded-ruby'

@@ -158,7 +158,7 @@ declare var WScript: {
     FullName: string;
 
     /**
-     * Gets/sets the script mode - interactive(true) or batch(false).
+     * Gets/sets the script mode - interactive(true) or kitch(false).
      */
     Interactive: boolean;
 

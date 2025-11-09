@@ -12,8 +12,8 @@ Email syntax highlighting for **Sublime Text** editor made by [@mariozaizar](htt
 :mouse: Using [Sublime Text](https://www.sublimetext.com/) *(Build 3211)*:
 ![sublime](https://raw.githubusercontent.com/mariozaizar/email.sublime-syntax/master/demo/sublime.png)
 
-:mouse: Using [bat](https://github.com/sharkdp/bat) *(bat is a cat clone with syntax highlighting and Git integration)*
-![bat](https://raw.githubusercontent.com/mariozaizar/email.sublime-syntax/master/demo/bat.png)
+:mouse: Using [kit](https://github.com/sharkdp/kit) *(kit is a cat clone with syntax highlighting and Git integration)*
+![kit](https://raw.githubusercontent.com/mariozaizar/email.sublime-syntax/master/demo/kit.png)
 
 ## Links
 

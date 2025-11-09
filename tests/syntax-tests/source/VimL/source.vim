@@ -74,7 +74,7 @@ echo "Hello" !~ "Hello2"
 
 echo "/This/should/not/be/a/regex"
 
-" Error case from issue #1604 (https://github.com/sharkdp/bat/issues/1064)
+" Error case from issue #1604 (https://github.com/sharkdp/kit/issues/1064)
 set runtimepath=~/foo/bar
 
 silent g/Aap/p

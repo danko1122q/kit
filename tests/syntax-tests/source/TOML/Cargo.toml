@@ -2,11 +2,11 @@
 authors = ["David Peter <mail@david-peter.de>"]
 categories = ["command-line-utilities"]
 description="A cat(1) clone with wings."
-homepage = "https://github.com/sharkdp/bat"
+homepage = "https://github.com/sharkdp/kit"
 license = "MIT/Apache-2.0"
-name = "bat"
+name = "kit"
 readme = "README.md"
-repository = "https://github.com/sharkdp/bat"
+repository = "https://github.com/sharkdp/kit"
 version = "0.15.4"
 exclude = [
     "assets/syntaxes/*",
@@ -17,8 +17,8 @@ edition = '2018'
 
 [features]
 default = ["application"]
-# Feature required for bat the application. Should be disabled when depending on
-# bat as a library.
+# Feature required for kit the application. Should be disabled when depending on
+# kit as a library.
 application = [
     "atty",
     "clap",

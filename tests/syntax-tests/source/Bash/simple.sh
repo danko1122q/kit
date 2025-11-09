@@ -12,12 +12,12 @@ compatible_function() {
 	(
 		exec 3>&1
 		echo "finished! $@? $*." >&3 \
-			| cat | bat - | cat
+			| cat | kit - | cat
 		exit 4
 	) || exit $?
 }
 
-if command -v bat &> /dev/null; then
+if command -v kit &> /dev/null; then
 	var=1
 	printf "%s...\n" "$(echo some text)"
 	while true; do

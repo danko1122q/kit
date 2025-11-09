@@ -1,4 +1,4 @@
-[38;2;190;132;255mBAT[0m[38;2;249;38;114m([0m[38;2;230;219;116m1[0m[38;2;249;38;114m)[0m[38;2;248;248;242m                      [0m[38;2;253;151;31mGeneral[0m[38;2;253;151;31m [0m[38;2;253;151;31mCommands[0m[38;2;253;151;31m [0m[38;2;253;151;31mManual[0m[38;2;248;248;242m                     [0m[38;2;190;132;255mBAT[0m[38;2;249;38;114m([0m[38;2;230;219;116m1[0m[38;2;249;38;114m)[0m
+[38;2;190;132;255mKIT[0m[38;2;249;38;114m([0m[38;2;230;219;116m1[0m[38;2;249;38;114m)[0m[38;2;248;248;242m                      [0m[38;2;253;151;31mGeneral[0m[38;2;253;151;31m [0m[38;2;253;151;31mCommands[0m[38;2;253;151;31m [0m[38;2;253;151;31mManual[0m[38;2;248;248;242m                     [0m[38;2;190;132;255mKIT[0m[38;2;249;38;114m([0m[38;2;230;219;116m1[0m[38;2;249;38;114m)[0m
 
 [38;2;253;151;31mNAME[0m
 [38;2;248;248;242m       kit - a [0m[38;2;166;226;46mcat[0m[38;2;249;38;114m([0m[38;2;190;132;255m1[0m[38;2;249;38;114m)[0m[38;2;248;248;242m clone with syntax highlighting and Git integration.[0m
@@ -15,11 +15,11 @@
 
 [38;2;248;248;242m       kit  supports  a  large number of programming and markup languages.  It[0m
 [38;2;248;248;242m       also communicates with [0m[38;2;166;226;46mgit[0m[38;2;249;38;114m([0m[38;2;190;132;255m1[0m[38;2;249;38;114m)[0m[38;2;248;248;242m to show modifications with respect to the[0m
-[38;2;248;248;242m       git  index.  bat automatically pipes its output through a pager (by de‐[0m
+[38;2;248;248;242m       git  index.  kit automatically pipes its output through a pager (by de‐[0m
 [38;2;248;248;242m       fault: less).[0m
 
-[38;2;248;248;242m       Whenever the output of bat goes to  a  non-interactive  terminal,  i.e.[0m
-[38;2;248;248;242m       when  the output is piped into another process or into a file, bat will[0m
+[38;2;248;248;242m       Whenever the output of kit goes to  a  non-interactive  terminal,  i.e.[0m
+[38;2;248;248;242m       when  the output is piped into another process or into a file, kit will[0m
 [38;2;248;248;242m       act as a drop-in replacement for [0m[38;2;166;226;46mcat[0m[38;2;249;38;114m([0m[38;2;190;132;255m1[0m[38;2;249;38;114m)[0m[38;2;248;248;242m and fall back to  printing  the[0m
 [38;2;248;248;242m       plain file contents.[0m
 
@@ -109,7 +109,7 @@
 [38;2;248;248;242m       [0m[38;2;166;226;46m-f[0m[38;2;248;248;242m,[0m[38;2;248;248;242m [0m[38;2;166;226;46m--force-colorization[0m
 
 [38;2;248;248;242m              Alias  for '[0m[38;2;166;226;46m--decorations[0m[38;2;249;38;114m=[0m[3;38;2;253;151;31malways[0m[38;2;248;248;242m [0m[38;2;166;226;46m--color[0m[38;2;249;38;114m=[0m[3;38;2;253;151;31malways'[0m[38;2;248;248;242m. This is useful[0m
-[38;2;248;248;242m              if the output of bat is piped to another program, but  you  want[0m
+[38;2;248;248;242m              if the output of kit is piped to another program, but  you  want[0m
 [38;2;248;248;242m              to keep the colorization/decorations.[0m
 
 [38;2;248;248;242m       [0m[38;2;166;226;46m--paging[0m[38;2;248;248;242m [0m[38;2;248;248;242m<[0m[3;38;2;253;151;31mwhen[0m[38;2;248;248;242m>[0m
@@ -123,7 +123,7 @@
 [38;2;248;248;242m       [0m[38;2;166;226;46m--pager[0m[38;2;248;248;242m [0m[38;2;248;248;242m<[0m[3;38;2;253;151;31mcommand[0m[38;2;248;248;242m>[0m
 
 [38;2;248;248;242m              Determine  which  pager  is  used. This option will override the[0m
-[38;2;248;248;242m              PAGER and BAT_PAGER environment variables. The default pager  is[0m
+[38;2;248;248;242m              PAGER and KIT_PAGER environment variables. The default pager  is[0m
 [38;2;248;248;242m              'less'.  To  control  when the pager is used, see the '[0m[38;2;166;226;46m--paging[0m[38;2;248;248;242m'[0m
 [38;2;248;248;242m              option. Example: '[0m[38;2;166;226;46m--pager[0m[38;2;248;248;242m "less [0m[38;2;166;226;46m-RF[0m[38;2;248;248;242m"'.[0m
 
@@ -205,7 +205,7 @@
 
 [38;2;248;248;242m       kit [0m[38;2;166;226;46m--config-file[0m
 
-[38;2;248;248;242m       Alternatively, you can use the BAT_CONFIG_PATH environment variable  to[0m
+[38;2;248;248;242m       Alternatively, you can use the KIT_CONFIG_PATH environment variable  to[0m
 [38;2;248;248;242m       point kit to a non-default location of the configuration file.[0m
 
 [38;2;253;151;31mADDING CUSTOM LANGUAGES[0m
@@ -226,18 +226,18 @@
 [38;2;248;248;242m            # And then build the cache.[0m
 [38;2;248;248;242m            kit cache [0m[38;2;166;226;46m--build[0m
 
-[38;2;248;248;242m       Once the cache is built, the new  language  will  be  visible  in  `bat[0m
+[38;2;248;248;242m       Once the cache is built, the new  language  will  be  visible  in  `kit[0m
 [38;2;248;248;242m       [0m[38;2;166;226;46m--list-languages[0m[38;2;248;248;242m`.[0m
 [38;2;248;248;242m       If  you  ever  want  to  remove the custom languages, you can clear the[0m
-[38;2;248;248;242m       cache with `bat cache [0m[38;2;166;226;46m--clear[0m[38;2;248;248;242m`.[0m
+[38;2;248;248;242m       cache with `kit cache [0m[38;2;166;226;46m--clear[0m[38;2;248;248;242m`.[0m
 
 [38;2;253;151;31mADDING CUSTOM THEMES[0m
-[38;2;248;248;242m       Similarly to custom  languages,  bat  supports  Sublime  Text  .tmTheme[0m
+[38;2;248;248;242m       Similarly to custom  languages,  kit  supports  Sublime  Text  .tmTheme[0m
 [38;2;248;248;242m       themes.   These  can  be installed to `$(kit [0m[38;2;166;226;46m--config-dir[0m[38;2;248;248;242m)/themes`, and[0m
 [38;2;248;248;242m       are added to the cache with `kit cache [0m[38;2;166;226;46m--build[0m[38;2;248;248;242m`.[0m
 
 [38;2;253;151;31mMORE INFORMATION[0m
-[38;2;248;248;242m       For more information and up-to-date documentation, visit the bat repo:[0m
+[38;2;248;248;242m       For more information and up-to-date documentation, visit the kit repo:[0m
 [38;2;248;248;242m       https://github.com/danko1122q/kit[0m
 
-[38;2;248;248;242m                                                                        [0m[38;2;166;226;46mBAT[0m[38;2;249;38;114m([0m[38;2;190;132;255m1[0m[38;2;249;38;114m)[0m
+[38;2;248;248;242m                                                                        [0m[38;2;166;226;46mKIT[0m[38;2;249;38;114m([0m[38;2;190;132;255m1[0m[38;2;249;38;114m)[0m

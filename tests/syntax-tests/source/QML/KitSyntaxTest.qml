@@ -16,7 +16,7 @@ Page {
 
     DBusServiceWatcher {
         id: dbusService
-        service: "org.bat.service"
+        service: "org.kit.service"
 
         onRegisteredChanged: {
             if (dbusService.registered) {
@@ -38,7 +38,7 @@ Page {
             enabled: !startup
                      && trustedDevices.count == 0
                      && nearDevices.count == 0
-            text: qsTr("Install Bat.")
+            text: qsTr("Install Kit.")
         }
 
         Column {

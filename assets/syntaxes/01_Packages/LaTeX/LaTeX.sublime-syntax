@@ -26,7 +26,7 @@ contexts:
     - include: text-decorators
     - include: footnote
     - include: references
-    - include: verbatim
+    - include: verkitim
     - include: verb
     - include: url
     - include: graphics
@@ -308,8 +308,8 @@ contexts:
         1: keyword.control.latex
         2: punctuation.definition.backslash.latex
 
-  verbatim:
-    - match: '((\\)begin)(\{)\s*((?:[vV]erbatim|alltt)\*?)\s*(\})'
+  verkitim:
+    - match: '((\\)begin)(\{)\s*((?:[vV]erkitim|alltt)\*?)\s*(\})'
       captures:
         1: support.function.begin.latex keyword.control.flow.begin.latex
         2: punctuation.definition.backslash.latex
@@ -318,8 +318,8 @@ contexts:
         5: punctuation.definition.group.brace.end.latex
       push:
         - meta_include_prototype: false
-        - meta_scope: meta.environment.verbatim.verbatim.latex
-        - meta_content_scope: markup.raw.verbatim.latex
+        - meta_scope: meta.environment.verkitim.verkitim.latex
+        - meta_content_scope: markup.raw.verkitim.latex
         - match: '((\\)end)(\{)\s*(\4)\s*(\})'
           captures:
             1: support.function.end.latex keyword.control.flow.begin.latex
@@ -538,7 +538,7 @@ contexts:
         3: punctuation.definition.verb.latex
       push:
         - meta_include_prototype: false
-        - meta_scope: meta.environment.verbatim.verb.latex
+        - meta_scope: meta.environment.verkitim.verb.latex
         - meta_content_scope: markup.raw.verb.latex
         - match: '\3'
           scope: punctuation.definition.verb.latex
@@ -774,24 +774,24 @@ contexts:
         1: punctuation.definition.backslash.latex
       push:
         - meta_include_prototype: false
-        - meta_scope: meta.environment.verbatim.lstinline.latex
+        - meta_scope: meta.environment.verkitim.lstinline.latex
         - include: general-optional-arguments
         - match: '\{'
           scope: punctuation.definition.group.brace.begin.latex
           set:
             - meta_include_prototype: false
             - meta_scope: meta.group.brace.latex
-            - meta_content_scope: meta.environment.verbatim.lstinline.latex markup.raw.verb.latex
+            - meta_content_scope: meta.environment.verkitim.lstinline.latex markup.raw.verb.latex
             - match: '\}'
-              scope: meta.environment.verbatim.lstinline.latex punctuation.definition.group.brace.end.latex
+              scope: meta.environment.verkitim.lstinline.latex punctuation.definition.group.brace.end.latex
               pop: true
         - match: '(\W)'
           scope: punctuation.definition.verb.latex
           set:
             - meta_include_prototype: false
-            - meta_content_scope: meta.environment.verbatim.lstinline.latex markup.raw.verb.latex
+            - meta_content_scope: meta.environment.verkitim.lstinline.latex markup.raw.verb.latex
             - match: '\1'
-              scope: meta.environment.verbatim.lstinline.latex punctuation.definition.verb.latex
+              scope: meta.environment.verkitim.lstinline.latex punctuation.definition.verb.latex
               pop: true
 
     - match: ((\\)begin)(\{)(lstlisting)(\})
@@ -803,7 +803,7 @@ contexts:
         5: punctuation.definition.group.brace.end.latex
       push:
         - meta_include_prototype: false
-        - meta_scope: meta.environment.verbatim.lstlisting.latex
+        - meta_scope: meta.environment.verkitim.lstlisting.latex
         - match: '((\\)end)(\{)(lstlisting)(\})'
           captures:
             1: support.function.end.latex keyword.control.flow.end.latex
@@ -935,7 +935,7 @@ contexts:
         5: punctuation.definition.group.brace.end.latex
       push:
         - meta_include_prototype: false
-        - meta_scope: meta.environment.verbatim.minted.latex
+        - meta_scope: meta.environment.verkitim.minted.latex
         - match: '((\\)end)(\{)(minted)(\})'
           captures:
             1: support.function.end.latex keyword.control.flow.end.latex
@@ -1143,10 +1143,10 @@ contexts:
         3: support.function.mintinline.latex
         4: punctuation.definition.backslash.latex
       push:
-        - meta_scope: meta.environment.verbatim.minted.latex
+        - meta_scope: meta.environment.verkitim.minted.latex
         - include: general-optional-arguments
         - match: '(\{)(c)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1154,13 +1154,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.c
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.c.latex source.c.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.c.latex source.c.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(cpp|c\+\+)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1168,13 +1168,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.c++
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.c++.latex source.c++.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.c++.latex source.c++.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(diff)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1182,13 +1182,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.diff
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.diff.latex source.diff.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.diff.latex source.diff.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(go|golang)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1196,13 +1196,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.go
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.go.latex source.go.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.go.latex source.go.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(haskell|hs)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1210,13 +1210,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.haskell
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.haskell.latex source.haskell.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.haskell.latex source.haskell.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(html)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1224,13 +1224,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:text.html.basic
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.html.latex text.html.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.html.latex text.html.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(java)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1238,13 +1238,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.java
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.java.latex source.java.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.java.latex source.java.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(javascript|js)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1252,13 +1252,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.js
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.js.latex source.js.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.js.latex source.js.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(json)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1266,13 +1266,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.json
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.json.latex source.json.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.json.latex source.json.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(tex|latex)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1280,13 +1280,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:text.tex.latex
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.latex.latex text.tex.latex.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.latex.latex text.tex.latex.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(lisp)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1294,13 +1294,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.lisp
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.lisp.latex source.lisp.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.lisp.latex source.lisp.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(lua)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1308,13 +1308,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.lua
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.lua.latex source.lua.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.lua.latex source.lua.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(obj(?:ective\-|)c)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1322,13 +1322,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.objc
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.objc.latex source.objc.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.objc.latex source.objc.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(obj(?:ective\-|)c\+\+)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1336,13 +1336,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.objc++
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.objc++.latex source.objc++.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.objc++.latex source.objc++.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(perl)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1350,13 +1350,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.perl
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.perl.latex source.perl.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.perl.latex source.perl.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(php)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1364,13 +1364,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.php
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.php.latex source.php.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.php.latex source.php.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(python|py)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1378,13 +1378,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.python
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.python.latex source.python.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.python.latex source.python.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(r)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1392,13 +1392,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.r
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.r.latex source.r.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.r.latex source.r.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(ruby)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1406,13 +1406,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.ruby
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.ruby.latex source.ruby.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.ruby.latex source.ruby.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(sh|shell|bash )(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1420,13 +1420,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.shell
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.shell.latex source.shell.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.shell.latex source.shell.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(sql|mysql|ddl|dml)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1434,13 +1434,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.sql
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.sql.latex source.sql.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.sql.latex source.sql.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(xml)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1448,13 +1448,13 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:text.xml
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.xml.latex text.xml.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.xml.latex text.xml.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex
             2: punctuation.definition.verb.latex
         - match: '(\{)(yaml)(\})((\{)|(\W))'
-          scope: meta.environment.verbatim.minted.latex
+          scope: meta.environment.verkitim.minted.latex
           captures:
             1: punctuation.definition.group.brace.begin.latex
             2: variable.parameter.function.latex
@@ -1462,7 +1462,7 @@ contexts:
             5: punctuation.definition.group.brace.begin.latex
             6: punctuation.definition.verb.latex
           embed: scope:source.yaml
-          embed_scope: meta.environment.verbatim.minted.latex meta.environment.embedded.yaml.latex source.yaml.embedded
+          embed_scope: meta.environment.verkitim.minted.latex meta.environment.embedded.yaml.latex source.yaml.embedded
           escape: '(\})|(\4)'
           escape_captures:
             1: punctuation.definition.group.brace.begin.latex

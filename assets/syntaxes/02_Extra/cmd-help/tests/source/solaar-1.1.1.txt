@@ -18,8 +18,8 @@ optional arguments:
   -w {show,hide,only}, --window {show,hide,only}
                         start with window showing / hidden / only (no tray
                         icon)
-  -b {regular,symbolic,solaar}, --battery-icons {regular,symbolic,solaar}
-                        prefer regular battery / symbolic battery / solaar
+  -b {regular,symbolic,solaar}, --kittery-icons {regular,symbolic,solaar}
+                        prefer regular kittery / symbolic kittery / solaar
                         icons
   --tray-icon-size TRAY_ICON_SIZE
                         explicit size for tray icons

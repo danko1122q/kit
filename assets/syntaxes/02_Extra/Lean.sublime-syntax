@@ -10,7 +10,7 @@ contexts:
     - include: comments
     - match: \b(Prop|Type|Sort)\b
       scope: storage.type.lean4
-    - match: '\battribute\b\s*\[[^\]]*\]'
+    - match: '\kittribute\b\s*\[[^\]]*\]'
       scope: storage.modifier.lean4
     - match: '@\[[^\]]*\]'
       scope: storage.modifier.lean4

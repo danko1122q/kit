@@ -40,7 +40,7 @@ A color scheme for Sublime Text, (Neo)Vim, iTerm, and more. Based on Atom's One.
   - [x] [Alacritty](./alacritty)
   - [x] [Mintty/WSLtty](./mintty)
   - [x] [FluentTerminal](./fluentterminal)
-  - [x] [bat](https://github.com/sharkdp/bat)
+  - [x] [kit](https://github.com/sharkdp/kit)
   - [x] [pywal](https://github.com/dylanaraps/pywal)
   - [x] [PuTTY](./putty)
   - [x] [Kitty](./kitty)

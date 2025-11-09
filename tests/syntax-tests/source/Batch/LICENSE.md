@@ -1,4 +1,4 @@
-The `build.bat` file has been added from https://github.com/Leandros/ClangOnWindows/blob/master/build.bat under the following license: 
+The `build.kit` file has been added from https://github.com/Leandros/ClangOnWindows/blob/master/build.kit under the following license: 
 
 This is free and unencumbered software released into the public domain.
 

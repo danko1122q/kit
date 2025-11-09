@@ -367,7 +367,7 @@
 [38;2;248;248;242mdifferently.[0m
 
 [38;2;248;248;242m							      *help-codeblock*[0m
-[38;2;248;248;242mTo quote a block of ex-commands verbatim, place a greater than (>) character[0m
+[38;2;248;248;242mTo quote a block of ex-commands verkitim, place a greater than (>) character[0m
 [38;2;248;248;242mat the end of the line before the block and a less than (<) character as the[0m
 [38;2;248;248;242mfirst non-blank on a line following the block.  Any line starting in column 1[0m
 [38;2;248;248;242malso implicitly stops the block of ex-commands before it.  E.g. >[0m

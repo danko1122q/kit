@@ -1,7 +1,7 @@
 import path from 'path'
 import { ExtensionContext, OutputChannel } from 'vscode'
 import { alwaysAskBeforeInstallingLeanVersions } from '../config'
-import { batchExecuteWithProgress, ExecutionExitCode, ExecutionResult } from './batch'
+import { kitchExecuteWithProgress, ExecutionExitCode, ExecutionResult } from './kitch'
 import {
     elanDumpStateWithNet,
     ElanDumpStateWithNetResult,
@@ -114,7 +114,7 @@ export class LeanCommandRunner {
         if (toolchainOverride !== undefined) {
             args = [`+${toolchainOverride}`, ...args]
         }
-        return await batchExecuteWithProgress(executablePath, args, options.context, options.waitingPrompt, {
+        return await kitchExecuteWithProgress(executablePath, args, options.context, options.waitingPrompt, {
             cwd: options.cwdUri?.fsPath,
             channel: options.channel,
             translator: options.translator,

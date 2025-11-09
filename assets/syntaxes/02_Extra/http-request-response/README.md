@@ -1,6 +1,6 @@
 # HTTP Request Response Syntax
 This is a sublime-syntax grammar for HTTP Requests and/or Responses.
-It was originally designed for use in https://github.com/sharkdp/bat, so it is not using any Sublime Text 4 features, as https://github.com/trishume/syntect does not support them yet. So this package should work in Sublime Text 3 also.
+It was originally designed for use in https://github.com/sharkdp/kit, so it is not using any Sublime Text 4 features, as https://github.com/trishume/syntect does not support them yet. So this package should work in Sublime Text 3 also.
 
 Example highlighting:
 

@@ -126,10 +126,10 @@ contexts:
             6: punctuation.definition.tag.begin.html
           push:
             - meta_include_prototype: false
-            - meta_content_scope: meta.environment.embedded.dosbatch.mediawiki source.dosbatch.embedded
+            - meta_content_scope: meta.environment.embedded.doskitch.mediawiki source.doskitch.embedded
             - match: (?=</(source|syntaxhighlight)>)
               pop: true
-            - include: scope:source.dosbatch
+            - include: scope:source.doskitch
         - match: '(csharp){{src_tag_after_lang}}'
           captures:
             1: string.quoted.mediawiki

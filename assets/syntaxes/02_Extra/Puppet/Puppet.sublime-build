@@ -5,6 +5,6 @@
     "path": "/opt/local/bin:$PATH",
     "windows":
     {    
-      "cmd": ["puppet.bat", "parser", "validate", "--color=false", "$file" ]
+      "cmd": ["puppet.kit", "parser", "validate", "--color=false", "$file" ]
     }
 }

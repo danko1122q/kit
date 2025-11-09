@@ -2079,7 +2079,7 @@
 		{ "trigger": "mssql_execute", "contents": "mssql_execute(${1:stmt})" },
 		{ "trigger": "mssql_fetch_array", "contents": "mssql_fetch_array(${1:result})" },
 		{ "trigger": "mssql_fetch_assoc", "contents": "mssql_fetch_assoc(${1:result_id})" },
-		{ "trigger": "mssql_fetch_batch", "contents": "mssql_fetch_batch(${1:result})" },
+		{ "trigger": "mssql_fetch_kitch", "contents": "mssql_fetch_kitch(${1:result})" },
 		{ "trigger": "mssql_fetch_field", "contents": "mssql_fetch_field(${1:result})" },
 		{ "trigger": "mssql_fetch_object", "contents": "mssql_fetch_object(${1:result})" },
 		{ "trigger": "mssql_fetch_row", "contents": "mssql_fetch_row(${1:result})" },

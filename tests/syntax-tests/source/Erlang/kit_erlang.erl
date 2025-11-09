@@ -1,4 +1,4 @@
--module(bat_erlang).
+-module(kit_erlang).
 
 -export([main/0]).
 

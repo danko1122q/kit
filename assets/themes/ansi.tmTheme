@@ -23,7 +23,7 @@
                     <key>foreground</key>
                     <string>#00000001</string>
                     <!--
-                    Explicitly set the gutter color since bat falls back to a
+                    Explicitly set the gutter color since kit falls back to a
                     hardcoded DEFAULT_GUTTER_COLOR otherwise.
                     -->
                     <key>gutter</key>

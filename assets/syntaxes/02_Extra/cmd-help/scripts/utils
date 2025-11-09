@@ -38,11 +38,11 @@ function debug {
 }
 
 function demo {
-    "$@" --help | bat --no-config -pl cmd-help --pager='less -R'
+    "$@" --help | kit --no-config -pl cmd-help --pager='less -R'
 }
 
 function demo_it {
-    "$@" --help | bat --no-config -pl cmd-help --pager='less -R' --italic-text=always
+    "$@" --help | kit --no-config -pl cmd-help --pager='less -R' --italic-text=always
 }
 
 alias mksyn='scripts/make_syntax_test.sh'

@@ -4,16 +4,23 @@ Kit is a command-line utility inspired by `cat` and `less`, enhanced with modern
 
 ---
 
+
+### 📖 Configuration Guides:
+* **[English](CONFIGURATION.EN.md)**
+* **[Indonesia](CONFIGURATION.ID.md)**
+
+
+---
 ## 💡 Key Features
 
-### 📄 Modern File Viewing
+### 🐄 Modern File Viewing
 
-* **Syntax Highlighting**: Beautifully highlight files for over 200 programming and markup languages.
-* **Git Integration**: Display Git modification status (modified, added) in the sidebar while viewing files.
-* **Automatic Paging**: Smartly uses a pager (like `less`) for easy navigation through large files, with support for customizable pagers.
+* **Syntax Highlighting**: Highlight files for over 200 programming and markup languages.
+* **Git Integration**: Display Git modification status (added, modified, removed) in the sidebar.
+* **Automatic Paging**: Smartly pipes output to a pager (like `less`) for large files, configurable with `--paging`.
 * **Scrolling & Navigation**:
 
-  * Scroll line by line: `j` / `k` or arrow keys
+  * Line-by-line: `j` / `k` or arrow keys
   * Page up / down: `Ctrl + b` / `Ctrl + f`
   * Go to start/end of file: `g` / `G`
   * Search: `/` followed by query
@@ -21,83 +28,137 @@ Kit is a command-line utility inspired by `cat` and `less`, enhanced with modern
 
 ### 🔨 CLI File Management
 
-* **File Creation**: Quickly create new files using the `-c` or `--create` flag.
-* **Directory Creation**: Create directories (including nested ones) recursively using `--mk` or `--mkdir` flags (similar to `mkdir -p`).
+* **File Creation**: `-c` / `--create` flag to create new files.
+* **Directory Creation**: `--mk` / `--mkdir` flags to create directories recursively.
+* **Editing (Planned Feature)**: `-e` / `--edit` flag to open a file in the embedded editor and create if it doesn't exist. *(Currently not implemented; future integration planned with Lex or Rust-based editor)*
+
+### 🎨 Output Customization
+
+* **Themes**: Apply color themes using `--theme` or environment variables.
+* **Styles**: Customize output with `--style` (numbers, changes, header, plain, grid, snip).
+* **Tabs**: Control tab width with `--tabs`.
+* **Non-printable Characters**: Show hidden characters with `-A`.
+
+### 🔗 Integration with Other Tools
+
+* **fzf Preview**: `fzf --preview "kit --color=always --style=numbers --line-range=:500 {}"`
+* **Find / fd**: `find ... -exec kit {} +` or `fd ... -X kit`
+* **Ripgrep / kitgrep**: `kitgrep <pattern> <directory>`
+* **Tail**: `tail -f file.log | kit --paging=never -l log`
+* **Git Show**: `git show <commit>:<file> | kit -l <lang>`
+* **Clipboard**: `kit -p file | xclip` for plain content copying.
+* **Man Pages**: Colorize `man` output using `MANPAGER` and `kit -p -lman`.
+* **Help Pages**: `alias kithelp='kit --plain --language=help'` and wrappers for `--help` commands.
+
+> ⚠️ Note: `--diff` functionality is not currently included in Kit; planned for future release.
 
 ---
 
 ## 💻 Usage
 
-### 1. Viewing Files
+### Viewing Files
 
-| Command              | Description                  |                                |
-| -------------------- | ---------------------------- | ------------------------------ |
-| `kit README.md`      | View a single file.          |                                |
-| `kit src/*.rs`       | View multiple files at once. |                                |
-| `curl -s example.com | kit`                         | View input from a pipe or URL. |
+```bash
+kit README.md               # View a single file
+kit src/*.rs                # View multiple files
+curl -s example.com | kit    # View piped input
+kit -A /etc/hosts           # Show non-printable characters
+kit -n file.txt             # Show line numbers
+kit --language=python file.py # Force syntax highlighting
+kit --theme=TwoDark file.md  # Apply a specific theme
+kit --paging=never file.log # Disable pager
+kit --style=plain file.md   # Plain output, no headers or line numbers
+kit --list-languages        # List all supported languages
+kit --list-themes           # List available themes
+```
 
-### 2. Creating Files and Directories
+### Creating Files and Directories
 
-| Command                             | Description                                                  |
-| ----------------------------------- | ------------------------------------------------------------ |
-| `kit -c test.txt`                   | Create a single new file.                                    |
-| `kit -c file1.txt file2.md`         | Create multiple new files.                                   |
-| `kit --mk path/to/nested/directory` | Create nested directories recursively (`--mk` or `--mkdir`). |
+```bash
+kit -c test.txt                     # Create a new file
+kit -c file1.txt file2.md           # Create multiple files
+kit --mk path/to/nested/directory   # Create directories recursively
+kit edit file.txt                    # Open editor and create if not exists (planned)
+```
 
-### 3. Viewing Options & Quick Customization
+### Integration Examples
 
-| Option                        | Description                        |
-| ----------------------------- | ---------------------------------- |
-| `kit --list-languages`        | Print all supported languages.     |
-| `kit --list-themes`           | Print all available color themes.  |
-| `kit -n file.txt`             | Show line numbers.                 |
-| `kit --theme=TwoDark file.rs` | Apply a specific theme to output.  |
-| `kit -A file.txt`             | Show all non-printable characters. |
+```bash
+# fzf preview
+fzf --preview "kit --color=always --style=numbers --line-range=:500 {}"
+
+# Find / fd integration
+find . -type f -exec kit {} +
+fd . -X kit
+
+# Ripgrep / kitgrep
+kitgrep pattern src/
+
+# Tail logs with syntax highlighting
+tail -f /var/log/syslog | kit --paging=never -l log
+
+# Git show
+git show HEAD:src/main.rs | kit -l rs
+
+# Clipboard copy
+kit file.txt -p | xclip
+
+# Man pages
+export MANPAGER="sh -c 'awk '{ gsub(/\x1B\[[0-9;]*m/, "", $0); gsub(/.\x08/, "", $0); print }' | kit -p -lman'"
+man 2 select
+
+# Help pages
+alias kithelp='kit --plain --language=help'
+help() {
+  "$@" --help 2>&1 | kithelp
+}
+```
 
 ---
 
-## ⚙️ Persistent Configuration
+## 🔧 Persistent Configuration
 
-Kit can be configured via a configuration file located at `~/.config/kit/config` and through environment variables.
+Configuration file: `~/.config/kit/config.toml`
 
-| Environment Variable | Description                                                  |
-| -------------------- | ------------------------------------------------------------ |
-| `KIT_THEME`          | Set the default color theme.                                 |
-| `KIT_STYLE`          | Control default style components (e.g., lines, Git, header). |
-| `KIT_PAGER`          | Set the external pager command to use.                       |
-| `KIT_PAGING`         | Control paging behavior (always or automatic).               |
-| `KIT_TABSM`          | Set tab width.                                               |
-| `KIT_CONFIG_PATH`    | Change the configuration file location.                      |
-| `KIT_CACHE_PATH`     | Change the cache directory location.                         |
+Example:
+
+```toml
+default_theme = "Catppuccin Frappe"
+style = "plain"
+colored_output = true
+paging_mode = "never"
+```
+
+Environment variables:
+
+| Variable        | Description                    |
+| --------------- | ------------------------------ |
+| KIT_THEME       | Default color theme            |
+| KIT_STYLE       | Default style components       |
+| KIT_PAGER       | Pager command                  |
+| KIT_PAGING      | Paging behavior (always, auto) |
+| KIT_TABSM       | Tab width                      |
+| KIT_CONFIG_PATH | Configuration file location    |
+| KIT_CACHE_PATH  | Cache directory location       |
 
 ---
 
 ## 📦 Building from Source
 
-Kit is built using Rust. Ensure you have the Rust Toolchain (MSRV 1.70 or newer) installed.
-
 ```bash
-# Clone repository
 git clone https://github.com/danko1122q/kit
 cd kit
-
-# Build in debug mode
-cargo build
-
-# For optimized compilation (recommended)
-cargo build --release
-
-# The generated binary will be located at:
-./target/release/kit
+cargo build            # Debug build
+cargo build --release  # Optimized release build
+./target/release/kit   # Binary location
 ```
 
 ---
 
-## 📝 License and Copyright
+## 🗑️ License and Copyright
 
 Kit is dual-licensed under MIT OR Apache-2.0.
 
-* Original Code (bat): Copyright (c) 2018-2023 bat-developers ([https://github.com/sharkdp/bat](https://github.com/sharkdp/bat))
-* KIT Modifications & Contributions: Copyright (c) 2025 danko1122q
+* Original Code (kit): Copyright (c) 2018-2023 kit-developers [https://github.com/sharkdp/kit](https://github.com/sharkdp/kit)
+* Kit Modifications & Contributions: Copyright (c) 2025 danko112q [https://github.com/danko1122q/kit](https://github.com/danko1122q/kit)
 
-Repository: [https://github.com/danko1122q/kit](https://github.com/danko1122q/kit)

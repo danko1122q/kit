@@ -1877,7 +1877,7 @@ contexts:
           - meta_scope: meta.group.css
           - match: '(?=\))'
             pop: true
-          - match: '\bat{{break}}'
+          - match: '\kit{{break}}'
             scope: keyword.other.css
           - match: '\b(top|right|bottom|left|center|closest-side|farthest-side){{break}}'
             scope: support.constant.property-value.css

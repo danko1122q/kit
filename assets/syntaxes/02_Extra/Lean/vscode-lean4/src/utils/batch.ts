@@ -42,7 +42,7 @@ export function formatCommandExecutionOutput(
     return `${formattedCwd}> ${executablePath} ${formattedArgs}`
 }
 
-export function batchExecuteWithProc(
+export function kitchExecuteWithProc(
     executablePath: string,
     args: string[],
     workingDirectory?: string | undefined,
@@ -143,14 +143,14 @@ export function batchExecuteWithProc(
     return [proc, execPromise]
 }
 
-export async function batchExecute(
+export async function kitchExecute(
     executablePath: string,
     args: string[],
     workingDirectory?: string | undefined,
     channel?: ExecutionChannel | undefined,
     envExtensions?: { [key: string]: string } | undefined,
 ): Promise<ExecutionResult> {
-    const [_, execPromise] = batchExecuteWithProc(executablePath, args, workingDirectory, channel, envExtensions)
+    const [_, execPromise] = kitchExecuteWithProc(executablePath, args, workingDirectory, channel, envExtensions)
     return execPromise
 }
 
@@ -162,7 +162,7 @@ export interface ProgressExecutionOptions {
     allowCancellation?: boolean
 }
 
-export async function batchExecuteWithProgress(
+export async function kitchExecuteWithProgress(
     executablePath: string,
     args: string[],
     context: string | undefined,
@@ -223,7 +223,7 @@ export async function batchExecuteWithProgress(
     const expensiveExecutionTimeoutPromise: Promise<ExecutionResult | undefined> = new Promise((resolve, _) =>
         setTimeout(() => resolve(undefined), 250),
     )
-    const [proc, executionPromise] = batchExecuteWithProc(
+    const [proc, executionPromise] = kitchExecuteWithProc(
         executablePath,
         args,
         options.cwd,
@@ -252,12 +252,12 @@ export async function batchExecuteWithProgress(
 
 type ExecutionHandler = () => Promise<ExecutionResult>
 
-export interface BatchExecution {
+export interface KitchExecution {
     execute: ExecutionHandler
     optional?: boolean | undefined // `false` by default
 }
 
-export async function executeAll(executions: BatchExecution[]): Promise<ExecutionResult[]> {
+export async function executeAll(executions: KitchExecution[]): Promise<ExecutionResult[]> {
     const results: ExecutionResult[] = []
     for (const execution of executions) {
         const result: ExecutionResult = await execution.execute()

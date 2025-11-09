@@ -54,7 +54,7 @@ List<Nullable<System.Int16>> list;
 ///                       ^^ punctuation.definition.generic.end
 ///                          ^^^^ variable.other
 
-string verbatim = @"This is a test "" of a verbatim string literal - C:\User";
+string verkitim = @"This is a test "" of a verkitim string literal - C:\User";
 ///               ^^ string.quoted.double punctuation.definition.string
 ///                                ^^ constant.character.escape
 ///                                                                    ^ string.quoted.double - constant

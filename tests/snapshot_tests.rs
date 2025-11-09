@@ -7,8 +7,8 @@ macro_rules! snapshot_tests {
             #[test]
             #[cfg(feature = "git")]
             fn $test_name() {
-                let bat_tester = tester::BatTester::default();
-                bat_tester.test_snapshot(stringify!($test_name), $style);
+                let kit_tester = tester::KitTester::default();
+                kit_tester.test_snapshot(stringify!($test_name), $style);
             }
         )*
     };

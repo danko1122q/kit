@@ -186,14 +186,14 @@ contexts:
   heading-specials:
     - match: (?i:usage):(?=.+\n)
       scope: *INLINE_USAGE_SCOPES
-      set: maybe-bat
+      set: maybe-kit
     - include: python-argparse-headings
 
 
-  # hack to harmonize usage lines in bat's help message
+  # hack to harmonize usage lines in kit's help message
   #nice: generalize this pattern and remove this hardcoded case
-  maybe-bat:
-    - match: " (bat)"
+  maybe-kit:
+    - match: " (kit)"
       captures:
         1: *KEYWORD_SCOPES
       set: then-pop
@@ -519,7 +519,7 @@ contexts:
         1: *KEYWORD_SCOPES
         # 2: *ARGUMENT_SCOPES
       set: then-pop
-    # e.g.: "bat <SUBCOMMAND>" (from bat)
+    # e.g.: "kit <SUBCOMMAND>" (from kit)
     - match: '({{other_lowercase_name}}) <({{relaxed_argument_name}})>'
       captures:
         1: *KEYWORD_SCOPES

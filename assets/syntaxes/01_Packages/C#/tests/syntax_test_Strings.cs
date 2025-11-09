@@ -32,20 +32,20 @@ var interpolated_none = $"foo";
 ///                     ^^^^^^ meta.string.interpolated.cs string.quoted.double.cs
 var interpolated_yes = $"foo {bar} foo";
 ///                    ^^^^^^^^^^^^^^^^ meta.string.interpolated.cs
-var verbatim_singleline = @"foo";
+var verkitim_singleline = @"foo";
 ///                       ^^^^^^ string.quoted.double.raw.cs
-var verbatim_singleline_interpolated_none = $@"foo bar";
+var verkitim_singleline_interpolated_none = $@"foo bar";
 ///                                         ^^^^^^^^^^^ meta.string.interpolated.cs string.quoted.double.raw.cs
-var verbatim_singleline_interpolated_yes = $@"foo {bar} foo";
+var verkitim_singleline_interpolated_yes = $@"foo {bar} foo";
 ///                                        ^^^^^^^ string.quoted.double.raw.cs
 ///                                        ^^^^^^^^^^^^^^^^^ meta.string.interpolated.cs
-var verbatim_multiline = @"foo bar
+var verkitim_multiline = @"foo bar
 ///                      ^^^^^^^^^^ string.quoted.double.raw.cs
 baz";
-var verbatim_multiline_interpolated_none = $@"foo bar
+var verkitim_multiline_interpolated_none = $@"foo bar
 ///                                        ^^^^^^^^^^^ meta.string.interpolated.cs string.quoted.double.raw.cs
 baz";
-var verbatim_multiline_interpolated_yes = $@"foo {bar}
+var verkitim_multiline_interpolated_yes = $@"foo {bar}
 ///                                       ^^^^^^ string.quoted.double.raw.cs
 ///                                       ^^^^^^^^^^^^ meta.string.interpolated.cs
 baz";

@@ -17,17 +17,17 @@ assignees: ''
 
 ---
 
-**bat version and environment**
+**kit version and environment**
 
 <!--
 In order to reproduce your issue, please add some information about the environment
-in which you're running bat. To do this, run the full `bat` command that demonstrates
+in which you're running kit. To do this, run the full `kit` command that demonstrates
 the bug, and attach the `--diagnostic` option:
 
-    bat [other options and arguments…] --diagnostic
+    kit [other options and arguments…] --diagnostic
 
 Finally, paste the Markdown output here. Please make sure that it does not reveal any
 personal information.
 
-If you are on Windows, please let us know your bat version and your Windows version.
+If you are on Windows, please let us know your kit version and your Windows version.
 -->

@@ -3,6 +3,6 @@
   "cmd": ["mix", "format", "$file", "--dot-formatter", "$folder/.formatter.exs"],
   "selector": "source.elixir",
   "windows": {
-    "cmd": ["mix.bat", "format", "$file", "--dot-formatter", "$folder/.formatter.exs"],
+    "cmd": ["mix.kit", "format", "$file", "--dot-formatter", "$folder/.formatter.exs"],
   }
 }

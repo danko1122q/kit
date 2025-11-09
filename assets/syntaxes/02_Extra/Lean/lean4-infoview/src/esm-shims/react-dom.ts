@@ -11,7 +11,7 @@ import {
     hydrateRoot,
     render,
     unmountComponentAtNode,
-    unstable_batchedUpdates,
+    unstable_kitchedUpdates,
     unstable_renderSubtreeIntoContainer,
     version,
     // @ts-ignore
@@ -28,7 +28,7 @@ export {
     hydrateRoot,
     render,
     unmountComponentAtNode,
-    unstable_batchedUpdates,
+    unstable_kitchedUpdates,
     unstable_renderSubtreeIntoContainer,
     version,
 }

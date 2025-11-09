@@ -74,7 +74,7 @@
 
 [38;2;102;217;239mecho[0m[38;2;248;248;242m [0m[38;2;230;219;116m"/This/should/not/be/a/regex"[0m
 
-[38;2;117;113;94m" Error case from issue #1604 (https://github.com/sharkdp/bat/issues/1064)[0m
+[38;2;117;113;94m" Error case from issue #1604 (https://github.com/sharkdp/kit/issues/1064)[0m
 [38;2;102;217;239mset[0m[38;2;248;248;242m runtimepath[0m[38;2;249;38;114m=~[0m[38;2;248;248;242m/foo/bar[0m
 
 [38;2;248;248;242msilent [0m[38;2;246;170;17mg/Aap/[0m[38;2;248;248;242mp[0m

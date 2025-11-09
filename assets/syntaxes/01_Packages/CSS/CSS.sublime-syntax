@@ -1254,7 +1254,7 @@ contexts:
           - meta_scope: meta.group.css
           - match: '(?=\))'
             pop: true
-          - match: '\bat\b'
+          - match: '\kit\b'
             scope: keyword.other.css
           - match: '\b(top|right|bottom|left|center|closest-side|farthest-side)\b'
             scope: support.constant.property-value.css

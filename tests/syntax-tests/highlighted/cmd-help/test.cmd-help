@@ -1,11 +1,11 @@
-[38;2;248;248;242mbat 0.22.1[0m
+[38;2;248;248;242mkit 0.22.1[0m
 [38;2;248;248;242mA cat(1) clone with wings.[0m
 
 [38;2;248;248;242mUse '--help' instead of '-h' to see a more detailed version of the help text.[0m
 
 [38;2;246;170;17mUSAGE:[0m
-[38;2;248;248;242m    [0m[38;2;190;132;255mbat[0m[38;2;248;248;242m [OPTIONS] [FILE]...[0m
-[38;2;248;248;242m    [0m[38;2;190;132;255mbat[0m[38;2;248;248;242m <SUBCOMMAND>[0m
+[38;2;248;248;242m    [0m[38;2;190;132;255mkit[0m[38;2;248;248;242m [OPTIONS] [FILE]...[0m
+[38;2;248;248;242m    [0m[38;2;190;132;255mkit[0m[38;2;248;248;242m <SUBCOMMAND>[0m
 
 [38;2;246;170;17mARGS:[0m
 [38;2;248;248;242m    [0m[38;2;249;38;114m<FILE>...[0m[38;2;248;248;242m    File(s) to print / concatenate. Use '-' for standard input.[0m
@@ -40,4 +40,4 @@
 [38;2;246;170;17mSUBCOMMANDS:[0m
 [38;2;248;248;242m    [0m[38;2;190;132;255mcache[0m[38;2;248;248;242m    Modify the syntax-definition and theme cache[0m
 
-[38;2;248;248;242mNote: `bat -h` prints a short and concise overview while `bat --help` gives all details.[0m
+[38;2;248;248;242mNote: `kit -h` prints a short and concise overview while `kit --help` gives all details.[0m

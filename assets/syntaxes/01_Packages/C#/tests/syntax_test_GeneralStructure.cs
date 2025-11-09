@@ -341,7 +341,7 @@ namespace TestNamespace.Test
 ///                 ^ variable.function
                     break;
 ///                 ^ keyword.control
-                case BLBodyBattleLibrary.ContextType.TapUp:
+                case BLBodyKittleLibrary.ContextType.TapUp:
 ///             ^^^^ keyword.control.switch.case
 ///                  ^^^^^^^^^^^^^^^^^^^ variable.other
 ///                                     ^ punctuation.accessor.dot

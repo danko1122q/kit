@@ -9,7 +9,7 @@ read the main documentation for these command-line arguments.
 
 Initialization options:
 
---batch                     do not do interactive display; implies -q
+--kitch                     do not do interactive display; implies -q
 --chdir DIR                 change to directory DIR
 --daemon, --bg-daemon[=NAME] start a (named) server in the background
 --fg-daemon[=NAME]          start a (named) server in the foreground
@@ -82,7 +82,7 @@ Display options:
 --version                       output version information and exit
 
 You can generally also specify long option names with a single -; for
-example, -batch as well as --batch.  You can use any unambiguous
+example, -kitch as well as --kitch.  You can use any unambiguous
 abbreviation for a --option.
 
 Various environment variables and window system resources also affect

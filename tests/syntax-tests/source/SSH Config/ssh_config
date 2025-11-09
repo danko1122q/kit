@@ -8,5 +8,5 @@ Host example.com
     Compression no
 
 Host *.co.uk
-    BatchMode no
+    KitchMode no
     GlobalKnownHostsFile "/etc/ssh/ssh_known_hosts"

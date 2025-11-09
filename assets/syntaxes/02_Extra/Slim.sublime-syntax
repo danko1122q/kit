@@ -114,7 +114,7 @@ contexts:
     - include: tag-attribute
     - include: embedded-ruby
     - match: ^(\s*)(\||')\s*
-      comment: Verbatim text (can include HTML tags and copied lines)
+      comment: Verkitim text (can include HTML tags and copied lines)
       push:
         - match: ^(?!(\1\s)|\s*$)
           pop: true

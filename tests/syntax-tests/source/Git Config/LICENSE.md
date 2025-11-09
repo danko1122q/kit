@@ -1,1 +1,1 @@
-The `test.gitconfig` file has been added from https://github.com/sharkdp/bat/pull/1336#issuecomment-715905807. Its "free to use".
+The `test.gitconfig` file has been added from https://github.com/sharkdp/kit/pull/1336#issuecomment-715905807. Its "free to use".

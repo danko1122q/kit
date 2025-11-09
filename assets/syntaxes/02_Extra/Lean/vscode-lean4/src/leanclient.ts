@@ -45,7 +45,7 @@ import {
 import { logger } from './utils/logger'
 // @ts-ignore
 import { SemVer } from 'semver'
-import { formatCommandExecutionOutput } from './utils/batch'
+import { formatCommandExecutionOutput } from './utils/kitch'
 import {
     c2pConverter,
     LeanImport,

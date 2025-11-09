@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 
-# call stack: this << bat-test.dockerfile << tests/theme_regression.sh
+# call stack: this << kit-test.dockerfile << tests/theme_regression.sh
 
 set -euo pipefail
 
 # change dir to /tests/ because src & dest volumes are mapped there.
 cd /tests
 
-cmd_prefix="bat --no-config -fpl cmd-help"
+cmd_prefix="kit --no-config -fpl cmd-help"
 brief_src="source/theme/brief.txt"
 synthetic_src="source/theme/synthetic.txt"
 
-readarray -t themes <<< "$(bat --list-themes --color=never)"
+readarray -t themes <<< "$(kit --list-themes --color=never)"
 
 for theme_ in "${themes[@]}"; do
-    # strip " (default)" and " (default light)" from theme names, because bat doesn't recognize that. sharkdp/bat#3188
+    # strip " (default)" and " (default light)" from theme names, because kit doesn't recognize that. sharkdp/kit#3188
     theme="${theme_% \(default*\)}"
 
     synthetic_dest="theme/synthetic-${theme}.txt"

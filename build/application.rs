@@ -10,7 +10,7 @@ pub fn gen_man_and_comp() -> anyhow::Result<()> {
     println!("cargo:rerun-if-env-changed=PROJECT_NAME");
     println!("cargo:rerun-if-env-changed=PROJECT_EXECUTABLE");
     println!("cargo:rerun-if-env-changed=CARGO_PKG_VERSION");
-    println!("cargo:rerun-if-env-changed=BAT_ASSETS_GEN_DIR");
+    println!("cargo:rerun-if-env-changed=KIT_ASSETS_GEN_DIR");
 
     // Read environment variables.
     let project_name = env::var("PROJECT_NAME").unwrap_or("kit".into());
@@ -27,11 +27,11 @@ pub fn gen_man_and_comp() -> anyhow::Result<()> {
     .into_iter()
     .collect();
 
-    let Some(out_dir) = env::var_os("BAT_ASSETS_GEN_DIR")
+    let Some(out_dir) = env::var_os("KIT_ASSETS_GEN_DIR")
         .or_else(|| env::var_os("OUT_DIR"))
         .map(PathBuf::from)
     else {
-        anyhow::bail!("BAT_ASSETS_GEN_DIR or OUT_DIR should be set for build.rs");
+        anyhow::bail!("KIT_ASSETS_GEN_DIR or OUT_DIR should be set for build.rs");
     };
 
     fs::create_dir_all(out_dir.join("assets/manual")).unwrap();
@@ -64,19 +64,19 @@ pub fn gen_man_and_comp() -> anyhow::Result<()> {
     )?;
 
     println!(
-        "cargo:rustc-env=BAT_GENERATED_COMPLETION_BASH={}",
+        "cargo:rustc-env=KIT_GENERATED_COMPLETION_BASH={}",
         out_dir.join("assets/completions/kit.bash").display()
     );
     println!(
-        "cargo:rustc-env=BAT_GENERATED_COMPLETION_FISH={}",
+        "cargo:rustc-env=KIT_GENERATED_COMPLETION_FISH={}",
         out_dir.join("assets/completions/kit.fish").display()
     );
     println!(
-        "cargo:rustc-env=BAT_GENERATED_COMPLETION_PS1={}",
+        "cargo:rustc-env=KIT_GENERATED_COMPLETION_PS1={}",
         out_dir.join("assets/completions/_kit.ps1").display()
     );
     println!(
-        "cargo:rustc-env=BAT_GENERATED_COMPLETION_ZSH={}",
+        "cargo:rustc-env=KIT_GENERATED_COMPLETION_ZSH={}",
         out_dir.join("assets/completions/kit.zsh").display()
     );
 

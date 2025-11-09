@@ -1,7 +1,7 @@
 A cat(1) clone with wings.
 
-Usage: bat [OPTIONS] [FILE]...
-       bat <COMMAND>
+Usage: kit [OPTIONS] [FILE]...
+       kit <COMMAND>
 
 Arguments:
   [FILE]...  File(s) to print / concatenate. Use '-' for standard input.

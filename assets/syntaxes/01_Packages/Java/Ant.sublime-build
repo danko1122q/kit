@@ -7,6 +7,6 @@
 
 	"windows":
 	{
-		"cmd": ["ant.bat"]
+		"cmd": ["ant.kit"]
 	}
 }

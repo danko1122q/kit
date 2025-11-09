@@ -4,13 +4,13 @@
 
 # Macs have bash3 for which the bash-completion package doesn't include
 # _init_completion. This is a minimal version of that function.
-__bat_init_completion()
+__kit_init_completion()
 {
 	COMPREPLY=()
 	_get_comp_words_by_ref "$@" cur prev words cword
 }
 
-__bat_escape_completions()
+__kit_escape_completions()
 {
 	# Do not escape if completing a quoted value.
 	[[ $cur == [\"\']* ]] && return 0
@@ -49,12 +49,12 @@ __bat_escape_completions()
 	fi
 }
 
-_bat() {
+_kit() {
 	local cur prev words split=false
 	if declare -F _init_completion >/dev/null 2>&1; then
 		_init_completion -s || return 0
 	else
-		__bat_init_completion -n "=" || return 0
+		__kit_init_completion -n "=" || return 0
 		_split_longopt && split=true
 	fi
 
@@ -84,7 +84,7 @@ _bat() {
 				printf "%s\n" "$lang"
 			done
 		)" -- "$cur"))
-		__bat_escape_completions
+		__kit_escape_completions
 		return 0
 		;;
 	-H | --highlight-line | \
@@ -150,14 +150,14 @@ _bat() {
 	--theme)
 		local IFS=$'\n'
 		COMPREPLY=($(compgen -W "auto${IFS}auto:always${IFS}auto:system${IFS}dark${IFS}light${IFS}$("$1" --list-themes)" -- "$cur"))
-		__bat_escape_completions
+		__kit_escape_completions
 		return 0
 		;;
 	--theme-dark | \
 	--theme-light)
 		local IFS=$'\n'
 		COMPREPLY=($(compgen -W "$("$1" --list-themes)" -- "$cur"))
-		__bat_escape_completions
+		__kit_escape_completions
 		return 0
 		;;
 	--style)
@@ -245,5 +245,5 @@ _bat() {
 	_filedir
 	
 	## Completion of the 'cache' command itself is removed for better UX
-	## See https://github.com/sharkdp/bat/issues/2085#issuecomment-1271646802
-} && complete -F _bat {{PROJECT_EXECUTABLE}}
+	## See https://github.com/sharkdp/kit/issues/2085#issuecomment-1271646802
+} && complete -F _kit {{PROJECT_EXECUTABLE}}

@@ -460,7 +460,7 @@ impl Printer for InteractivePrinter<'_> {
                 writeln!(
                     handle,
                     "{}: Binary content from {} will not be printed to the terminal \
-                     (but will be present if the output of 'bat' is piped). You can use 'kit -A' \
+                     (but will be present if the output of 'kit' is piped). You can use 'kit -A' \
                      to show the binary file contents.",
                     Yellow.paint("[kit warning]"),
                     input.description.summary(),

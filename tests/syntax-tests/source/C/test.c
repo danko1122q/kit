@@ -18,7 +18,7 @@ struct Node
 
 int main(int argc, char **argv)
 {
-    /* This C program was written to help bat
+    /* This C program was written to help kit
      * with its syntax highlighting tests
      */
 

@@ -1,18 +1,29 @@
-NOTICE
+NOTICE: Project 'kit' Licensing Information
 
-Project kit - Copyright (c) 2023-2025 danko1122q
+Overview
 
-This project, 'kit', is a derivative work based on the 'bat' utility.
+This project, 'kit', is a derivative work and a full modification of the 'kit' utility.
 
-Original Work (bat utility):
------------------------------
-Copyright (c) 2018-2021 bat-developers (https://github.com/sharkdp/bat).
+Project Information
 
-The original 'bat' utility was made available under the terms of either the MIT License or the Apache License 2.0, at the option of the user.
+Category: Project
+Detail: kit (Fully Modified Derivative)
 
-Current Licensing:
-------------------
-The 'kit' project, including all modifications and additions, is licensed to you under the terms of the **Apache License, Version 2.0**.
-(Note: You must replace 'Apache License, Version 2.0' with 'MIT License' if you decide to use MIT for 'kit'.)
+Category: Copyright (kit)
+Detail: 2023-2025 danko1122q
+
+Original Work ('kit')
+
+Description: Original Utility
+Project: kit
+Original Copyright: Copyright (c) 2018-2021 kit-developers (https://github.com/sharkdp/kit)
+Original Licensing: MIT License or Apache License 2.0 (User's option)
+
+Current Licensing (for 'kit')
+
+The 'kit' project, including all modifications and additions, is licensed under the terms of the Apache License, Version 2.0.
 
 You should have received a copy of the Apache License 2.0 in the LICENSE file distributed with this work.
+
+Important: If you did not receive a copy of this license, you may obtain one at:
+http://www.apache.org/licenses/LICENSE-2.0

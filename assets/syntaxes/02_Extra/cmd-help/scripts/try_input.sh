@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# run a help message (stdin) by bat-test, i.e.: the local version of cmd-help.sublime-syntax
+# run a help message (stdin) by kit-test, i.e.: the local version of cmd-help.sublime-syntax
 
 # usage:
 #   $ <CMD> --help | scripts/try_input.sh
@@ -13,13 +13,13 @@ set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 echo "building docker image ..."
-docker build -f ../tests/docker/bat-test.dockerfile -t bat-test .. &> /dev/null
+docker build -f ../tests/docker/kit-test.dockerfile -t kit-test .. &> /dev/null
 printf '\e[A\e[K' # clear previous line
-image_id=$(docker image inspect --format "{{.Id}}" bat-test)
+image_id=$(docker image inspect --format "{{.Id}}" kit-test)
 echo "using docker image $image_id"
 
-bat_options=(--no-config --plain --language=cmd-help --force-colorization)
+kit_options=(--no-config --plain --language=cmd-help --force-colorization)
 
 cat |
-    docker run --rm --interactive --entrypoint=bat bat-test "${bat_options[@]}" |
+    docker run --rm --interactive --entrypoint=kit kit-test "${kit_options[@]}" |
     less -R

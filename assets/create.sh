@@ -40,7 +40,7 @@ if [ -t 0 ]; then
 fi
 
 # Always remove the local cache to avoid any confusion
-bat cache --clear
+kit cache --clear
 
 # TODO:
 # - Remove the JavaDoc patch once https://github.com/trishume/syntect/issues/222 has been fixed
@@ -63,7 +63,7 @@ reverse_patches() {
     )
 }
 
-# Make sure to always reverse patches, even if the `bat cache` command fails or aborts
+# Make sure to always reverse patches, even if the `kit cache` command fails or aborts
 trap reverse_patches EXIT
 
-bat cache --build --blank --acknowledgements --source="$ASSET_DIR" --target="$ASSET_DIR"
+kit cache --build --blank --acknowledgements --source="$ASSET_DIR" --target="$ASSET_DIR"

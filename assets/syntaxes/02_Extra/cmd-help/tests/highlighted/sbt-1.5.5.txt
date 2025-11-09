@@ -23,7 +23,7 @@
 [38;2;248;248;242m  [0m[38;2;166;226;46m--no-share[0m[38;2;248;248;242m          use all local caches; no sharing[0m
 [38;2;248;248;242m  [0m[38;2;166;226;46m--no-global[0m[38;2;248;248;242m         uses global caches, but does not use global ~/.sbt directory.[0m
 [38;2;248;248;242m  [0m[38;2;166;226;46m--jvm-debug[0m[38;2;248;248;242m [0m[38;2;249;38;114m<port>[0m[38;2;248;248;242m  Turn on JVM debugging, open at the given port.[0m
-[38;2;248;248;242m  [0m[38;2;166;226;46m--batch[0m[38;2;248;248;242m             disable interactive mode[0m
+[38;2;248;248;242m  [0m[38;2;166;226;46m--kitch[0m[38;2;248;248;242m             disable interactive mode[0m
 
 [38;2;248;248;242m  # sbt version (default: from project/build.properties if present, else latest release)[0m
 [38;2;248;248;242m  [0m[38;2;166;226;46m--sbt-version[0m[38;2;248;248;242m  <version>   use the specified version of sbt[0m

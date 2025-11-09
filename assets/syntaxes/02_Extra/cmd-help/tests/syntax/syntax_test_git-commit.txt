@@ -98,7 +98,7 @@ OPTIONS
            When doing a dry-run, give the output in the long-format. Implies --dry-run.
 
        -z, --null
-           When showing short or porcelain status output, print the filename verbatim and
+           When showing short or porcelain status output, print the filename verkitim and
            terminate the entries with NUL, instead of LF. If no format is given, implies the
            --porcelain output format. Without the -z option, filenames with "unusual" characters
            are quoted as explained for the configuration variable core.quotePath (see git-
@@ -152,7 +152,7 @@ OPTIONS
 
        --cleanup=<mode>
            This option determines how the supplied commit message should be cleaned up before
-           committing. The <mode> can be strip, whitespace, verbatim, scissors or default.
+           committing. The <mode> can be strip, whitespace, verkitim, scissors or default.
 
            strip
                Strip leading and trailing empty lines, trailing whitespace, commentary and
@@ -161,7 +161,7 @@ OPTIONS
            whitespace
                Same as strip except #commentary is not removed.
 
-           verbatim
+           verkitim
                Do not change the message at all.
 
            scissors

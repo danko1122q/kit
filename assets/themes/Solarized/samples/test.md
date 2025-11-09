@@ -23,4 +23,4 @@ And matched, and they still fold **properly**
 
 Some code:
 
-    a verbatim or "code" block
+    a verkitim or "code" block

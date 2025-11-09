@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # -----------------------------------------------------------------------------
-# bat-extras | Copyright (C) 2020 eth-p and contributors | MIT License
+# kit-extras | Copyright (C) 2020 eth-p and contributors | MIT License
 #
-# Repository: https://github.com/eth-p/bat-extras
-# Issues:     https://github.com/eth-p/bat-extras/issues
+# Repository: https://github.com/eth-p/kit-extras
+# Issues:     https://github.com/eth-p/kit-extras/issues
 # -----------------------------------------------------------------------------
 printc(){
 printf "$(sed "$_PRINTC_PATTERN" <<<"$1")" "${@:2}"
@@ -34,10 +34,10 @@ fi
 esac
 }
 print_warning(){
-printc "%{YELLOW}[%s warning]%{CLEAR}: $1%{CLEAR}\n" "batgrep" "${@:2}" 1>&2
+printc "%{YELLOW}[%s warning]%{CLEAR}: $1%{CLEAR}\n" "kitgrep" "${@:2}" 1>&2
 }
 print_error(){
-printc "%{RED}[%s error]%{CLEAR}: $1%{CLEAR}\n" "batgrep" "${@:2}" 1>&2
+printc "%{RED}[%s error]%{CLEAR}: $1%{CLEAR}\n" "kitgrep" "${@:2}" 1>&2
 }
 printc_init "[DEFINE]" <<END
 	CLEAR	\x1B[0m
@@ -113,8 +113,8 @@ fi
 _configure_pager(){
 SCRIPT_PAGER_CMD=($PAGER)
 SCRIPT_PAGER_ARGS=()
-if [[ -n ${BAT_PAGER+x} ]];then
-SCRIPT_PAGER_CMD=($BAT_PAGER)
+if [[ -n ${KIT_PAGER+x} ]];then
+SCRIPT_PAGER_CMD=($KIT_PAGER)
 SCRIPT_PAGER_ARGS=()
 return
 fi
@@ -166,7 +166,7 @@ fi
 OPT_VAL="${_ARGV[$_ARGV_INDEX]}"
 ((_ARGV_INDEX++))
 if [[ $OPT_VAL =~ -.* ]];then
-printc "%{RED}%s: '%s' requires a value%{CLEAR}\n" "batgrep" "$ARG"
+printc "%{RED}%s: '%s' requires a value%{CLEAR}\n" "kitgrep" "$ARG"
 exit 1
 fi
 }
@@ -182,7 +182,7 @@ case "$OPT_VAL" in
 always|true)OPT_COLOR=true;;
 never|false)OPT_COLOR=false;;
 auto)return 0;;
-*)printc "%{RED}%s: '--color' expects value of 'auto', 'always', or 'never'%{CLEAR}\n" "batgrep"
+*)printc "%{RED}%s: '--color' expects value of 'auto', 'always', or 'never'%{CLEAR}\n" "kitgrep"
 exit 1
 esac
 };;
@@ -214,7 +214,7 @@ case "$OPT_VAL" in
 auto):;;
 always):;;
 never)SCRIPT_PAGER_CMD='';;
-*)printc "%{RED}%s: '--paging' expects value of 'auto', 'always', or 'never'%{CLEAR}\n" "batgrep"
+*)printc "%{RED}%s: '--paging' expects value of 'auto', 'always', or 'never'%{CLEAR}\n" "kitgrep"
 exit 1
 esac
 };;
@@ -235,10 +235,10 @@ SHIFTOPT_HOOKS+=("__shiftopt_hook__version")
 __shiftopt_hook__version(){
 if [[ $OPT == "--version" ]];then
 printf "%s %s\n\n%s\n%s\n" \
-"batgrep" \
+"kitgrep" \
 "2020.10.04" \
 "Copyright (C) 2019-2020 eth-p | MIT License" \
-"https://github.com/eth-p/bat-extras"
+"https://github.com/eth-p/kit-extras"
 exit 0
 fi
 return 1
@@ -266,8 +266,8 @@ return 0
 }
 OPT_TERMINAL_WIDTH="$(term_width)"
 }
-bat_version(){
-"bat" --version|cut -d ' ' -f 2
+kit_version(){
+"kit" --version|cut -d ' ' -f 2
 return
 }
 version_compare(){
@@ -316,7 +316,7 @@ hook_pager
 hook_version
 hook_width
 RG_ARGS=()
-BAT_ARGS=()
+KIT_ARGS=()
 PATTERN=""
 FILES=()
 OPT_CASE_SENSITIVITY=''
@@ -327,8 +327,8 @@ OPT_SNIP=""
 OPT_HIGHLIGHT=true
 OPT_SEARCH_PATTERN=false
 OPT_FIXED_STRINGS=false
-BAT_STYLE="header,numbers"
-if version_compare "$(bat_version)" -gt "0.12";then
+KIT_STYLE="header,numbers"
+if version_compare "$(kit_version)" -gt "0.12";then
 OPT_SNIP=",snip"
 fi
 if [[ -n $RIPGREP_CONFIG_PATH && -e $RIPGREP_CONFIG_PATH ]];then
@@ -416,7 +416,7 @@ fi
 };;
 \
 -*){
-printc "%{RED}%s: unknown option '%s'%{CLEAR}\n" "batgrep" "$OPT" 1>&2
+printc "%{RED}%s: unknown option '%s'%{CLEAR}\n" "kitgrep" "$OPT" 1>&2
 exit 1
 };;
 \
@@ -441,9 +441,9 @@ if "$OPT_FOLLOW";then
 RG_ARGS+=("--follow")
 fi
 if "$OPT_COLOR";then
-BAT_ARGS+=("--color=always")
+KIT_ARGS+=("--color=always")
 else
-BAT_ARGS+=("--color=never")
+KIT_ARGS+=("--color=never")
 fi
 if [[ $OPT_CONTEXT_BEFORE -eq 0 && $OPT_CONTEXT_AFTER -eq 0 ]];then
 OPT_SNIP=""
@@ -459,7 +459,7 @@ fi
 elif is_pager_disabled;then
 print_error "%s %s %s" \
 "The -p/--search-pattern option requires a pager, but" \
-'the pager was explicitly disabled by $BAT_PAGER or the' \
+'the pager was explicitly disabled by $KIT_PAGER or the' \
 "--paging option."
 exit 1
 else
@@ -479,10 +479,10 @@ do_print(){
 [[ -z $LAST_FILE ]]&&return 0
 "$FIRST_PRINT"&&echo "$SEP"
 FIRST_PRINT=false
-"bat" "${BAT_ARGS[@]}" \
+"kit" "${KIT_ARGS[@]}" \
 "${LAST_LR[@]}" \
 "${LAST_LH[@]}" \
---style="$BAT_STYLE$OPT_SNIP" \
+--style="$KIT_STYLE$OPT_SNIP" \
 --paging=never \
 --terminal-width="$OPT_TERMINAL_WIDTH" \
 "$LAST_FILE"

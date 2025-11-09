@@ -13,14 +13,14 @@
 	        (&lt;(?i:body|div|dl|fieldset|form|head|li|ol|script|select|style|table|tbody|tfoot|thead|tr|ul)\b.*?&gt;
 	        |&lt;!--(?!.*--\s*&gt;)
 	        |^&lt;!--\ \#tminclude\ (?&gt;.*?--&gt;)$
-	        |\{%\s+(autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)
+	        |\{%\s+(autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verkitim)
 	        )</string>
 		<key>foldingStopMarker</key>
 		<string>(?x)
 	        (&lt;/(?i:body|div|dl|fieldset|form|head|li|ol|script|select|style|table|tbody|tfoot|thead|tr|ul)&gt;
 	        |^(?!.*?&lt;!--).*?--\s*&gt;
 	        |^&lt;!--\ end\ tminclude\ --&gt;$
-	        |\{%\s+end(autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)
+	        |\{%\s+end(autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verkitim)
 	        )</string>
 	</dict>
 	<key>uuid</key>

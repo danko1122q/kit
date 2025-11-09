@@ -2,12 +2,12 @@ import { commands, Disposable, OutputChannel, QuickPickItem, SaveDialogOptions, 
 import { checkAll, SetupDiagnostics } from './diagnostics/setupDiagnostics'
 import { PreconditionCheckResult, SetupNotificationOptions } from './diagnostics/setupNotifs'
 import {
-    batchExecute,
-    batchExecuteWithProgress,
+    kitchExecute,
+    kitchExecuteWithProgress,
     displayResultError,
     ExecutionExitCode,
     ExecutionResult,
-} from './utils/batch'
+} from './utils/kitch'
 import { elanStableChannel } from './utils/elan'
 import { ExtUri, extUriToCwdUri, FileUri } from './utils/exturi'
 import { displayLakeRunnerError, FetchMathlibCacheResult, lake, LakeRunnerResult } from './utils/lake'
@@ -233,7 +233,7 @@ export class ProjectInitializationProvider implements Disposable {
     }
 
     private async createInitialCommit(projectFolder: FileUri): Promise<'Success' | 'GitAddFailed' | 'GitCommitFailed'> {
-        const gitAddResult = await batchExecute('git', ['add', '--all'], projectFolder.fsPath, {
+        const gitAddResult = await kitchExecute('git', ['add', '--all'], projectFolder.fsPath, {
             combined: this.channel,
         })
         if (gitAddResult.exitCode !== ExecutionExitCode.Success) {
@@ -244,7 +244,7 @@ export class ProjectInitializationProvider implements Disposable {
         const author = 'Lean 4 VS Code Extension'
         const email = '<>'
 
-        const gitCommitResult = await batchExecute(
+        const gitCommitResult = await kitchExecute(
             'git',
             ['-c', `user.name='${author}'`, '-c', `user.email='${email}'`, 'commit', '-m', 'Initial commit'],
             projectFolder.fsPath,
@@ -381,7 +381,7 @@ Open this project instead?`
                 return
             }
 
-            const result: ExecutionResult = await batchExecuteWithProgress(
+            const result: ExecutionResult = await kitchExecuteWithProgress(
                 'git',
                 ['clone', projectUri, projectFolder.fsPath],
                 downloadProjectContext,

@@ -38,7 +38,7 @@ contexts:
           pop: true
         - include: inline
     - match: '^(\s*).*?((::))'
-      comment: verbatim blocks
+      comment: verkitim blocks
       captures:
         2: markup.raw.restructuredtext
         3: punctuation.definition.raw.restructuredtext

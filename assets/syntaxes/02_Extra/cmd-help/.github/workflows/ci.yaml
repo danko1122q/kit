@@ -54,12 +54,12 @@ jobs:
       - name: Run theme regression tests
         run: tests/theme_regression.sh
 
-  bat_ci_compliance:
-    name: bat CI compliance
+  kit_ci_compliance:
+    name: kit CI compliance
     continue-on-error: true
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Check bat CI compliance
-        run: scripts/check_bat_ci_compliance.sh
+      - name: Check kit CI compliance
+        run: scripts/check_kit_ci_compliance.sh

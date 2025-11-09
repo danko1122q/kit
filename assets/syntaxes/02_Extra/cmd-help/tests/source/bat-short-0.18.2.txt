@@ -1,9 +1,9 @@
-bat 0.18.2
+kit 0.18.2
 A cat(1) clone with syntax highlighting and Git integration.
 
 USAGE:
-    bat [OPTIONS] [FILE]...
-    bat <SUBCOMMAND>
+    kit [OPTIONS] [FILE]...
+    kit <SUBCOMMAND>
 
 OPTIONS:
     -A, --show-all                       Show non-printable characters (space, tab, newline, ..).
@@ -40,4 +40,4 @@ ARGS:
 SUBCOMMANDS:
     cache    Modify the syntax-definition and theme cache
 
-Note: `bat -h` prints a short and concise overview while `bat --help` gives all details.
+Note: `kit -h` prints a short and concise overview while `kit --help` gives all details.

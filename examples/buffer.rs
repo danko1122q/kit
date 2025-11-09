@@ -1,4 +1,4 @@
-use bat::{
+use kit::{
     assets::HighlightingAssets, config::Config, controller::Controller, output::OutputHandle, Input,
 };
 

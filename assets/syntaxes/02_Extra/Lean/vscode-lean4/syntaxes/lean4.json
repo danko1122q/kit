@@ -5,7 +5,7 @@
     "patterns": [
         { "include": "#comments" },
         { "match": "\\b(Prop|Type|Sort)\\b", "name": "storage.type.lean4" },
-        { "match": "\\battribute\\b\\s*\\[[^\\]]*\\]", "name": "storage.modifier.lean4" },
+        { "match": "\\kittribute\\b\\s*\\[[^\\]]*\\]", "name": "storage.modifier.lean4" },
         { "match": "@\\[[^\\]]*\\]", "name": "storage.modifier.lean4" },
         {
             "match": "\\b(?<!\\.)(global|local|scoped|partial|unsafe|private|protected|noncomputable)(?!\\.)\\b",

@@ -1,7 +1,7 @@
 import * as os from 'os'
 import { SemVer } from 'semver'
 import { OutputChannel, extensions, version } from 'vscode'
-import { ExecutionExitCode, ExecutionResult, batchExecute } from '../utils/batch'
+import { ExecutionExitCode, ExecutionResult, kitchExecute } from '../utils/kitch'
 import {
     ElanDumpStateWithNetResult,
     ElanDumpStateWithoutNetResult,
@@ -296,7 +296,7 @@ export class SetupDiagnoser {
     }
 
     private async runSilently(executablePath: string, args: string[]): Promise<ExecutionResult> {
-        return batchExecute(executablePath, args, this.cwdUri?.fsPath, { combined: this.channel })
+        return kitchExecute(executablePath, args, this.cwdUri?.fsPath, { combined: this.channel })
     }
 
     private async runLeanCommand(executablePath: string, args: string[], title: string): Promise<ExecutionResult> {

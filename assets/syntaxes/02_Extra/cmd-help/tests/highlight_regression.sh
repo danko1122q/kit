@@ -6,9 +6,9 @@ set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 echo "building docker image ..."
-docker build -f docker/bat-test.dockerfile -t bat-test .. &> /dev/null
+docker build -f docker/kit-test.dockerfile -t kit-test .. &> /dev/null
 printf '\e[A\e[K' # clear previous line
-image_id=$(docker image inspect --format "{{.Id}}" bat-test)
+image_id=$(docker image inspect --format "{{.Id}}" kit-test)
 echo "using docker image $image_id"
 
 vol_src="$PWD"/source:/tests/source:ro
@@ -18,7 +18,7 @@ docker run --rm \
     --user "$(id -u):$(id -g)" \
     -v "$vol_src" -v "$vol_dest" \
     --entrypoint /tests/entrypoints/highlight_regression.sh \
-    bat-test
+    kit-test
 
 # if we're running locally
 if [ -z ${CI+x} ]; then

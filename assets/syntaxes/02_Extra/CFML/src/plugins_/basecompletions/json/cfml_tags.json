@@ -150,7 +150,7 @@
         }
     },
     "cfcomponent": {
-        "attributes": [[], ["accessors", "attribute", "autoIndex", "batchsize", "bindingname", "cacheName", "cacheUse", "catalog", "consumes", "discriminatorColumn", "discriminatorValue", "displayname", "dynamicinsert", "dynamicupdate", "embedded", "entityname", "extends", "hint", "httpMethod", "implements", "indexLanguage", "indexable", "initmethod", "invokeImplicitAccessor", "joinColumn", "lazy", "mappedSuperClass", "namespace", "optimisticlock", "output", "persistent", "porttypename", "produces", "readonly", "rest", "restPath", "rowid", "saveMapping", "schema", "selectbeforeupdate", "serializable", "serviceaddress", "serviceportname", "style", "table", "wsVersion", "wsdlfile"]],
+        "attributes": [[], ["accessors", "attribute", "autoIndex", "kitchsize", "bindingname", "cacheName", "cacheUse", "catalog", "consumes", "discriminatorColumn", "discriminatorValue", "displayname", "dynamicinsert", "dynamicupdate", "embedded", "entityname", "extends", "hint", "httpMethod", "implements", "indexLanguage", "indexable", "initmethod", "invokeImplicitAccessor", "joinColumn", "lazy", "mappedSuperClass", "namespace", "optimisticlock", "output", "persistent", "porttypename", "produces", "readonly", "rest", "restPath", "rowid", "saveMapping", "schema", "selectbeforeupdate", "serializable", "serviceaddress", "serviceportname", "style", "table", "wsVersion", "wsdlfile"]],
         "attribute_values": {
             "accessors": ["true", "false"],
             "attribute": ["true", "false"],

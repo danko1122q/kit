@@ -27,8 +27,8 @@ contexts:
     scope: variable.parameter.COMMENT.cmake
   - match: \bDEPFILE\b
     scope: variable.parameter.DEPFILE.cmake
-  - match: \bVERBATIM\b
-    scope: variable.parameter.VERBATIM.cmake
+  - match: \bVERKITIM\b
+    scope: variable.parameter.VERKITIM.cmake
   - match: \bAPPEND\b
     scope: variable.parameter.APPEND.cmake
   - match: \bUSES_TERMINAL COMMAND_EXPAND_LISTS\b
@@ -56,8 +56,8 @@ contexts:
     scope: variable.parameter.WORKING_DIRECTORY.cmake
   - match: \bCOMMENT\b
     scope: variable.parameter.COMMENT.cmake
-  - match: \bVERBATIM\b
-    scope: variable.parameter.VERBATIM.cmake
+  - match: \bVERKITIM\b
+    scope: variable.parameter.VERKITIM.cmake
   - match: \bUSES_TERMINAL\b
     scope: variable.parameter.USES_TERMINAL.cmake
   - match: \bCOMMAND_EXPAND_LISTS\b

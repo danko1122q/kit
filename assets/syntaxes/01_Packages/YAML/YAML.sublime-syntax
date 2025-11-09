@@ -61,7 +61,7 @@ variables:
         !              {{ns_uri_char}}*
       | (?![,!\[\]{}]) {{ns_uri_char}}+
     )
-  c_ns_tag_property: |- # c-verbatim-tag | c-ns-shorthand-tag | c-non-specific-tag
+  c_ns_tag_property: |- # c-verkitim-tag | c-ns-shorthand-tag | c-non-specific-tag
     (?x:
         ! < {{ns_uri_char}}+ >
       | {{c_tag_handle}} {{ns_tag_char}}+

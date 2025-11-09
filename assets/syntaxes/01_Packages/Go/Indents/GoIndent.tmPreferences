@@ -1,8 +1,8 @@
 <!--
 
 Note: with the current API, it seems impossible to make rules that would
-batch-reindent real-world code without wrecking it. As such, these rules are
-optimized for convenience while typing, not for batch reindentation.
+kitch-reindent real-world code without wrecking it. As such, these rules are
+optimized for convenience while typing, not for kitch reindentation.
 
 -->
 

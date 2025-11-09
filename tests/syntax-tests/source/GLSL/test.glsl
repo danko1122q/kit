@@ -35,7 +35,7 @@ double calc()
 
 void main()
 {
-    // This GLSL code serves the purpose of bat syntax highlighting tests
+    // This GLSL code serves the purpose of kit syntax highlighting tests
     double x = data.offsetX + calc();
     gl_Position = projectionMatrix * vec4(vertex.xy, data.offsetX, data.offsetY);
     p_textureVertex = vertex.zw;

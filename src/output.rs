@@ -94,7 +94,7 @@ impl OutputType {
             None => return Ok(OutputType::stdout()),
         };
 
-        // PERBAIKAN DI SINI: Bat -> Kit
+        // PERBAIKAN DI SINI: Kit -> Kit
         if pager.kind == PagerKind::Kit {
             return Err(Error::InvalidPagerValueKit);
         }
@@ -132,7 +132,7 @@ impl OutputType {
                     p.arg("-S"); // Short version of --chop-long-lines for compatibility
                 }
 
-                // Ensures that 'less' quits together with 'bat'
+                // Ensures that 'less' quits together with 'kit'
                 p.arg("-K"); // Short version of '--quit-on-intr'
 
                 // Passing '--no-init' fixes a bug with '--quit-if-one-screen' in older

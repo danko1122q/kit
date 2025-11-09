@@ -92,41 +92,41 @@ Directive tests
     ..     ^^ punctuation.separator.key-value.restructuredtext
 
 
-Verbatim tests
+Verkitim tests
 --------------
 
 ::
 
-    Verbatim
+    Verkitim
 ..  ^^^^^^^^ meta.raw.block.restructuredtext
 
 Can start with other text::
 
-    Verbatim
+    Verkitim
 ..  ^^^^^^^^ meta.raw.block.restructuredtext
 
 .. blank lines should not cause scopes to be left
 
 ::
 
-    Verbatim
+    Verkitim
 
-    Also Verbatim
+    Also Verkitim
 ..  ^^^^^^^^^^^^^ meta.raw.block.restructuredtext
 
 ::
 
-    Verbatim
+    Verkitim
 
-      Also Verbatim
+      Also Verkitim
 ..    ^^^^^^^^^^^^^ meta.raw.block.restructuredtext
 
 
 ::
 
-    Verbatim
+    Verkitim
 
-Not verbatim
+Not verkitim
 .. <- meta.paragraph.restructuredtext
 
 .. raw:: html

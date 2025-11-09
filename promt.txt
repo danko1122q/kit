@@ -1,6 +1,6 @@
-# PROYEK REBRANDING: bat → kit (Super Detail)
+# PROYEK REBRANDING: kit → kit (Super Detail)
 
-Tugas utama Anda adalah mengubah binary `bat` menjadi `kit` dan menambahkan dua fungsi filesystem baru (`-c` dan `-m`). Proyek ini membutuhkan modifikasi pada dua file utama: `Cargo.toml` dan `src/main.rs`.
+Tugas utama Anda adalah mengubah binary `kit` menjadi `kit` dan menambahkan dua fungsi filesystem baru (`-c` dan `-m`). Proyek ini membutuhkan modifikasi pada dua file utama: `Cargo.toml` dan `src/main.rs`.
 
 ---
 
@@ -10,7 +10,7 @@ Fungsionalitas `kit` akan menjadi CLI yang memiliki tiga mode operasi utama:
 
 | Perintah kit | Deskripsi Fungsi | Operasi Dasar | Modul Rust | Status |
 |---|---|---|---|---|
-| `kit <file>` | View dengan syntax highlighting | `bat` (dipertahankan) | Logika asli bat | Selesai |
+| `kit <file>` | View dengan syntax highlighting | `kit` (dipertahankan) | Logika asli kit | Selesai |
 | `kit -c <file>` | **Create**: Menciptakan file baru | `touch` | `std::fs::File::create` | **Wajib diimplementasi** |
 | `kit -m <folder>` | **Make**: Menciptakan directory baru | `mkdir -p` | `std::fs::create_dir_all` | **Wajib diimplementasi** |
 
@@ -20,13 +20,13 @@ Fungsionalitas `kit` akan menjadi CLI yang memiliki tiga mode operasi utama:
 
 ### A. Tugas 1: Mengubah Nama Executable
 
-**Tujuan**: Mengubah binary yang dihasilkan dari `bat.exe` menjadi `kit.exe`.
+**Tujuan**: Mengubah binary yang dihasilkan dari `kit.exe` menjadi `kit.exe`.
 
 **File Target**: `Cargo.toml` (Manifesto proyek Rust, di root folder kit)
 
 **Aksi**:
 1. Buka `Cargo.toml`
-2. Temukan bagian `[package]` dan ubah nilai key `name` dari `"bat"` menjadi `"kit"`
+2. Temukan bagian `[package]` dan ubah nilai key `name` dari `"kit"` menjadi `"kit"`
 
 **Contoh**:
 ```toml

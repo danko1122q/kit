@@ -1,4 +1,4 @@
-# An example file to test Crystal syntax highlighting in bat
+# An example file to test Crystal syntax highlighting in kit
 my_var : Nil = nil
 my_var_also : Int32 = 42
 my_other_var = 4.0
@@ -55,7 +55,7 @@ class Greeter
   end
 end
 
-greeter = Greeter.new("bat")
+greeter = Greeter.new("kit")
 greeter.with_greeting do |greeting|
   puts greeting
 end

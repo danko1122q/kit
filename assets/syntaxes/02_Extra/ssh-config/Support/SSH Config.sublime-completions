@@ -38,14 +38,14 @@
             "details": "IPv4/IPv6 switch"
         },
         {
-            "trigger": "BatchMode",
-            "contents": "BatchMode",
+            "trigger": "KitchMode",
+            "contents": "KitchMode",
             "kind": "keyword",
             "details": "Disable UI prompts"
         },
         {
-            "trigger": "batchmode",
-            "contents": "BatchMode ${0:{ yes | no \\}}",
+            "trigger": "kitchmode",
+            "contents": "KitchMode ${0:{ yes | no \\}}",
             "kind": "snippet",
             "details": "Disable UI prompts"
         },

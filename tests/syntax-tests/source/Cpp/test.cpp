@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/* This C program was submitted to help bat
+/* This C program was submitted to help kit
  * with its syntax highlighting tests
  */
 

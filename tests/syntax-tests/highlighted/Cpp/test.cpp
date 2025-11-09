@@ -3,7 +3,7 @@
 
 [38;2;249;38;114musing[0m[38;2;248;248;242m [0m[38;2;249;38;114mnamespace[0m[38;2;248;248;242m std[0m[38;2;248;248;242m;[0m
 
-[38;2;117;113;94m/*[0m[38;2;117;113;94m This C program was submitted to help bat[0m
+[38;2;117;113;94m/*[0m[38;2;117;113;94m This C program was submitted to help kit[0m
 [38;2;117;113;94m [0m[38;2;117;113;94m*[0m[38;2;117;113;94m with its syntax highlighting tests[0m
 [38;2;117;113;94m [0m[38;2;117;113;94m*/[0m
 

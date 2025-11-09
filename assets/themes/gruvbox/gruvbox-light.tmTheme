@@ -256,7 +256,7 @@
         <key>name</key>
         <string>Variables</string>
         <key>scope</key>
-        <string>entity.name.val.declaration, entity.name.variable, meta.definition.variable, storage.type.variable, support.type.custom-property, support.type.variable-name, variable, variable.interpolation variable, variable.other.interpolation variable, variable.parameter.dosbatch, variable.parameter.output.function.matlab, variable.parameter.sass</string>
+        <string>entity.name.val.declaration, entity.name.variable, meta.definition.variable, storage.type.variable, support.type.custom-property, support.type.variable-name, variable, variable.interpolation variable, variable.other.interpolation variable, variable.parameter.doskitch, variable.parameter.output.function.matlab, variable.parameter.sass</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>

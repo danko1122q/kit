@@ -29,7 +29,7 @@ On the other hand, the Windows Subsystem for Linux (WSL) should do just fine.
 
 I cannot say much here that isn't better explained in **[the official documentation](https://www.sublimetext.com/docs/syntax.html#ver-3.2).**
 
-More precisely, the targeted interpreter for the syntax is [`syntect`](https://github.com/trishume/syntect), a Rust implementation of Sublime Syntaxes used by `bat`.
+More precisely, the targeted interpreter for the syntax is [`syntect`](https://github.com/trishume/syntect), a Rust implementation of Sublime Syntaxes used by `kit`.
 For all intents and purposes, the Sublime Syntax documentation for v3.2 also applies to `syntect`.
 
 Both Sublime Syntaxes and `syntect` use the Oniguruma regex engine, which follows [this specification](https://raw.githubusercontent.com/kkos/oniguruma/v6.9.1/doc/RE).
@@ -92,11 +92,11 @@ For that, I like to pair both within the same commit, so the former serves as an
 
 There are a bunch of samples (help messages from actual commands) in `tests/source`.
 
-Regression tests take all these samples and run them through `bat` + `cmd-help`, storing the result (syntax highlighted text) in `tests/highlighted/`.
+Regression tests take all these samples and run them through `kit` + `cmd-help`, storing the result (syntax highlighted text) in `tests/highlighted/`.
 
 Run them with `$ tests/highlight_regression`
 
-This script runs the entire suite of highlight regression tests. They usually take < 5s, but it depends on how fast Docker + `bat` update the syntax theme.
+This script runs the entire suite of highlight regression tests. They usually take < 5s, but it depends on how fast Docker + `kit` update the syntax theme.
 
 **They're good for quickly validating if your change breaks existing functionality.**
 
@@ -124,13 +124,13 @@ and its follow-up [d158798](https://github.com/victor-gp/cmd-help-sublime-syntax
 
 ### Theme regression tests
 
-These track the syntax's coverage for the themes included with `bat`. The motivation for which is [documented in Principles.md](Principles.md#scope-names).
+These track the syntax's coverage for the themes included with `kit`. The motivation for which is [documented in Principles.md](Principles.md#scope-names).
 
 **You probably don't need to look into these** unless you change the scopes that we assign to tokens. If you do, do follow the guidelines in the Principles doc.
 
 You can run them with `$ tests/theme_regression`
 
-It runs a synthetic help message through `bat` + `cmd-help`, twice for each theme: with and without italics enabled.
+It runs a synthetic help message through `kit` + `cmd-help`, twice for each theme: with and without italics enabled.
 Then it stores the result in `tests/theme_regression/`, but deleting the italics version if it makes no difference.
 
 Everything I mentioned on `highlight_regression` applies here, just replacing `highlight` for `theme`.

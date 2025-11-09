@@ -9,7 +9,7 @@
 
 [38;2;246;170;17mInitialization options:[0m
 
-[38;2;166;226;46m--batch[0m[38;2;248;248;242m                     do not do interactive display; implies -q[0m
+[38;2;166;226;46m--kitch[0m[38;2;248;248;242m                     do not do interactive display; implies -q[0m
 [38;2;166;226;46m--chdir[0m[38;2;248;248;242m [0m[38;2;249;38;114mDIR[0m[38;2;248;248;242m                 change to directory DIR[0m
 [38;2;166;226;46m--daemon[0m[38;2;248;248;242m, [0m[38;2;166;226;46m--bg-daemon[0m[38;2;248;248;242m[=[0m[38;2;249;38;114mNAME[0m[38;2;248;248;242m] start a (named) server in the background[0m
 [38;2;166;226;46m--fg-daemon[0m[38;2;248;248;242m[=[0m[38;2;249;38;114mNAME[0m[38;2;248;248;242m]          start a (named) server in the foreground[0m
@@ -82,7 +82,7 @@
 [38;2;166;226;46m--version[0m[38;2;248;248;242m                       output version information and exit[0m
 
 [38;2;248;248;242mYou can generally also specify long option names with a single -; for[0m
-[38;2;248;248;242mexample, -batch as well as --batch.  You can use any unambiguous[0m
+[38;2;248;248;242mexample, -kitch as well as --kitch.  You can use any unambiguous[0m
 [38;2;248;248;242mabbreviation for a --option.[0m
 
 [38;2;248;248;242mVarious environment variables and window system resources also affect[0m

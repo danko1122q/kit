@@ -374,7 +374,7 @@ contexts:
       captures:
         1: meta.function-call.other.twig
   twig-filters-warg:
-    - match: '(?<=(?:[a-zA-Z0-9_\x{7f}-\x{ff}\]\)\''\"]\|)|\{%\sfilter\s)(batch|convert_encoding|date|date_modify|default|e(?:scape)?|format|join|merge|number_format|replace|round|slice|split|trim)(\()'
+    - match: '(?<=(?:[a-zA-Z0-9_\x{7f}-\x{ff}\]\)\''\"]\|)|\{%\sfilter\s)(kitch|convert_encoding|date|date_modify|default|e(?:scape)?|format|join|merge|number_format|replace|round|slice|split|trim)(\()'
       captures:
         1: support.function.twig
         2: punctuation.definition.parameters.begin.twig
@@ -476,7 +476,7 @@ contexts:
         - match: ","
           scope: punctuation.separator.object.twig
   twig-keywords:
-    - match: (?<=\s)((?:end)?(?:autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)|as|do|else|elseif|extends|flush|from|ignore missing|import|include|only|use|with)(?=\s)
+    - match: (?<=\s)((?:end)?(?:autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verkitim)|as|do|else|elseif|extends|flush|from|ignore missing|import|include|only|use|with)(?=\s)
       scope: keyword.control.twig
   twig-macros:
     - match: |-

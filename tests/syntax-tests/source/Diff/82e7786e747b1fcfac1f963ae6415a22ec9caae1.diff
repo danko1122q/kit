@@ -13,14 +13,14 @@ index ced88213..973eba9a 100644
 +
  ## Bugfixes
  ## Other
- ## `bat` as a library
-diff --git a/src/bin/bat/app.rs b/src/bin/bat/app.rs
+ ## `kit` as a library
+diff --git a/src/bin/kit/app.rs b/src/bin/kit/app.rs
 index e5221455..f0f519ea 100644
---- a/src/bin/bat/app.rs
-+++ b/src/bin/bat/app.rs
+--- a/src/bin/kit/app.rs
++++ b/src/bin/kit/app.rs
 @@ -15,7 +15,7 @@ use console::Term;
  
- use bat::{
+ use kit::{
      assets::HighlightingAssets,
 -    config::Config,
 +    config::{Config, VisibleLines},
@@ -58,12 +58,12 @@ index e5221455..f0f519ea 100644
              style_components,
              syntax_mapping,
              pager: self.matches.value_of("pager"),
-diff --git a/src/bin/bat/clap_app.rs b/src/bin/bat/clap_app.rs
+diff --git a/src/bin/kit/clap_app.rs b/src/bin/kit/clap_app.rs
 index c7344991..85edefde 100644
---- a/src/bin/bat/clap_app.rs
-+++ b/src/bin/bat/clap_app.rs
+--- a/src/bin/kit/clap_app.rs
++++ b/src/bin/kit/clap_app.rs
 @@ -105,6 +105,34 @@ pub fn build_app(interactive_output: bool) -> ClapApp<'static, 'static> {
-                             data to bat from STDIN when bat does not otherwise know \
+                             data to kit from STDIN when kit does not otherwise know \
                              the filename."),
          )
 +        .arg(

@@ -74,7 +74,7 @@ CODE
 foreground: C2C2C2
 background: 3D3D3D
 
-VERBATIM
+VERKITIM
 foreground: C2C2C2
 background: 3D3D3D
 

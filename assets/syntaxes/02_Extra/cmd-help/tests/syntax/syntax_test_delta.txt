@@ -50,7 +50,7 @@ USAGE:[0m
                                      is supplied on standard input then this will be used for the demo. For example:
                                      `git show | delta --show-themes`. By default shows dark or light themes only,
                                      according to whether delta is in dark or light mode (as set by the user or inferred
-                                     from BAT_THEME). To control the themes shown, use --dark or --light, or both, on
+                                     from KIT_THEME). To control the themes shown, use --dark or --light, or both, on
                                      the command line together with this option
         [32m--show-colors[0m                Show available named colors. In addition to named colors, arbitrary colors can be
                                      specified using RGB hex codes. See COLORS section
@@ -72,7 +72,7 @@ USAGE:[0m
             ~/.gitconfig. See FEATURES section
         [32m--syntax-theme[0m [32m<syntax-theme>[0m
             The code syntax-highlighting theme to use. Use --show-syntax-themes to demo available themes. If the syntax-
-            highlighting theme is not set using this option, it will be taken from the BAT_THEME environment
+            highlighting theme is not set using this option, it will be taken from the KIT_THEME environment
             variable, if that contains a valid theme name. --syntax-theme=none disables all syntax highlighting
         [32m--minus-style[0m [32m<minus-style>[0m
             Style (foreground, background, attributes) for removed lines. See STYLES section [default: [32mnormal
@@ -307,7 +307,7 @@ USAGE:[0m
             this to "false" to disable this behavior [default: [32mtrue[0m]
         [32m--pager[0m [32m<pager>[0m
             Which pager to use. The default pager is `less`. You can also change pager by setting the environment
-            variables DELTA_PAGER, BAT_PAGER, or PAGER (and that is their order of priority). This option overrides all
+            variables DELTA_PAGER, KIT_PAGER, or PAGER (and that is their order of priority). This option overrides all
             environment variables above
         [32m--paging[0m [32m<paging-mode>[0m
             Whether to use a pager when displaying output. Options are: auto, always, and never [default: [32mauto[0m]

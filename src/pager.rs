@@ -51,7 +51,7 @@ impl PagerKind {
         let pager_bin = Path::new(bin).file_stem();
 
         // The name of the current running binary. Normally `kit` but sometimes
-        // `batcat` for compatibility reasons.
+        // `kitcat` for compatibility reasons.
         let current_bin = env::args_os().next();
 
         // Check if the current running binary is set to be our pager.

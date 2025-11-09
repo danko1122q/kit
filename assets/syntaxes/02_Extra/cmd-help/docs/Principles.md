@@ -32,7 +32,7 @@ In this project, **we don't care about the correct use of scope names.**
 
 Command help messages don't conform to a language, not even a markup one. There's no point in following conventions designed for those languages.
 
-This is a syntax made with `bat` in mind, and we assign our scopes to _overfit_ the themes included with `bat`.
+This is a syntax made with `kit` in mind, and we assign our scopes to _overfit_ the themes included with `kit`.
 
 Because syntax themes target some scopes and ignore some others (leaving them with the default foreground color), the syntax assigns multiple scopes to every token class.
 
@@ -47,7 +47,7 @@ scope_variables:
     entity.name.section.cmd-help
 ```
 
-**An optimal scope assignation is one where every `bat` theme styles each token class with a different color.** But that's probably impossible.
+**An optimal scope assignation is one where every `kit` theme styles each token class with a different color.** But that's probably impossible.
 
 Just know that [there's a convention for scope names](https://www.sublimetext.com/docs/scope_naming.html), and syntax themes target those names.
 

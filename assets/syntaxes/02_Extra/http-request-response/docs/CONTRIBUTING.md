@@ -6,7 +6,7 @@ Thanks for being interested in improving this syntax highlighting definition.
 
 If possible, please write test assertions for changes you make, more test coverage is always good!
 There is some documentation on this at http://www.sublimetext.com/docs/syntax.html#testing, which is mainly aimed at Sublime Text users.
-If you are not a Sublime Text user, and are contributing to improve a tool that uses the `syntect` Rust library, such as `bat`,
+If you are not a Sublime Text user, and are contributing to improve a tool that uses the `syntect` Rust library, such as `kit`,
 then feel free to have a go at it or even submit your PR without any changes to the tests[^1] - CI will catch any assertion failures for you.
 Maintainers of this repository can always add/fix tests or guide you - so we won't let it be a barrier to contribution.
 You can always manually check your changes by adding the updated syntax definition to your preferred tool and seeing the highlighted output.

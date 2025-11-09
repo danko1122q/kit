@@ -9,7 +9,7 @@ use crate::error::*;
 
 #[derive(Debug, PartialEq, Eq, Default, Serialize, Deserialize)]
 pub struct AssetsMetadata {
-    bat_version: Option<String>,
+    kit_version: Option<String>,
     creation_time: Option<SystemTime>,
 }
 
@@ -19,7 +19,7 @@ impl AssetsMetadata {
     #[cfg(feature = "build-assets")]
     pub(crate) fn new(current_version: &str) -> AssetsMetadata {
         AssetsMetadata {
-            bat_version: Some(current_version.to_owned()),
+            kit_version: Some(current_version.to_owned()),
             creation_time: Some(SystemTime::now()),
         }
     }
@@ -45,7 +45,7 @@ impl AssetsMetadata {
     ///   - We find a `metadata.yaml` file, but are not able to parse it
     ///     - return a [`Error::SerdeYamlError`]
     ///   - We do not find a `metadata.yaml` file but a `syntaxes.bin` or `themes.bin` file
-    ///     - assume that these were created by an old version of bat and return
+    ///     - assume that these were created by an old version of kit and return
     ///       [`AssetsMetadata::default()`] without version information
     ///   - We do not find a `metadata.yaml` file and no cached assets
     ///     - no user provided assets are available, return `None`
@@ -66,9 +66,9 @@ impl AssetsMetadata {
 
     pub fn is_compatible_with(&self, current_version: &str) -> bool {
         let current_version =
-            Version::parse(current_version).expect("bat follows semantic versioning");
+            Version::parse(current_version).expect("kit follows semantic versioning");
         let stored_version = self
-            .bat_version
+            .kit_version
             .as_ref()
             .and_then(|ver| Version::parse(ver).ok());
 

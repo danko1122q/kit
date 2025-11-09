@@ -4,7 +4,7 @@
 
 0. Keep iterating on the syntax
     - [ ] handle more syntax patterns
-    - [x] improve coverage of `bat` themes
+    - [x] improve coverage of `kit` themes
 1. Make contributions to the project easier
     - [x] add issue templates
     - [x] add CI setup for Pull Requests (with GitHub Actions)
@@ -16,7 +16,7 @@ In no particular order:
 
 - [ ] **`cmd-help-full` / `helpful`**
   - alt syntax that colorizes tokens in descriptions, not just at the beginning of line.
-  - If we like it better than the original one, make this default and keep the other in `cmd-help-less`. (we => poll bat mantainers and/or users)
+  - If we like it better than the original one, make this default and keep the other in `cmd-help-less`. (we => poll kit mantainers and/or users)
   - It may work by importing `cmd-help` (OG) to handle beginning of line, and then handling the rest of the line within `cmd-help-full`.
 - [ ] **PowerShell support**
   - Extend the syntax to better parse PowerShell-like help messages.

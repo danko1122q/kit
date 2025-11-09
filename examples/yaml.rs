@@ -1,5 +1,5 @@
 /// A program that serializes a Rust structure to YAML and pretty-prints the result
-use bat::{Input, PrettyPrinter};
+use kit::{Input, PrettyPrinter};
 use serde::Serialize;
 
 #[derive(Serialize)]

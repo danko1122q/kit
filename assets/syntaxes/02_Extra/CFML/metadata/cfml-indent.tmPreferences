@@ -17,7 +17,7 @@
                 |   [^<>]*+<cfelse[^>]*>
             )
         ]]></string>
-        <key>batchDecreaseIndentPattern</key>
+        <key>kitchDecreaseIndentPattern</key>
         <string><![CDATA[(?x)
             ^\s*+
             (
@@ -46,7 +46,7 @@
                     (?<html_tag>[A-Za-z0-9-]+)(?=\s|>)\b[^>]*>(?!.*</\k<html_tag>\s*>)
             )
         ]]></string>
-        <key>batchIncreaseIndentPattern</key>
+        <key>kitchIncreaseIndentPattern</key>
         <string><![CDATA[(?x)
             ^\s*+
             (

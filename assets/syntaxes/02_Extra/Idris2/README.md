@@ -1,7 +1,7 @@
 ## Idris 2 highlighting for Sublime Text
 
 Sublime Text [syntax highlighting](idris2.sublime-syntax) for [Idris 2](https://www.idris-lang.org/) programming language.
-This was mainly created to be usable with [`bat`](https://github.com/sharkdp/bat/), [`typst`](https://typst.app/),
+This was mainly created to be usable with [`kit`](https://github.com/sharkdp/kit/), [`typst`](https://typst.app/),
 [`delta`](https://github.com/dandavison/delta) and etc.
 
 ## Panydocy theme

@@ -153,7 +153,7 @@ contexts:
       scope: constant.character.escape.gdscript
 
   builtin-types:
-    # It's debateable whether these "built-in types" should be categorized as ``storage`` or
+    # It's dekiteable whether these "built-in types" should be categorized as ``storage`` or
     # ``support``. I chose storage because the default color scheme differentiates it from
     # support and that's useful because things descended from Object get instantiated by
     # calling ``new()``, but these don't

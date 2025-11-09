@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# call stack: this << bat-test.dockerfile << tests/highlight_regression.sh
+# call stack: this << kit-test.dockerfile << tests/highlight_regression.sh
 
 set -euo pipefail
 
@@ -13,5 +13,5 @@ for source_path in source/* ; do
 
     filename=$(basename "$source_path")
     highlighted_path="highlighted/$filename"
-    bat --no-config -fpl cmd-help "$source_path" > "$highlighted_path"
+    kit --no-config -fpl cmd-help "$source_path" > "$highlighted_path"
 done

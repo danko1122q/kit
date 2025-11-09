@@ -1,6 +1,6 @@
 import { SemVer } from 'semver'
 import { commands, Disposable, env, OutputChannel } from 'vscode'
-import { ExecutionExitCode, ExecutionResult } from '../utils/batch'
+import { ExecutionExitCode, ExecutionResult } from '../utils/kitch'
 import { ElanInstalledToolchain, ElanToolchains, ElanUnresolvedToolchain } from '../utils/elan'
 import { extUriToCwdUri, FileUri } from '../utils/exturi'
 import { lean } from '../utils/leanEditorProvider'

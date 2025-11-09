@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-_modules=('system' 'bat' 'bat_config' 'bat_wrapper' 'bat_wrapper_function' 'tool')
+_modules=('system' 'kit' 'kit_config' 'kit_wrapper' 'kit_wrapper_function' 'tool')
 _modules_consented=()
 
 set -o pipefail
@@ -7,15 +7,15 @@ set -o pipefail
 export LC_ALL=C
 export LANG=C
 
-BAT="bat"
-if ! command -v bat &>/dev/null; then
-	if command -v batcat &> /dev/null; then
-		BAT="batcat"
+KIT="kit"
+if ! command -v kit &>/dev/null; then
+	if command -v kitcat &> /dev/null; then
+		KIT="kitcat"
 	else
 		tput setaf 1
 		printf "%s\n%s\n" \
-			"Unable to find a bat executable on your PATH." \
-			"Please ensure that 'bat' exists and is not named something else."
+			"Unable to find a kit executable on your PATH." \
+			"Please ensure that 'kit' exists and is not named something else."
 		tput sgr0
 		exit 1
 	fi
@@ -25,22 +25,22 @@ fi
 # Modules:
 # -----------------------------------------------------------------------------
 
-_bat_:description() {
-	_collects "Version information for 'bat'."
-	_collects "Custom syntaxes and themes for 'bat'."
+_kit_:description() {
+	_collects "Version information for 'kit'."
+	_collects "Custom syntaxes and themes for 'kit'."
 }
 
-_bat_config_:description() {
-	_collects "The environment variables used by 'bat'."
-	_collects "The 'bat' configuration file."
+_kit_config_:description() {
+	_collects "The environment variables used by 'kit'."
+	_collects "The 'kit' configuration file."
 }
 
-_bat_wrapper_:description() {
-	_collects "Any wrapper script used by 'bat'."
+_kit_wrapper_:description() {
+	_collects "Any wrapper script used by 'kit'."
 }
 
-_bat_wrapper_function_:description() {
-	_collects "The wrapper function surrounding 'bat' (if applicable)."
+_kit_wrapper_function_:description() {
+	_collects "The wrapper function surrounding 'kit' (if applicable)."
 }
 
 _system_:description() {
@@ -54,48 +54,48 @@ _tool_:description() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-_bat_:run() {
-	_out "$BAT" --version
-	_out env | grep '^BAT_\|^PAGER='
+_kit_:run() {
+	_out "$KIT" --version
+	_out env | grep '^KIT_\|^PAGER='
 
 	local cache_dir
-	cache_dir="$($BAT --cache-dir)"
+	cache_dir="$($KIT --cache-dir)"
 	if [[ -f "${cache_dir}/syntaxes.bin" ]]; then
-		_print_command "$BAT" "--list-languages"
+		_print_command "$KIT" "--list-languages"
 		echo "Found custom syntax set."
 	fi
 
 	if [[ -f "${cache_dir}/themes.bin" ]]; then
-		_print_command "$BAT" "--list-themes"
+		_print_command "$KIT" "--list-themes"
 		echo "Found custom theme set."
 	fi
 }
 
-_bat_config_:run() {
-	if [[ -f "$("$BAT" --config-file)" ]]; then
-		_out_fence cat "$("$BAT" --config-file)"
+_kit_config_:run() {
+	if [[ -f "$("$KIT" --config-file)" ]]; then
+		_out_fence cat "$("$KIT" --config-file)"
 	fi
 }
 
-_bat_wrapper_:run() {
-	_bat_wrapper_:detect_wrapper() {
-		local bat="$1"
-		if file "$(command -v "${bat}")" | grep "text executable" &> /dev/null; then
-			_out_fence cat "$(command -v "${bat}")"
+_kit_wrapper_:run() {
+	_kit_wrapper_:detect_wrapper() {
+		local kit="$1"
+		if file "$(command -v "${kit}")" | grep "text executable" &> /dev/null; then
+			_out_fence cat "$(command -v "${kit}")"
 			return
 		fi
 
-		printf "\nNo wrapper script for '%s'.\n" "${bat}"
+		printf "\nNo wrapper script for '%s'.\n" "${kit}"
 	}
 
-	_bat_wrapper_:detect_wrapper bat
-	if [[ "$BAT" != "bat" ]]; then
-		_bat_wrapper_:detect_wrapper "$BAT"
+	_kit_wrapper_:detect_wrapper kit
+	if [[ "$KIT" != "kit" ]]; then
+		_kit_wrapper_:detect_wrapper "$KIT"
 	fi
 }
 
-_bat_wrapper_function_:run() {
-	_bat_wrapper_function_:detect_wrapper() {
+_kit_wrapper_function_:run() {
+	_kit_wrapper_function_:detect_wrapper() {
 		local command="$1"
 		case "$("$SHELL" --version | head -n 1)" in
 			*fish*)
@@ -122,10 +122,10 @@ _bat_wrapper_function_:run() {
 		printf "\nNo wrapper function for '%s'.\n" "${command}"
 	}
 
-	_bat_wrapper_function_:detect_wrapper bat
-	_bat_wrapper_function_:detect_wrapper cat
-	if [[ "$BAT" != "bat" ]]; then
-		_bat_wrapper_function_:detect_wrapper "$BAT"
+	_kit_wrapper_function_:detect_wrapper kit
+	_kit_wrapper_function_:detect_wrapper cat
+	if [[ "$KIT" != "kit" ]]; then
+		_kit_wrapper_function_:detect_wrapper "$KIT"
 	fi
 }
 
@@ -177,7 +177,7 @@ _ask_module() {
 	cat 1>&2 << EOF
 --------------------------------------------------------------------------------
 This script runs some harmless commands to collect information about your
-system and bat configuration. It will give you a small preview of the commands
+system and kit configuration. It will give you a small preview of the commands
 that will be run, and ask consent before running them. Once completed, it will
 output a small report that you can review and copy into the issue description.
 --------------------------------------------------------------------------------
@@ -198,7 +198,7 @@ EOF
 		| sed 's/^ *//; s/;$//' \
 		| grep '^_out[^ ]* ' \
 		| sed 's/^_out[^ ]* //' \
-		| sed "s/\"\$BAT\"/$BAT/" 1>&2
+		| sed "s/\"\$KIT\"/$KIT/" 1>&2
 
 	# Prompt
 	printf "\n" 1>&2
@@ -225,14 +225,14 @@ _run_module() {
 # Functions:
 # -----------------------------------------------------------------------------
 
-# Tell the user if their executable isn't named "bat".
-if [[ "$BAT" != "bat" ]] && [[ "$1" != '-y' ]]; then
+# Tell the user if their executable isn't named "kit".
+if [[ "$KIT" != "kit" ]] && [[ "$1" != '-y' ]]; then
 	trap '_tput rmcup; exit 1' INT
 	_tput smcup
 	_tput clear
 	_tput cup 0 0
 	_tput setaf 1
-	printf "The %s executable on your system is named '%s'.\n%s\n" "bat" "$BAT" \
+	printf "The %s executable on your system is named '%s'.\n%s\n" "kit" "$KIT" \
 		"If your issue is related to installation, please check that this isn't the issue."
 	_tput sgr0
 	printf "Press any key to continue...\n"

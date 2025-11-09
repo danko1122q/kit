@@ -401,7 +401,7 @@ OPTIONS
                           git grep --line-number '' |
                             fzf --delimiter : --preview 'nl {1}' --preview-window '+{2}-5'
 
-                          # Preview with bat, matching line in the middle of the window below
+                          # Preview with kit, matching line in the middle of the window below
                           # the fixed header of the top 3 lines
                           #
                           #   ~3    Top 3 lines as the fixed header
@@ -411,11 +411,11 @@ OPTIONS
                           #
                           git grep --line-number '' |
                             fzf --delimiter : \
-                                --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+                                --preview 'kit --style=full --color=always --highlight-line {2} {1}' \
                                 --preview-window '~3,+{2}+3/2'
 
                           # Display top 3 lines as the fixed header
-                          fzf --preview 'bat --style=full --color=always {}' --preview-window '~3'
+                          fzf --preview 'kit --style=full --color=always {}' --preview-window '~3'
 
               * You can specify an alternative set of options that are used only when the size
                 of the preview window is below a certain threshold. Note that only one

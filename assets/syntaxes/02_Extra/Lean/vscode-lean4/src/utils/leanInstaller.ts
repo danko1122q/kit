@@ -1,7 +1,7 @@
 import { SemVer } from 'semver'
 import { Disposable, EventEmitter, OutputChannel, TerminalOptions, window } from 'vscode'
 import { getPowerShellPath, isRunningTest, setAlwaysAskBeforeInstallingLeanVersions } from '../config'
-import { ExecutionExitCode, displayResultError } from './batch'
+import { ExecutionExitCode, displayResultError } from './kitch'
 import { elanSelfUninstall, elanSelfUpdate, elanVersion, isElanEagerResolutionVersion } from './elan'
 import { FileUri } from './exturi'
 import { logger } from './logger'

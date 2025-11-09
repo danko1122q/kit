@@ -32,8 +32,8 @@ def generate_snapshot(name, arguments):
     subprocess.call(command, shell=True)
 
 
-def build_bat():
-    print("building bat")
+def build_kit():
+    print("building kit")
     subprocess.call("cargo build", cwd="../..", shell=True)
 
 
@@ -52,7 +52,7 @@ def undo_sample_file_modification():
     subprocess.call("git checkout -- sample.rs", shell=True)
 
 
-build_bat()
+build_kit()
 prepare_output_dir()
 modify_sample_file()
 generate_snapshots()

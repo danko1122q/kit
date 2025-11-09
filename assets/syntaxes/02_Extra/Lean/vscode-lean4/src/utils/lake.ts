@@ -1,6 +1,6 @@
 import * as os from 'os'
 import { OutputChannel } from 'vscode'
-import { displayOutputError, ExecutionExitCode } from './batch'
+import { displayOutputError, ExecutionExitCode } from './kitch'
 import { FileUri } from './exturi'
 import { leanRunner, ToolchainUpdateMode } from './leanCmdRunner'
 

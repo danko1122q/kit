@@ -2,7 +2,7 @@
 ---
 # http://www.sublimetext.com/docs/3/syntax.html
 name: Ada
-comment: 'Ada Lanaguage sublime-syntax for use with bat. See: https://github.com/wiremoons/ada-sublime-syntax'
+comment: 'Ada Lanaguage sublime-syntax for use with kit. See: https://github.com/wiremoons/ada-sublime-syntax'
 file_extensions:
   - adb
   - ads

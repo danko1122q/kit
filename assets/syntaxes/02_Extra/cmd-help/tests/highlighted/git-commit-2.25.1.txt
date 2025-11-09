@@ -94,7 +94,7 @@
 [38;2;248;248;242m           When doing a dry-run, give the output in the long-format. Implies [0m[38;2;166;226;46m--dry-run[0m[38;2;248;248;242m.[0m
 
 [38;2;248;248;242m       [0m[38;2;166;226;46m-z[0m[38;2;248;248;242m,[0m[38;2;248;248;242m [0m[38;2;166;226;46m--null[0m
-[38;2;248;248;242m           When showing short or porcelain status output, print the filename verbatim and[0m
+[38;2;248;248;242m           When showing short or porcelain status output, print the filename verkitim and[0m
 [38;2;248;248;242m           terminate the entries with NUL, instead of LF. If no format is given, implies the[0m
 [38;2;248;248;242m           [0m[38;2;166;226;46m--porcelain[0m[38;2;248;248;242m output format. Without the [0m[38;2;166;226;46m-z[0m[38;2;248;248;242m option, filenames with "unusual" characters[0m
 [38;2;248;248;242m           are quoted as explained for the configuration variable core.quotePath (see git-[0m
@@ -148,7 +148,7 @@
 
 [38;2;248;248;242m       [0m[38;2;166;226;46m--cleanup[0m[38;2;249;38;114m=[0m[38;2;248;248;242m<[0m[38;2;253;151;31mmode[0m[38;2;248;248;242m>[0m
 [38;2;248;248;242m           This option determines how the supplied commit message should be cleaned up before[0m
-[38;2;248;248;242m           committing. The <mode> can be strip, whitespace, verbatim, scissors or default.[0m
+[38;2;248;248;242m           committing. The <mode> can be strip, whitespace, verkitim, scissors or default.[0m
 
 [38;2;248;248;242m           strip[0m
 [38;2;248;248;242m               Strip leading and trailing empty lines, trailing whitespace, commentary and[0m
@@ -157,7 +157,7 @@
 [38;2;248;248;242m           whitespace[0m
 [38;2;248;248;242m               Same as strip except #commentary is not removed.[0m
 
-[38;2;248;248;242m           verbatim[0m
+[38;2;248;248;242m           verkitim[0m
 [38;2;248;248;242m               Do not change the message at all.[0m
 
 [38;2;248;248;242m           scissors[0m

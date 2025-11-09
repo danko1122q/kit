@@ -45,7 +45,7 @@ $current_theme: $theme_main;
 body {
   @include themed {
     background-color: theme('background-color');
-    background-image: url("https://github.com/sharkdp/bat/raw/master/doc/logo-header.svg");
+    background-image: url("https://github.com/sharkdp/kit/raw/master/doc/logo-header.svg");
   }
   
   header[data-selectable="false"] {

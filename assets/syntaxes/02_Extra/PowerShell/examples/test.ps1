@@ -278,10 +278,10 @@ c:\file.txt
 file.txt
 command.cmd
 co.cmd
-a.bat
-aa.bat
-aaa.bat
-aaaa.bat
+a.kit
+aa.kit
+aaa.kit
+aaaa.kit
 øyvind.ps1
 my file.exe
 

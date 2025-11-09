@@ -100,8 +100,8 @@ class RpcSessionForFile {
             this.refsToRelease.push(ptr)
 
             // We release eagerly instead of delaying when this many refs become garbage
-            const maxBatchSize = 100
-            if (this.refsToRelease.length > maxBatchSize) {
+            const maxKitchSize = 100
+            if (this.refsToRelease.length > maxKitchSize) {
                 void this.releaseNow()
                 clearTimeout(releaseTimeout)
                 releaseTimeout = undefined

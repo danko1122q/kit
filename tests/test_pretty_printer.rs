@@ -1,4 +1,4 @@
-use bat::PrettyPrinter;
+use kit::PrettyPrinter;
 
 #[test]
 fn syntaxes() {

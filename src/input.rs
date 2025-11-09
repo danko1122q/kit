@@ -10,7 +10,7 @@ use content_inspector::{self, ContentType};
 use crate::error::*;
 
 /// A description of an Input source.
-/// This tells bat how to refer to the input.
+/// This tells kit how to refer to the input.
 #[derive(Clone)]
 pub struct InputDescription {
     pub(crate) name: String,

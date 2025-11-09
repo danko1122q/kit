@@ -1,38 +1,38 @@
-:: SYNTAX TEST "Packages/Batch File/Batch File.sublime-syntax"
+:: SYNTAX TEST "Packages/Kitch File/Kitch File.sublime-syntax"
 
    REM I'm a (com|ment)
-:: ^^^                  keyword.command.rem.dosbatch
-::     ^^^^^^^^^^^^^^^^ comment.line.rem.dosbatch
-::           ^          invalid.illegal.unexpected-character.dosbatch
-::               ^      invalid.illegal.unexpected-character.dosbatch
-::                    ^ invalid.illegal.unexpected-character.dosbatch
+:: ^^^                  keyword.command.rem.doskitch
+::     ^^^^^^^^^^^^^^^^ comment.line.rem.doskitch
+::           ^          invalid.illegal.unexpected-character.doskitch
+::               ^      invalid.illegal.unexpected-character.doskitch
+::                    ^ invalid.illegal.unexpected-character.doskitch
 
 REM
    not a comment
-:: ^^^^^^^^^^^^^ - comment.line.rem.dosbatch
+:: ^^^^^^^^^^^^^ - comment.line.rem.doskitch
 
 REM This follows a REM command
 :: <- keyword.command - comment
 :: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line
 
    :: Me too!
-:: ^^         punctuation.definition.comment.dosbatch
-:: ^^^^^^^^^^ comment.line.colon.dosbatch
+:: ^^         punctuation.definition.comment.doskitch
+:: ^^^^^^^^^^ comment.line.colon.doskitch
 
    :+ Me too!
-:: ^^         punctuation.definition.comment.dosbatch
+:: ^^         punctuation.definition.comment.doskitch
 
    := Me too!
-:: ^^         punctuation.definition.comment.dosbatch
+:: ^^         punctuation.definition.comment.doskitch
 
    :, Me too!
-:: ^^         punctuation.definition.comment.dosbatch
+:: ^^         punctuation.definition.comment.doskitch
 
    :; Me too!
-:: ^^         punctuation.definition.comment.dosbatch
+:: ^^         punctuation.definition.comment.doskitch
 
    : Me too!
-:: ^^         punctuation.definition.comment.dosbatch
+:: ^^         punctuation.definition.comment.doskitch
 
 ECHO : Not a comment
 ::   ^^^^^^^^^^^^^^^ - comment
@@ -43,311 +43,311 @@ ECHO : Not a comment ^
 ::       ^^^^^ - keyword.command
 
 ECHO &:: A comment
-::   ^ keyword.operator.conditional.dosbatch
-::    ^^ punctuation.definition.comment.dosbatch
-::    ^^^^^^^^^^^^ comment.line.colon.dosbatch
+::   ^ keyword.operator.conditional.doskitch
+::    ^^ punctuation.definition.comment.doskitch
+::    ^^^^^^^^^^^^ comment.line.colon.doskitch
 
   :: an indented comment
-::^^ punctuation.definition.comment.dosbatch
-::^^^^^^^^^^^^^^^^^^^^^^ comment.line.colon.dosbatch
+::^^ punctuation.definition.comment.doskitch
+::^^^^^^^^^^^^^^^^^^^^^^ comment.line.colon.doskitch
 
    ECHO "foo"
-::      ^       punctuation.definition.string.begin.dosbatch
-::      ^^^^^   string.quoted.double.dosbatch
-::          ^   punctuation.definition.string.end.dosbatch
+::      ^       punctuation.definition.string.begin.doskitch
+::      ^^^^^   string.quoted.double.doskitch
+::          ^   punctuation.definition.string.end.doskitch
 
 ECHO "
-::    ^ invalid.illegal.newline.dosbatch
+::    ^ invalid.illegal.newline.doskitch
 
    @ECHO OFF
-:: ^ keyword.operator.at.dosbatch
+:: ^ keyword.operator.at.doskitch
 
    @
-:: ^ - keyword.operator.at.dosbatch
+:: ^ - keyword.operator.at.doskitch
 
    GOTO:EOF
-:: ^^^^ keyword.control.statement.dosbatch
-::     ^ punctuation.separator.dosbatch
-::      ^^^ keyword.control.flow.return.dosbatch
+:: ^^^^ keyword.control.statement.doskitch
+::     ^ punctuation.separator.doskitch
+::      ^^^ keyword.control.flow.return.doskitch
 
    GOTO :End
-:: ^^^^ keyword.control.statement.dosbatch
-::      ^ punctuation.separator.dosbatch
-::       ^^^ meta.function-call.dosbatch variable.function.dosbatch
+:: ^^^^ keyword.control.statement.doskitch
+::      ^ punctuation.separator.doskitch
+::       ^^^ meta.function-call.doskitch variable.function.doskitch
 
    GOTO:End
-:: ^^^^ keyword.control.statement.dosbatch
-::     ^ punctuation.separator.dosbatch
-::      ^^^ meta.function-call.dosbatch variable.function.dosbatch
+:: ^^^^ keyword.control.statement.doskitch
+::     ^ punctuation.separator.doskitch
+::      ^^^ meta.function-call.doskitch variable.function.doskitch
 
 :: Redirection
    ECHO Hello World! > hello.txt
-:: ^^^^                keyword.command.dosbatch
-::                   ^ keyword.operator.redirection.dosbatch
+:: ^^^^                keyword.command.doskitch
+::                   ^ keyword.operator.redirection.doskitch
 
    ECHO >> NUL
-::      ^^     keyword.operator.redirection.dosbatch
+::      ^^     keyword.operator.redirection.doskitch
 ::         ^^^ constant.language
 
    dir > f.txt 2>&1
-::     ^ keyword.operator.redirection.dosbatch
-::              ^^ keyword.operator.redirection.dosbatch
+::     ^ keyword.operator.redirection.doskitch
+::              ^^ keyword.operator.redirection.doskitch
 
    ECHO || ECHO && ECHO &
-::      ^^ keyword.operator.conditional.dosbatch
-::              ^^ keyword.operator.conditional.dosbatch
-::                      ^ keyword.operator.conditional.dosbatch
+::      ^^ keyword.operator.conditional.doskitch
+::              ^^ keyword.operator.conditional.doskitch
+::                      ^ keyword.operator.conditional.doskitch
 
 :: Conditionals
    IF foo EQU bar
-:: ^^         keyword.control.conditional.dosbatch
-::        ^^^ keyword.operator.comparison.dosbatch
+:: ^^         keyword.control.conditional.doskitch
+::        ^^^ keyword.operator.comparison.doskitch
 
    IF NOT foo EQU bar
-:: ^^             keyword.control.conditional.dosbatch
-::    ^^^         keyword.operator.logical.dosbatch
-::            ^^^ keyword.operator.comparison.dosbatch
+:: ^^             keyword.control.conditional.doskitch
+::    ^^^         keyword.operator.logical.doskitch
+::            ^^^ keyword.operator.comparison.doskitch
 
 
    IF %ERRORLEVEL% NEQ 0 EXIT /B 1
-:: ^^              keyword.control.conditional.dosbatch
-::    ^^^^^^^^^^^^ variable.language.dosbatch
-::    ^ punctuation.definition.variable.begin.dosbatch
-::               ^ variable.language.dosbatch punctuation.definition.variable.end.dosbatch
+:: ^^              keyword.control.conditional.doskitch
+::    ^^^^^^^^^^^^ variable.language.doskitch
+::    ^ punctuation.definition.variable.begin.doskitch
+::               ^ variable.language.doskitch punctuation.definition.variable.end.doskitch
 
    IF foo == bar
-:: ^^         keyword.control.conditional.dosbatch
-::        ^^  keyword.operator.comparison.dosbatch
+:: ^^         keyword.control.conditional.doskitch
+::        ^^  keyword.operator.comparison.doskitch
 
    FOR %%G IN (0,9) DO (md %%G)
-:: ^^^                 keyword.control.repeat.dosbatch
-::             ^       constant.numeric.integer.decimal.dosbatch
+:: ^^^                 keyword.control.repeat.doskitch
+::             ^       constant.numeric.integer.decimal.doskitch
 
    FIND "a" |
-::          ^ keyword.operator.pipe.dosbatch
+::          ^ keyword.operator.pipe.doskitch
 
   :This is a #%@$虎 strange label
-::^    punctuation.separator.dosbatch
-:: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.label.dosbatch
+::^    punctuation.separator.doskitch
+:: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ entity.name.label.doskitch
 
   :End
-::^    punctuation.separator.dosbatch
-:: ^^^ entity.name.label.dosbatch
+::^    punctuation.separator.doskitch
+:: ^^^ entity.name.label.doskitch
 
    ECHO %1 %* %~dpf$PATH:5 %~1
-::      ^ punctuation.definition.variable.dosbatch
-::      ^^ variable.parameter.dosbatch
-::         ^ punctuation.definition.variable.dosbatch
-::         ^^ variable.parameter.dosbatch
-::            ^ punctuation.definition.variable.dosbatch
-::            ^^^^^^^^^^^ variable.parameter.dosbatch
-::                         ^ punctuation.definition.variable.dosbatch
-::                         ^^^ variable.parameter.dosbatch
+::      ^ punctuation.definition.variable.doskitch
+::      ^^ variable.parameter.doskitch
+::         ^ punctuation.definition.variable.doskitch
+::         ^^ variable.parameter.doskitch
+::            ^ punctuation.definition.variable.doskitch
+::            ^^^^^^^^^^^ variable.parameter.doskitch
+::                         ^ punctuation.definition.variable.doskitch
+::                         ^^^ variable.parameter.doskitch
 
    ECHO %variable% !variable!
-::      ^ punctuation.definition.variable.begin.dosbatch
-::      ^^^^^^^^^^ variable.other.readwrite.dosbatch
-::               ^ punctuation.definition.variable.end.dosbatch
-::                 ^ punctuation.definition.variable.begin.dosbatch
-::                 ^^^^^^^^^^ variable.other.readwrite.dosbatch
-::                          ^ punctuation.definition.variable.end.dosbatch
+::      ^ punctuation.definition.variable.begin.doskitch
+::      ^^^^^^^^^^ variable.other.readwrite.doskitch
+::               ^ punctuation.definition.variable.end.doskitch
+::                 ^ punctuation.definition.variable.begin.doskitch
+::                 ^^^^^^^^^^ variable.other.readwrite.doskitch
+::                          ^ punctuation.definition.variable.end.doskitch
 
 ECHO %sub:str1=str2% !sub:str1=str2!
-::   ^^^^^^^^^^^^^^^ variable.other.readwrite.dosbatch
-::   ^ punctuation.definition.variable.begin.dosbatch
-::       ^ punctuation.separator.dosbatch
-::        ^^^^^^^^^ meta.variable.substitution.dosbatch
-::        ^^^^ string.unquoted.dosbatch
-::            ^ punctuation.separator.dosbatch
-::             ^^^^ string.unquoted.dosbatch
-::                 ^ punctuation.definition.variable.end.dosbatch
-::                   ^^^^^^^^^^^^^^^ variable.other.readwrite.dosbatch
-::                   ^ punctuation.definition.variable.begin.dosbatch
-::                       ^ punctuation.separator.dosbatch
-::                        ^^^^^^^^^ meta.variable.substitution.dosbatch
-::                        ^^^^ string.unquoted.dosbatch
-::                            ^ punctuation.separator.dosbatch
-::                             ^^^^ string.unquoted.dosbatch
-::                                 ^ punctuation.definition.variable.end.dosbatch
+::   ^^^^^^^^^^^^^^^ variable.other.readwrite.doskitch
+::   ^ punctuation.definition.variable.begin.doskitch
+::       ^ punctuation.separator.doskitch
+::        ^^^^^^^^^ meta.variable.substitution.doskitch
+::        ^^^^ string.unquoted.doskitch
+::            ^ punctuation.separator.doskitch
+::             ^^^^ string.unquoted.doskitch
+::                 ^ punctuation.definition.variable.end.doskitch
+::                   ^^^^^^^^^^^^^^^ variable.other.readwrite.doskitch
+::                   ^ punctuation.definition.variable.begin.doskitch
+::                       ^ punctuation.separator.doskitch
+::                        ^^^^^^^^^ meta.variable.substitution.doskitch
+::                        ^^^^ string.unquoted.doskitch
+::                            ^ punctuation.separator.doskitch
+::                             ^^^^ string.unquoted.doskitch
+::                                 ^ punctuation.definition.variable.end.doskitch
 
 
 ECHO %substr:~0,-2% !substr:~0,-2!
-::   ^^^^^^^^^^^^^^ variable.other.readwrite.dosbatch
-::   ^ punctuation.definition.variable.begin.dosbatch
-::          ^^ punctuation.separator.dosbatch
-::            ^^^^ meta.variable.substring.dosbatch
-::            ^ constant.numeric.dosbatch
-::             ^ punctuation.separator.dosbatch
-::              ^^ constant.numeric.dosbatch
-::                ^ punctuation.definition.variable.end.dosbatch
-::                  ^^^^^^^^^^^^^^ variable.other.readwrite.dosbatch
-::                  ^ punctuation.definition.variable.begin.dosbatch
-::                         ^^ punctuation.separator.dosbatch
-::                           ^^^^ meta.variable.substring.dosbatch
-::                           ^ constant.numeric.dosbatch
-::                            ^ punctuation.separator.dosbatch
-::                             ^^ constant.numeric.dosbatch
-::                               ^ punctuation.definition.variable.end.dosbatch
+::   ^^^^^^^^^^^^^^ variable.other.readwrite.doskitch
+::   ^ punctuation.definition.variable.begin.doskitch
+::          ^^ punctuation.separator.doskitch
+::            ^^^^ meta.variable.substring.doskitch
+::            ^ constant.numeric.doskitch
+::             ^ punctuation.separator.doskitch
+::              ^^ constant.numeric.doskitch
+::                ^ punctuation.definition.variable.end.doskitch
+::                  ^^^^^^^^^^^^^^ variable.other.readwrite.doskitch
+::                  ^ punctuation.definition.variable.begin.doskitch
+::                         ^^ punctuation.separator.doskitch
+::                           ^^^^ meta.variable.substring.doskitch
+::                           ^ constant.numeric.doskitch
+::                            ^ punctuation.separator.doskitch
+::                             ^^ constant.numeric.doskitch
+::                               ^ punctuation.definition.variable.end.doskitch
 
 ECHO %b:~-5% !b:~+5!
-::   ^^^^^^^ variable.other.readwrite.dosbatch
-::   ^ punctuation.definition.variable.begin.dosbatch
-::     ^^ punctuation.separator.dosbatch
-::       ^^ meta.variable.substring.dosbatch
-::       ^^ constant.numeric.dosbatch
-::         ^ punctuation.definition.variable.end.dosbatch
-::           ^^^^^^^ variable.other.readwrite.dosbatch
-::           ^ punctuation.definition.variable.begin.dosbatch
-::             ^^ punctuation.separator.dosbatch
-::               ^^ meta.variable.substring.dosbatch
-::               ^^ constant.numeric.dosbatch
-::                 ^ punctuation.definition.variable.end.dosbatch
+::   ^^^^^^^ variable.other.readwrite.doskitch
+::   ^ punctuation.definition.variable.begin.doskitch
+::     ^^ punctuation.separator.doskitch
+::       ^^ meta.variable.substring.doskitch
+::       ^^ constant.numeric.doskitch
+::         ^ punctuation.definition.variable.end.doskitch
+::           ^^^^^^^ variable.other.readwrite.doskitch
+::           ^ punctuation.definition.variable.begin.doskitch
+::             ^^ punctuation.separator.doskitch
+::               ^^ meta.variable.substring.doskitch
+::               ^^ constant.numeric.doskitch
+::                 ^ punctuation.definition.variable.end.doskitch
 
 ECHO !t:%foo%=%bar:~0,-4%!
-::   ^^^^^^^^^^^^^^^^^^^^^ variable.other.readwrite.dosbatch
-::   ^ punctuation.definition.variable.begin.dosbatch
-::      ^^^^^ meta.variable.substitution.dosbatch variable.other.readwrite.dosbatch
-::      ^ meta.variable.substitution.dosbatch punctuation.definition.variable.begin.dosbatch
-::          ^ meta.variable.substitution.dosbatch punctuation.definition.variable.end.dosbatch
-::            ^ meta.variable.substitution.dosbatch punctuation.definition.variable.begin.dosbatch
-::            ^^^^^^^^^^^ meta.variable.substitution.dosbatch variable.other.readwrite.dosbatch
-::                  ^^^^ meta.variable.substitution.dosbatch meta.variable.substring.dosbatch
-::                      ^ meta.variable.substitution.dosbatch punctuation.definition.variable.end.dosbatch
-::                    ^^ meta.variable.substitution.dosbatch constant.numeric.dosbatch
-::                       ^ punctuation.definition.variable.end.dosbatch
+::   ^^^^^^^^^^^^^^^^^^^^^ variable.other.readwrite.doskitch
+::   ^ punctuation.definition.variable.begin.doskitch
+::      ^^^^^ meta.variable.substitution.doskitch variable.other.readwrite.doskitch
+::      ^ meta.variable.substitution.doskitch punctuation.definition.variable.begin.doskitch
+::          ^ meta.variable.substitution.doskitch punctuation.definition.variable.end.doskitch
+::            ^ meta.variable.substitution.doskitch punctuation.definition.variable.begin.doskitch
+::            ^^^^^^^^^^^ meta.variable.substitution.doskitch variable.other.readwrite.doskitch
+::                  ^^^^ meta.variable.substitution.doskitch meta.variable.substring.doskitch
+::                      ^ meta.variable.substitution.doskitch punctuation.definition.variable.end.doskitch
+::                    ^^ meta.variable.substitution.doskitch constant.numeric.doskitch
+::                       ^ punctuation.definition.variable.end.doskitch
 
 ECHO %t:foo=!bar:~0,-4!%
-::   ^^^^^^^^^^^^^^^^^^^ variable.other.readwrite.dosbatch
-::   ^ punctuation.definition.variable.begin.dosbatch
-::          ^ meta.variable.substitution.dosbatch punctuation.definition.variable.begin.dosbatch
-::          ^^^^^^^^^^^ meta.variable.substitution.dosbatch variable.other.readwrite.dosbatch
-::                ^^^^ meta.variable.substitution.dosbatch meta.variable.substring.dosbatch
-::                    ^ meta.variable.substitution.dosbatch punctuation.definition.variable.end.dosbatch
-::                  ^^ meta.variable.substitution.dosbatch constant.numeric.dosbatch
-::                     ^ punctuation.definition.variable.end.dosbatch
+::   ^^^^^^^^^^^^^^^^^^^ variable.other.readwrite.doskitch
+::   ^ punctuation.definition.variable.begin.doskitch
+::          ^ meta.variable.substitution.doskitch punctuation.definition.variable.begin.doskitch
+::          ^^^^^^^^^^^ meta.variable.substitution.doskitch variable.other.readwrite.doskitch
+::                ^^^^ meta.variable.substitution.doskitch meta.variable.substring.doskitch
+::                    ^ meta.variable.substitution.doskitch punctuation.definition.variable.end.doskitch
+::                  ^^ meta.variable.substitution.doskitch constant.numeric.doskitch
+::                     ^ punctuation.definition.variable.end.doskitch
 
 ECHO Not% a variable
-::      ^^^^^^^^^^^^ - variable.other.readwrite.dosbatch
-::   ^^^             - keyword.operator.logical.dosbatch
+::      ^^^^^^^^^^^^ - variable.other.readwrite.doskitch
+::   ^^^             - keyword.operator.logical.doskitch
 
 ECHO Not! a variable
-::      ^^^^^^^^^^^^ - variable.other.readwrite.dosbatch
-::   ^^^             - keyword.operator.logical.dosbatch
+::      ^^^^^^^^^^^^ - variable.other.readwrite.doskitch
+::   ^^^             - keyword.operator.logical.doskitch
 
 :: Numerics
 SET /A r = 010 + 0x20 - 24
-::         ^^^ constant.numeric.integer.octal.dosbatch
-::         ^ punctuation.definition.numeric.octal.dosbatch
-::               ^^^^ constant.numeric.integer.hexadecimal.dosbatch
-::               ^^ punctuation.definition.numeric.hexadecimal.dosbatch
-::                      ^^ constant.numeric.integer.decimal.dosbatch
+::         ^^^ constant.numeric.integer.octal.doskitch
+::         ^ punctuation.definition.numeric.octal.doskitch
+::               ^^^^ constant.numeric.integer.hexadecimal.doskitch
+::               ^^ punctuation.definition.numeric.hexadecimal.doskitch
+::                      ^^ constant.numeric.integer.decimal.doskitch
 
 :: Escape Characters
 ECHO %% ^^! ^&
-::   ^^ constant.character.escape.dosbatch
-::      ^^^ constant.character.escape.dosbatch
-::          ^^ constant.character.escape.dosbatch
+::   ^^ constant.character.escape.doskitch
+::      ^^^ constant.character.escape.doskitch
+::          ^^ constant.character.escape.doskitch
 
 :: command SET /A specific operators
    set /a "num%%=5"
-::        ^^^^^^^^^ meta.expression.set.dosbatch
-::            ^^^ keyword.operator.assignment.augmented.dosbatch
+::        ^^^^^^^^^ meta.expression.set.doskitch
+::            ^^^ keyword.operator.assignment.augmented.doskitch
 
    set /a "num&=3"
-::            ^^ keyword.operator.assignment.augmented.dosbatch
+::            ^^ keyword.operator.assignment.augmented.doskitch
 
    set /a "num*=5"
-::            ^^ keyword.operator.assignment.augmented.dosbatch
+::            ^^ keyword.operator.assignment.augmented.doskitch
 
    set /a "num+=5"
-::            ^^ keyword.operator.assignment.augmented.dosbatch
+::            ^^ keyword.operator.assignment.augmented.doskitch
 
    set /a "num-=5"
-::            ^^ keyword.operator.assignment.augmented.dosbatch
+::            ^^ keyword.operator.assignment.augmented.doskitch
 
    set /a "num/=5"
-::            ^^ keyword.operator.assignment.augmented.dosbatch
+::            ^^ keyword.operator.assignment.augmented.doskitch
 
    set /a "num<<=2"
-::            ^^^ keyword.operator.assignment.augmented.dosbatch
+::            ^^^ keyword.operator.assignment.augmented.doskitch
 
    set /a "num=!5"
-::            ^ keyword.operator.assignment.dosbatch
-::             ^ keyword.operator.logical.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::             ^ keyword.operator.logical.doskitch
 
    set /a "num=(2+3)*5"
-::             ^^^^^ meta.group.dosbatch
-::             ^ punctuation.section.group.begin.dosbatch
-::                 ^ punctuation.section.group.end.dosbatch
-::            ^ keyword.operator.assignment.dosbatch
-::               ^ keyword.operator.arithmetic.dosbatch
-::                  ^ keyword.operator.arithmetic.dosbatch
+::             ^^^^^ meta.group.doskitch
+::             ^ punctuation.section.group.begin.doskitch
+::                 ^ punctuation.section.group.end.doskitch
+::            ^ keyword.operator.assignment.doskitch
+::               ^ keyword.operator.arithmetic.doskitch
+::                  ^ keyword.operator.arithmetic.doskitch
 
    set /a "num=2,result=num*5"
-::            ^ keyword.operator.assignment.dosbatch
-::              ^ punctuation.separator.dosbatch
-::                     ^ keyword.operator.assignment.dosbatch
-::                         ^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::              ^ punctuation.separator.doskitch
+::                     ^ keyword.operator.assignment.doskitch
+::                         ^ keyword.operator.arithmetic.doskitch
 
    set /a "num=2<<3"
-::            ^ keyword.operator.assignment.dosbatch
-::              ^^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::              ^^ keyword.operator.arithmetic.doskitch
 
    set /a "num=2>>3"
-::            ^ keyword.operator.assignment.dosbatch
-::              ^^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::              ^^ keyword.operator.arithmetic.doskitch
 
    set /a "num=5%%2"
-::            ^ keyword.operator.assignment.dosbatch
-::              ^^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::              ^^ keyword.operator.arithmetic.doskitch
 
    set /a "num=5&3"
-::            ^ keyword.operator.assignment.dosbatch
-::              ^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::              ^ keyword.operator.arithmetic.doskitch
 
    set /a "num=5^3"
-::            ^ keyword.operator.assignment.dosbatch
-::              ^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::              ^ keyword.operator.arithmetic.doskitch
 
    set /a "num=5|3"
-::            ^ keyword.operator.assignment.dosbatch
-::              ^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::              ^ keyword.operator.arithmetic.doskitch
 
    set /a "num^=3"
-::            ^^ keyword.operator.assignment.augmented.dosbatch
+::            ^^ keyword.operator.assignment.augmented.doskitch
 
    set /a "num=num*5"
-::            ^ keyword.operator.assignment.dosbatch
-::                ^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::                ^ keyword.operator.arithmetic.doskitch
 
    set /a "num=num+5"
-::            ^ keyword.operator.assignment.dosbatch
-::                ^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::                ^ keyword.operator.arithmetic.doskitch
 
    set /a "num=num-5"
-::            ^ keyword.operator.assignment.dosbatch
-::                ^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::                ^ keyword.operator.arithmetic.doskitch
 
    set /a "num=num/5"
-::            ^ keyword.operator.assignment.dosbatch
-::                ^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::                ^ keyword.operator.arithmetic.doskitch
 
    set /a "num=~5"
-::            ^ keyword.operator.assignment.dosbatch
-::             ^ keyword.operator.arithmetic.dosbatch
+::            ^ keyword.operator.assignment.doskitch
+::             ^ keyword.operator.arithmetic.doskitch
 
    set /a "num>>=2"
-::            ^^^ keyword.operator.assignment.augmented.dosbatch
+::            ^^^ keyword.operator.assignment.augmented.doskitch
 
    set /a "num|=3"
-::            ^^ keyword.operator.assignment.augmented.dosbatch
+::            ^^ keyword.operator.assignment.augmented.doskitch
 
    set /a century=year/100, next=century+1
-::               ^ keyword.operator.assignment.dosbatch
-::                    ^ keyword.operator.arithmetic.dosbatch
-::                        ^ punctuation.separator.dosbatch
-::                              ^ keyword.operator.assignment.dosbatch
-::                                      ^ keyword.operator.arithmetic.dosbatch
+::               ^ keyword.operator.assignment.doskitch
+::                    ^ keyword.operator.arithmetic.doskitch
+::                        ^ punctuation.separator.doskitch
+::                              ^ keyword.operator.assignment.doskitch
+::                                      ^ keyword.operator.arithmetic.doskitch
 
   SET T=%TIME: =0%
 ::^^^ keyword.command
@@ -433,7 +433,7 @@ set test rem = hi
 
 set hello_world
 :: <- keyword.command
-::  ^^^^^^^^^^^ variable.other.readwrite.dosbatch
+::  ^^^^^^^^^^^ variable.other.readwrite.doskitch
 
 set /A hello_world
 :: <- keyword.command
@@ -441,42 +441,42 @@ set /A hello_world
 ::                ^ - meta.expression.set
 
 powershell get-date -uformat "%%Y%%m%%d" > today.txt
-::                           ^^^^^^^^^^^ string.quoted.double.dosbatch
-::                            ^^ constant.character.escape.dosbatch
-::                              ^ - constant.character.escape.dosbatch
-::                               ^^ constant.character.escape.dosbatch
-::                                 ^ - constant.character.escape.dosbatch
-::                                  ^^ constant.character.escape.dosbatch
-::                                    ^ - constant.character.escape.dosbatch
+::                           ^^^^^^^^^^^ string.quoted.double.doskitch
+::                            ^^ constant.character.escape.doskitch
+::                              ^ - constant.character.escape.doskitch
+::                               ^^ constant.character.escape.doskitch
+::                                 ^ - constant.character.escape.doskitch
+::                                  ^^ constant.character.escape.doskitch
+::                                    ^ - constant.character.escape.doskitch
 
 :: the following example was inspired by http://stackoverflow.com/a/14634551/4473405
 set /p today=<today.txt
-:: ^^^^ - variable.other.readwrite.dosbatch
-::     ^^^^^ variable.other.readwrite.dosbatch
-::          ^ keyword.operator.assignment.dosbatch
-::           ^ keyword.operator.redirection.dosbatch
+:: ^^^^ - variable.other.readwrite.doskitch
+::     ^^^^^ variable.other.readwrite.doskitch
+::          ^ keyword.operator.assignment.doskitch
+::           ^ keyword.operator.redirection.doskitch
 ren example.txt example_%today%.txt
-::                      ^ punctuation.definition.variable.begin.dosbatch
-::                      ^^^^^^^ variable.other.readwrite.dosbatch
-::                            ^ punctuation.definition.variable.end.dosbatch
+::                      ^ punctuation.definition.variable.begin.doskitch
+::                      ^^^^^^^ variable.other.readwrite.doskitch
+::                            ^ punctuation.definition.variable.end.doskitch
 
 set /p today=enter a date:
-:: ^^^^ - variable.other.readwrite.dosbatch
-::     ^^^^^ variable.other.readwrite.dosbatch
-::          ^ keyword.operator.assignment.dosbatch
-::           ^^^^^^^^^^^^^ meta.prompt.set.dosbatch string.unquoted - variable.other.readwrite.dosbatch
-::                        ^ - meta.prompt.set.dosbatch
+:: ^^^^ - variable.other.readwrite.doskitch
+::     ^^^^^ variable.other.readwrite.doskitch
+::          ^ keyword.operator.assignment.doskitch
+::           ^^^^^^^^^^^^^ meta.prompt.set.doskitch string.unquoted - variable.other.readwrite.doskitch
+::                        ^ - meta.prompt.set.doskitch
 set /p today=enter a date: REM :: this is not a comment
-:: ^^^^ - variable.other.readwrite.dosbatch
-::     ^^^^^ variable.other.readwrite.dosbatch
-::          ^ keyword.operator.assignment.dosbatch
-::           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.prompt.set.dosbatch string.unquoted - variable.other.readwrite.dosbatch - comment
-::                                                     ^ - meta.prompt.set.dosbatch
+:: ^^^^ - variable.other.readwrite.doskitch
+::     ^^^^^ variable.other.readwrite.doskitch
+::          ^ keyword.operator.assignment.doskitch
+::           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ meta.prompt.set.doskitch string.unquoted - variable.other.readwrite.doskitch - comment
+::                                                     ^ - meta.prompt.set.doskitch
 set /p today=
-:: ^^^^ - variable.other.readwrite.dosbatch
-::     ^^^^^ variable.other.readwrite.dosbatch
-::          ^ keyword.operator.assignment.dosbatch
-::           ^ - meta.prompt.set.dosbatch
+:: ^^^^ - variable.other.readwrite.doskitch
+::     ^^^^^ variable.other.readwrite.doskitch
+::          ^ keyword.operator.assignment.doskitch
+::           ^ - meta.prompt.set.doskitch
 
 :: Double quotes after the equal sign, or part of a quoted assignment are literal chars
 SET "XML=<foo bar="%ATTR1%" baz="prefix-%ATTR2%" />"
@@ -490,34 +490,34 @@ SET "XML=<foo bar="%ATTR1%" baz="prefix-%ATTR2%" />"
 ::                                                 ^ punctuation.definition.string.end
 
 set folder=%TEMP%\subfolder\
-::  ^^^^^^ variable.other.readwrite.dosbatch
-::         ^^^^^^ variable.other.readwrite.dosbatch
+::  ^^^^^^ variable.other.readwrite.doskitch
+::         ^^^^^^ variable.other.readwrite.doskitch
 ::               ^^^^^^^^^^^ string.unquoted - variable.other
 
 set test="c:\program files (x86)\%example%_%%test"abc
-::  ^^^^ variable.other.readwrite.dosbatch
-::      ^ keyword.operator.assignment.dosbatch
-::       ^ punctuation.definition.string.begin.dosbatch
-::       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.dosbatch
-::                               ^^^^^^^^^ variable.other.readwrite.dosbatch
-::                                         ^^ constant.character.escape.dosbatch
-::                                               ^ punctuation.definition.string.end.dosbatch
-::                                                ^^^ string.unquoted.dosbatch
+::  ^^^^ variable.other.readwrite.doskitch
+::      ^ keyword.operator.assignment.doskitch
+::       ^ punctuation.definition.string.begin.doskitch
+::       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.doskitch
+::                               ^^^^^^^^^ variable.other.readwrite.doskitch
+::                                         ^^ constant.character.escape.doskitch
+::                                               ^ punctuation.definition.string.end.doskitch
+::                                                ^^^ string.unquoted.doskitch
 
 SETLOCAL EnableDelayedExpansion
-::^^^^^^ keyword.command.dosbatch
+::^^^^^^ keyword.command.doskitch
   SET /P example="what is the answer? ;) " & echo you have answered: !example!
-::   ^^^^ - variable.other.readwrite.dosbatch
-::       ^^^^^^^ variable.other.readwrite.dosbatch
-::              ^ keyword.operator.assignment.dosbatch
-::               ^ punctuation.definition.string.begin.dosbatch
-::               ^^^^^^^^^^^^^^^^^^^^^^^^^ meta.prompt.set.dosbatch string.quoted
-::                                       ^ punctuation.definition.string.end.dosbatch
-::                                         ^ keyword.operator.conditional.dosbatch - meta.prompt.set.dosbatch - string
-::                                           ^^^^ keyword.command.dosbatch
-::                                                                   ^^^^^^^^^ variable.other.readwrite.dosbatch
+::   ^^^^ - variable.other.readwrite.doskitch
+::       ^^^^^^^ variable.other.readwrite.doskitch
+::              ^ keyword.operator.assignment.doskitch
+::               ^ punctuation.definition.string.begin.doskitch
+::               ^^^^^^^^^^^^^^^^^^^^^^^^^ meta.prompt.set.doskitch string.quoted
+::                                       ^ punctuation.definition.string.end.doskitch
+::                                         ^ keyword.operator.conditional.doskitch - meta.prompt.set.doskitch - string
+::                                           ^^^^ keyword.command.doskitch
+::                                                                   ^^^^^^^^^ variable.other.readwrite.doskitch
 ENDLOCAL
-::^^^^^^ keyword.command.dosbatch
+::^^^^^^ keyword.command.doskitch
 
 set "X="
 ::  ^^^^ string.quoted.double
@@ -539,10 +539,10 @@ set /p OUTPUT="( ... )|&... "ignored & echo
 ::                                   ^ keyword.operator.conditional - comment
 ::                                     ^^^^ keyword.command
 set /p today="enter a date: " REM :: this is a comment & echo !today!
-:: ^^^^ - variable.other.readwrite.dosbatch
-::     ^^^^^ variable.other.readwrite.dosbatch
-::          ^ keyword.operator.assignment.dosbatch - variable.other.readwrite.dosbatch
-::           ^^^^^^^^^^^^^^^^ meta.prompt.set.dosbatch string.quoted - variable.other.readwrite.dosbatch - comment
+:: ^^^^ - variable.other.readwrite.doskitch
+::     ^^^^^ variable.other.readwrite.doskitch
+::          ^ keyword.operator.assignment.doskitch - variable.other.readwrite.doskitch
+::           ^^^^^^^^^^^^^^^^ meta.prompt.set.doskitch string.quoted - variable.other.readwrite.doskitch - comment
 ::                            ^^^^^^^^^^^^^^^^^^^^^^^^ comment
 ::                                                     ^ keyword.operator.conditional - comment - meta.prompt
 ::                                                       ^^^^ keyword.command

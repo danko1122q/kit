@@ -367,7 +367,7 @@ line starting from the first column.  The section separator line is highlighted
 differently.
 
 							      *help-codeblock*
-To quote a block of ex-commands verbatim, place a greater than (>) character
+To quote a block of ex-commands verkitim, place a greater than (>) character
 at the end of the line before the block and a less than (<) character as the
 first non-blank on a line following the block.  Any line starting in column 1
 also implicitly stops the block of ex-commands before it.  E.g. >
