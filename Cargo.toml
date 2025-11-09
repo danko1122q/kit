@@ -21,7 +21,7 @@ application = [
     "bugreport",
     "build-assets",
     "minimal-application",
-]
+] # <--- PERBAIKAN: Koma ditambahkan di sini untuk konsistensi
 # Mainly for developers that want to iterate quickly
 # Be aware that the included features might change in the future
 minimal-application = [
